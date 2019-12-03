@@ -3,7 +3,7 @@ sass/**
 scripts/js/**
 .htaccess
 .gitignore
-.scss-lint.yml
+.sass-lint.yml
 package.json
 gulpfile.js
 .prettierrc.json
