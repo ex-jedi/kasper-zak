@@ -1,0 +1,201 @@
+//*==============================================================================
+//** Colour, font stacks, media queries, that kind of thing  **
+//*==============================================================================
+
+//*=========================================
+//** Layout **
+//*=========================================
+
+//* Main Grid Mixin
+@mixin main-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "h h h h"
+    "m m m m"
+    "f f f f";
+  grid-gap: $grid-gap;
+}
+
+//* Flex Mixin
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+//* Layout Variables
+$grid-gap: 0 1rem;
+
+//*=========================================
+//** Typography **
+//*=========================================
+
+//* Font Stacks
+@mixin heading-font-stack {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+}
+
+@mixin font-stack {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+//********** Sizing & spacing **********
+
+//* Headings
+
+//Sizing
+$h1-size: 2.5rem;
+$h2-size: 1.5rem;
+$h3-size: 1rem;
+
+//Spacing
+$h1-spacing-large: 5rem;
+$h1-spacing: 2.5rem;
+$h2-spacing: 1.5rem;
+$h3-spacing: 1rem;
+
+//* Articles
+$article-spacing: 5rem;
+
+//* Sections
+$large-section-spacing: 5rem;
+$section-spacing: 3.5rem;
+$small-section-spacing: 1.5rem;
+
+//* Paragraphs
+
+//Font sizing
+$font-size-large: 3rem;
+$font-size: 1.5rem;
+$font-size-small: 1rem;
+
+//Spacing
+$large-paragraph-spacing: 3rem;
+$paragraph-spacing: 1.5rem;
+$smaller-paragraph-spacing: 1rem;
+$small-paragraph-spacing: 0.5rem;
+
+//* Forms
+
+//Sizing
+$input-font-size: $font-size-small;
+
+//Spacing
+$input-spacing: 1rem;
+
+//********** Links **********
+
+//* Fancy Link Underline
+@mixin link-underline($colour) {
+  transition: all $transition-one;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+
+  &:hover,
+  &focus {
+    border-bottom: 3px solid $colour;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    outline: 0;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+}
+
+//* Fancy Link Underline With Visited styles
+@mixin link-underline-visited($colour) {
+  transition: all $transition-one;
+  border-bottom: 3px solid transparent;
+  padding-bottom: 5px;
+
+  @include breakpoint(800) {
+    border-bottom: 3px solid transparent;
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &focus {
+    border-bottom: 3px solid $colour;
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    outline: 0;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+
+  &:visited {
+    border-bottom: 3px solid $link-visited;
+
+    @include breakpoint(800) {
+      border-bottom: 3px solid transparent;
+    }
+  }
+}
+
+//*=========================================
+//** Colours  **
+//*=========================================
+
+//Main brand Colours
+$orange: #ea8a13;
+$accent: #6a4d29;
+
+//Main Font Colours
+$dark-font-colour: #252525;
+$light-font-colour: #f7f7f7;
+$link-colour: #3c3cf6;
+$link-visited: #8608fb;
+
+//Background Colours
+$light-background-colour: #fff;
+$medium-background-colour: #817f7f;
+$dark-background-colour: #141414;
+
+//*=========================================
+//** Effects and Animation  **
+//*=========================================
+
+//********** Animation Stagger **********
+
+@mixin stagger-anim-delay($elem, $initial-delay, $stagger-delay) {
+  @for $i from 1 through $elem {
+    &:nth-of-type(#{$i}) {
+      animation-delay: $initial-delay + $stagger-delay * $i;
+    }
+    $i: $i - 1;
+  }
+}
+
+//********** Transition Timings**********
+
+$transition-one: 0.3s ease-in-out 0s;
+
+//*=========================================
+//** Media Queries   **
+//*=========================================
+
+@mixin breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-width: $point) {
+    @content;
+  }
+}
+
+//* Alternative Media Queries
+//TODO: You must Choose!
+
+// @mixin breakpoint($point) {
+//   @if $point == 2000 {
+//     @media (max-width: 2000) {
+//       @content;
+//     }
+//   }
+// }
