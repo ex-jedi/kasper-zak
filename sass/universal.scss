@@ -1,19 +1,16 @@
 // *=======================================================================================
-// ** Styles that apply to all pages across the site  **
+// ** Styles for all pages  **
 // *=======================================================================================
 
-//**************************************** Imports  ****************************************
+//********** Imports **********
 
 @import "bits"; //Contains variables, media queries mixins etc.
 
-//******************************************************************************************
-
 // *=========================================
-// ** Wrappers  **
+// ** Wrappers **
 // *=========================================
 
 html {
-  box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -23,10 +20,11 @@ html {
   overflow-x: hidden;
 }
 
+// * Box sizing rules
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 // *=========================================
@@ -45,12 +43,25 @@ html {
 
 //********** Images **********
 
+//* Make images easier to work with
+img {
+  max-width: 100%;
+  display: block;
+}
+
 //********** Links **********
 
 // *=========================================
 // ** Header  **
 // *=========================================
 
+//* Hides outline unless tab key is pressed
+
+.hide-outline {
+  .no-outline {
+    outline: none;
+  }
+}
 // *=========================================
 // ** Main Nav  **
 // *=========================================
@@ -63,6 +74,55 @@ html {
 // ** Forms  **
 // *=========================================
 
+//* Inherit fonts for inputs and buttons
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
 // *=========================================
 // ** Footer  **
 // *=========================================
+
+//*=========================================
+//** Utility & Accessibility  **
+//*=========================================
+
+//* Remove all animations and transitions for people that prefer not to see them
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+//*Skip to content link
+.show-on-focus {
+  position: absolute;
+  color: $dark-font-colour;
+  background-color: $light-background-colour;
+  padding: 10px;
+  font-size: $smaller-font-size;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0.5rem 0 0 0.5rem;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+
+  &:focus {
+    z-index: 20;
+    width: auto;
+    height: auto;
+    clip: auto;
+  }
+}
+
+//*=========================================
+//** Browser Specific Styles  **
+//*=========================================

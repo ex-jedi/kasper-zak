@@ -14,8 +14,8 @@
 										    'add-trailing-slash' => false,
 										    'include-domain'     => true,
 										), true);
-	$mainsitename      = "SITE NAME";
-	$pagetitlename = " - SITE NAME";
+	$mainsitename      = "Kasper Zak";
+	$pagetitlename = " - Kasper Zak";
 	$sharing_image = '/images/default_fb_image.jpg';
 
 	PerchSystem::set_var('domain',$domain);
