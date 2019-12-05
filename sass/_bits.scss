@@ -147,8 +147,10 @@ $input-spacing: 1rem;
 //*=========================================
 
 //Main brand Colours
-$orange: #ea8a13;
-$accent: #6a4d29;
+$light-beige: rgb(233, 227, 226);
+$dark-beige: rgb(195, 179, 177);
+$dark-grey: rgb(47, 47, 47);
+$white: rgb(255, 255, 255);
 
 //Main Font Colours
 $dark-font-colour: #252525;
@@ -157,9 +159,15 @@ $link-colour: #3c3cf6;
 $link-visited: #8608fb;
 
 //Background Colours
-$light-background-colour: #fff;
-$medium-background-colour: #817f7f;
-$dark-background-colour: #141414;
+$main-background-colour: $light-beige;
+$accent-background-colour: $dark-beige;
+$dark-background-colour: $dark-grey;
+$light-background-colour: $white;
+$light-background-gradient: linear-gradient(
+  180deg,
+  rgba(233, 228, 227, 1) 50%,
+  rgba(195, 179, 177, 1) 100%
+);
 
 //*=========================================
 //** Effects and Animation  **
