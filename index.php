@@ -3,7 +3,6 @@
 <main class="main-content homepage-main-content">
 	<h1>Hello Kasper</h1>
 	<section>
-	  <?php perch_content('Placeholder'); ?>
 	</section>
 </main>
 <?php perch_layout('main-footer'); ?>

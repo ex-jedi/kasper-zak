@@ -56,13 +56,20 @@ img {
 // ** Header  **
 // *=========================================
 
-//* Hides outline unless tab key is pressed
-
-.hide-outline {
-  .no-outline {
-    outline: none;
-  }
+header {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  padding: $header-spacing 0 $header-spacing-large;
 }
+
+.main-header {
+}
+
+.main-logo {
+  width: 500px;
+}
+
 // *=========================================
 // ** Main Nav  **
 // *=========================================
@@ -122,6 +129,14 @@ select {
     width: auto;
     height: auto;
     clip: auto;
+  }
+}
+
+//* Hides outline unless tab key is pressed
+
+.hide-outline {
+  .no-outline {
+    outline: none;
   }
 }
 
