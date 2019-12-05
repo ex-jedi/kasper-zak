@@ -3,7 +3,7 @@
 // ** Reset based on https://hankchizljaw.com/wrote/a-modern-css-reset/  **
 // *=======================================================================================
 
-//********** Imports **********
+//* Imports
 
 @import "bits"; //Contains variables, media queries mixins etc.
 
@@ -36,25 +36,28 @@ body {
 // ** Content container and block **
 // *=========================================
 
-//********** Headings**********
+//* Headings
 
-//********** Containers **********
+//* Containers
 
-//********** Paragraphs **********
+//* Paragraphs
 
 // *=========================================
 // ** Inline **
 // *=========================================
 
-//********** Images **********
+//* Images
 
-//* Make images easier to work with
 img {
   max-width: 100%;
   display: block;
 }
 
-//********** Links **********
+//* Links
+
+a {
+  text-decoration: none;
+}
 
 // *=========================================
 // ** Header  **
@@ -62,22 +65,62 @@ img {
 
 header {
   @include flex(row);
+  position: relative;
+}
+
+.main-header {
   justify-content: center;
   align-items: center;
   padding: $header-spacing 0 $header-spacing-large;
 }
 
-.main-header {
-}
-
 .main-logo {
   width: 500px;
+  margin: 0 auto;
 }
 
 // *=========================================
 // ** Main Nav  **
 // *=========================================
 
+.main-nav {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav-ul {
+  margin: 0;
+}
+
+.main-nav-li {
+  list-style-type: none;
+  width: auto;
+  display: none;
+}
+
+.main-nav-link {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.main-nav-trigger {
+  position: fixed;
+  right: $header-spacing;
+  top: $header-spacing;
+  border: 1px solid $dark-grey;
+  background-color: $main-background-colour;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-weight: bold;
+}
+
+.main-nav-closer {
+  display: none;
+}
 // *=========================================
 // ** Body **
 // *=========================================
