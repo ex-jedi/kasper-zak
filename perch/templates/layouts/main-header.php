@@ -59,9 +59,12 @@
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>
-				<?php perch_content("Main Logo"); ?>
-					<?php perch_pages_navigation(array(
-							'hide-extensions' => true,
-					)); ?>
+
+				<div class="header-inner-wrapper">
+					<?php perch_content("Main Logo"); ?>
+						<?php perch_pages_navigation(array(
+								'hide-extensions' => true,
+						)); ?>
+				</div>
 
 			</header>
