@@ -97,11 +97,13 @@ header {
 
 .main-nav {
   @include flex(column);
+  @include utility-font-stack;
   width: auto;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .main-nav-ul {
@@ -121,15 +123,17 @@ header {
 }
 
 .main-nav-trigger {
-  position: absolute;
+  position: fixed;
   right: $header-spacing;
-  top: 0;
+  top: $header-spacing;
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .main-nav-closer {
