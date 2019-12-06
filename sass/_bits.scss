@@ -31,14 +31,19 @@ $grid-gap: 0 1rem;
 //*=========================================
 
 //* Font Stacks
-@mixin heading-font-stack {
-  font-family: "Roboto Slab", serif;
+@mixin main-font-stack {
+  font-family: "baskerville-poster-pt", serif;
   font-weight: 400;
 }
 
-@mixin font-stack {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+@mixin utility-font-stack {
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 400;
+}
+
+@mixin utility-font-stack-bold {
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 700;
 }
 
 //********** Sizing & spacing **********
