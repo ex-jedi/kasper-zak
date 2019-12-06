@@ -32,6 +32,10 @@ body {
   background-color: $main-background-colour;
 }
 
+section {
+  position: relative;
+}
+
 // *=========================================
 // ** Content container and block **
 // *=========================================
@@ -132,8 +136,32 @@ header {
   display: none;
 }
 // *=========================================
-// ** Body **
+// ** Main **
 // *=========================================
+
+.triptych-section {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.triptych-image {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.triptych-image-one {
+  width: 45%;
+}
+
+.triptych-image-two {
+  width: 30%;
+  margin: 10rem 0.5rem 0.5rem;
+}
+
+.triptych-image-three {
+  width: 20%;
+}
 
 // *=========================================
 // ** Forms  **
