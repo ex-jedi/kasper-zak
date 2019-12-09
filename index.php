@@ -2,6 +2,7 @@
 <?php perch_layout('main-header'); ?>
 <main class="main-content homepage-main-content">
 		<?php perch_content("Homepage Triptych"); ?>
+		<?php perch_content("Introduction Text"); ?>
 </main>
 <?php perch_layout('main-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
