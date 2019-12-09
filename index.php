@@ -1,9 +1,8 @@
 <?php include('perch/runtime.php'); ?>
 <?php perch_layout('main-header'); ?>
 <main class="main-content homepage-main-content">
-	<h1>Hello Kasper</h1>
-	<section>
-	</section>
+		<?php perch_content("Homepage Triptych"); ?>
+		<?php perch_content("Introduction Text"); ?>
 </main>
 <?php perch_layout('main-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->

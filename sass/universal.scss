@@ -32,6 +32,10 @@ body {
   background-color: $main-background-colour;
 }
 
+section {
+  position: relative;
+}
+
 // *=========================================
 // ** Content container and block **
 // *=========================================
@@ -71,11 +75,20 @@ header {
 .main-header {
   justify-content: center;
   align-items: center;
-  padding: $header-spacing 0 $header-spacing-large;
+}
+
+.header-inner-wrapper {
+  @include flex(row);
+  margin: $header-spacing 0 $header-spacing;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
 }
 
 .main-logo {
-  width: 500px;
+  height: 5rem;
+  width: auto;
   margin: 0 auto;
 }
 
@@ -85,10 +98,13 @@ header {
 
 .main-nav {
   @include flex(column);
+  @include utility-font-stack;
+  width: auto;
   justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .main-nav-ul {
@@ -104,6 +120,7 @@ header {
 .main-nav-link {
   display: inline-block;
   padding: 1rem;
+  display: inline-block;
 }
 
 .main-nav-trigger {
@@ -113,17 +130,43 @@ header {
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   font-weight: bold;
+  text-transform: uppercase;
+  z-index: 1;
 }
 
 .main-nav-closer {
   display: none;
 }
 // *=========================================
-// ** Body **
+// ** Main **
 // *=========================================
+
+.triptych-section {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.triptych-image {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.triptych-image-one {
+  width: 45%;
+}
+
+.triptych-image-two {
+  width: 30%;
+  margin: 10rem 0.5rem 0.5rem;
+}
+
+.triptych-image-three {
+  width: 20%;
+}
 
 // *=========================================
 // ** Forms  **

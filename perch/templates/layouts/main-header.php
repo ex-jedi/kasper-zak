@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://use.typekit.net/gyv3hod.css">
 	<link rel="stylesheet" href="/css/universal.css?v=1.0">
 	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.0">
 	<!-- Perch Meta -->
@@ -59,9 +60,12 @@
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>
-				<?php perch_content("Main Logo"); ?>
-					<?php perch_pages_navigation(array(
-							'hide-extensions' => true,
-					)); ?>
+
+				<div class="header-inner-wrapper">
+					<?php perch_content("Main Logo"); ?>
+						<?php perch_pages_navigation(array(
+								'hide-extensions' => true,
+						)); ?>
+				</div>
 
 			</header>

@@ -31,14 +31,14 @@ $grid-gap: 0 1rem;
 //*=========================================
 
 //* Font Stacks
-@mixin heading-font-stack {
-  font-family: "Roboto Slab", serif;
+@mixin main-font-stack {
+  font-family: "baskerville-poster-pt", serif;
   font-weight: 400;
 }
 
-@mixin font-stack {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+@mixin utility-font-stack {
+  font-family: "calluna-sans", sans-serif;
+  font-weight: 400;
 }
 
 //********** Sizing & spacing **********
@@ -165,7 +165,7 @@ $dark-background-colour: $dark-grey;
 $light-background-colour: $white;
 $light-background-gradient: linear-gradient(
   180deg,
-  rgba(233, 228, 227, 1) 50%,
+  rgba(233, 228, 227, 1) 0%,
   rgba(195, 179, 177, 1) 100%
 );
 
