@@ -79,7 +79,7 @@ header {
 
 .header-inner-wrapper {
   @include flex(row);
-  margin: $header-spacing 0 $header-spacing-large;
+  margin: $header-spacing 0 $header-spacing;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -87,7 +87,8 @@ header {
 }
 
 .main-logo {
-  width: 500px;
+  height: 5rem;
+  width: auto;
   margin: 0 auto;
 }
 
