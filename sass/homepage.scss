@@ -40,12 +40,12 @@
 
 .intro-text-section {
   @include main-font-stack;
-  padding: 0 $section-spacing-extra-large;
+  padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
   margin-top: -$paragraph-spacing-extra-large;
   color: $font-colour-dark;
   background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
-  background-position: left 0 top 10rem;
+  background-position: left 0 top $section-spacing-medium;
 }
 
 .homepage-intro-text-paragraph {
