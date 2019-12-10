@@ -202,7 +202,8 @@ select {
 //* Hides outline unless tab key is pressed
 
 .hide-outline {
-  .no-outline {
+  a:focus,
+  button:focus {
     outline: none;
   }
 }
