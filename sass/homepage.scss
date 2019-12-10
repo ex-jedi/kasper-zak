@@ -95,7 +95,7 @@
   font-size: $font-size-large;
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 10px;
+  letter-spacing: $letter-spacing-medium;
   margin: 0;
   background-color: inherit;
   border: 0;
@@ -107,4 +107,17 @@
   flex: 0 1 auto;
   width: 40%;
   margin-top: $section-spacing-large;
+}
+
+//* Text Area Two
+
+.homepage-text-area-two {
+  margin: $section-spacing-medium;
+  color: $dark-font-colour;
+}
+
+.homepage-text-area-two-paragraph {
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  line-height: 1.5;
 }
