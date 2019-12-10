@@ -1,3 +1,6 @@
 <div class="showreel-player">
-  <img src="/images/showreel-player-arrow.svg" alt="Showreel player arrow">
+  <img class="showreel-player-arrow" src="/images/showreel-player-arrow.svg" alt="Showreel player arrow">
+  <button class="showreel-player-button">
+    play showreel
+  </button>
 </div>
