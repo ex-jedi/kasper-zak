@@ -68,16 +68,22 @@
   text-align: right;
 }
 
-//* Showreel Illustration Section
+//* Showreel & Illustration Section
+
+.showreel-and-illustration-section {
+  @include flex(row);
+  margin: 0 $section-spacing-small;
+  justify-content: space-between;
+}
 
 .showreel-player {
   @include flex(column);
   justify-content: space-between;
+  flex: 0 1 auto;
   position: relative;
   width: 800px;
   height: 800px;
   background-color: $dark-background-colour;
-  margin-left: $section-spacing-small;
   padding: $section-spacing-small;
 }
 
@@ -95,4 +101,10 @@
   border: 0;
   text-align: left;
   color: $light-font-colour;
+}
+
+.homepage-illustration-wrapper {
+  flex: 0 1 auto;
+  width: 40%;
+  margin-top: $section-spacing-large;
 }
