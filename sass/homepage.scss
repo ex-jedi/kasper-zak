@@ -6,3 +6,53 @@
 
 @import "bits"; //Contains variables, media queries mixins etc.
 
+// *=========================================
+// ** Main **
+// *=========================================
+
+//* Triptych Section
+
+.triptych-section {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.triptych-image {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.triptych-image-one {
+  width: 45%;
+}
+
+.triptych-image-two {
+  width: 30%;
+  margin: 10rem 0.5rem 0.5rem;
+}
+
+.triptych-image-three {
+  width: 20%;
+}
+
+//* Intro Text
+
+.intro-text-section {
+  @include main-font-stack;
+  padding: 0 $section-spacing-extra-large;
+}
+
+.homepage-intro-text-paragraph {
+  margin: 0 0 $paragraph-spacing-large;
+}
+
+.homepage-intro-text-paragraph-one {
+  font-size: $font-size-extra-large;
+}
+
+.homepage-intro-text-paragraph-two,
+.homepage-intro-text-paragraph-three,
+.homepage-intro-text-paragraph-four {
+  font-size: $font-size-large;
+}
