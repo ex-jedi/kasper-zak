@@ -41,10 +41,16 @@
 .intro-text-section {
   @include main-font-stack;
   padding: 0 $section-spacing-extra-large;
+  margin-top: -$paragraph-spacing-extra-large;
+  color: $font-colour-dark;
+  background-image: url("/images/birds-background-images.png");
+  background-repeat: no-repeat;
+  background-position: left 0 top 10rem;
 }
 
 .homepage-intro-text-paragraph {
   margin: 0 0 $paragraph-spacing-large;
+  width: 100%;
 }
 
 .homepage-intro-text-paragraph-one {
@@ -55,4 +61,9 @@
 .homepage-intro-text-paragraph-three,
 .homepage-intro-text-paragraph-four {
   font-size: $font-size-large;
+}
+
+.homepage-intro-text-paragraph-three,
+.homepage-intro-text-paragraph-four {
+  text-align: right;
 }
