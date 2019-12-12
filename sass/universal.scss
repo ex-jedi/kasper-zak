@@ -225,6 +225,11 @@ header {
   }
 }
 
+.contact-consent-link {
+  color: $dark-font-colour;
+  text-decoration: underline;
+}
+
 //* Inherit fonts for inputs and buttons
 input,
 button,
