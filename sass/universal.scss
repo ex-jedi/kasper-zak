@@ -149,17 +149,38 @@ header {
 // ** Forms  **
 // *=========================================
 
-//* Text area three
-
 .general-contact-form-section {
-  margin: $section-spacing-medium 0;
+  margin: $section-spacing-medium;
   color: $dark-font-colour;
 }
 
 .contact-form-intro-text {
   @include main-font-stack;
   font-size: $font-size-large;
-  margin: 0 $section-spacing-medium $section-spacing-medium;
+  margin: 0 0 $section-spacing-medium;
+}
+.general-contact-form-wrapper {
+  @include flex(column);
+  justify-content: center;
+  @include utility-font-stack;
+}
+
+.general-contact-form-input-wrapper {
+  @include flex(row);
+  margin-bottom: $section-spacing-small;
+}
+
+.general-contact-form-label {
+  display: inline-block;
+  width: $section-spacing-medium;
+  flex: 0 1 auto;
+}
+
+.general-contact-form-input {
+  flex: 1 1 auto;
+  background-color: $main-background-colour;
+  border: 0;
+  border-bottom: 1px solid $dark-font-colour;
 }
 
 //* Inherit fonts for inputs and buttons
