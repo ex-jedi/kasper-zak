@@ -5,6 +5,7 @@
 	<?php perch_content("Introduction Text"); ?>
 	<?php perch_layout('showreel-player-illustration'); ?>
 	<?php perch_content("Homepage Text Area Two"); ?>
+	<?php perch_content("Homepage Triptych Two"); ?>
 </main>
 <?php perch_layout('main-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->

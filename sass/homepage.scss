@@ -72,7 +72,7 @@
 
 .showreel-and-illustration-section {
   @include flex(row);
-  margin: 0 $section-spacing-small;
+  margin: 0 $section-spacing-small $section-spacing-small;
   justify-content: space-between;
 }
 
@@ -120,4 +120,41 @@
   @include main-font-stack;
   font-size: $font-size-medium;
   line-height: 1.5;
+  margin: 0;
+}
+
+//* Triptych Section Two
+
+.triptych-section-two {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 150%;
+    height: 100%;
+    background-color: $accent-background-colour;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+  }
+}
+
+.triptych-section-two-image {
+  flex: 0 1 auto;
+  width: 65%;
+  height: auto;
+}
+
+.triptych-two-image-one,
+.triptych-two-image-three {
+  align-self: flex-start;
+}
+
+.triptych-two-image-two {
+  align-self: flex-end;
+  margin: -$section-spacing-small 0 0 -$section-spacing-small;
 }
