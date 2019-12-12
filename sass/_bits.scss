@@ -42,20 +42,31 @@ $grid-gap: 0 1rem;
   font-weight: 400;
 }
 
-//********** Sizing & spacing **********
+//********** Sizing **********
 
-//* Header
-$header-spacing: 5rem;
-$header-spacing-large: 10rem;
-
-//* Headings
-
-//Sizing
+//* Heading Sizing
 $h1-size: 2.5rem;
 $h2-size: 1.5rem;
 $h3-size: 1rem;
 
-//Spacing
+//* Font sizing
+$font-size-extra-large: 10rem;
+$font-size-large: 5rem;
+$font-size-medium: 2.5rem;
+$font-size-small: 1rem;
+
+//* Forms
+
+$label-font-size: $font-size-medium;
+$input-font-size: $font-size-small;
+
+$letter-spacing-medium: 10px;
+
+//********** Spacing **********
+
+$header-spacing: 5rem;
+$header-spacing-large: 10rem;
+
 $h1-spacing-large: 5rem;
 $h1-spacing: 2.5rem;
 $h2-spacing: 1.5rem;
@@ -73,26 +84,12 @@ $section-spacing-small: 5rem;
 
 //* Paragraphs
 
-//Font sizing
-$font-size-extra-large: 10rem;
-$font-size-large: 5rem;
-$font-size-medium: 2.5rem;
-$font-size-small: 1rem;
-
-$letter-spacing-medium: 10px;
-
-//Spacing
 $paragraph-spacing-extra-large: 10rem;
 $paragraph-spacing-large: 3rem;
 $paragraph-spacing-medium: 1rem;
 $paragraph-spacing-small: 0.5rem;
 
-//* Forms
-
-//Sizing
-$input-font-size: $font-size-small;
-
-//Spacing
+//* Spacing
 $input-spacing: 1rem;
 
 //********** Links **********

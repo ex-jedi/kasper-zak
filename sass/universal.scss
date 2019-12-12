@@ -150,7 +150,7 @@ header {
 // *=========================================
 
 .general-contact-form-section {
-  margin: $section-spacing-medium;
+  margin: $section-spacing-medium $section-spacing-large;
   color: $dark-font-colour;
 }
 
@@ -167,13 +167,18 @@ header {
 
 .general-contact-form-input-wrapper {
   @include flex(row);
+  justify-content: flex-end;
+  align-items: flex-end;
   margin-bottom: $section-spacing-small;
 }
 
 .general-contact-form-label {
-  display: inline-block;
-  width: $section-spacing-medium;
+  width: $section-spacing-large;
   flex: 0 1 auto;
+  font-size: $label-font-size;
+  font-weight: 700;
+  vertical-align: bottom;
+  line-height: 0.7;
 }
 
 .general-contact-form-input {
@@ -181,6 +186,12 @@ header {
   background-color: $main-background-colour;
   border: 0;
   border-bottom: 1px solid $dark-font-colour;
+
+  &:focus,
+  &:active {
+    border: 0;
+    border-bottom: 1px solid $dark-font-colour;
+  }
 }
 
 //* Inherit fonts for inputs and buttons
@@ -250,7 +261,9 @@ footer {
 
 .hide-outline {
   a:focus,
-  button:focus {
+  button:focus,
+  input:focus,
+  textarea:focus {
     outline: none;
   }
 }
