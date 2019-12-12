@@ -179,6 +179,7 @@ header {
   font-weight: 700;
   vertical-align: bottom;
   line-height: 0.7;
+  letter-spacing: $letter-spacing-small;
 }
 
 .text-area-label {
@@ -230,6 +231,55 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+//********** Checkbox **********
+.checkbox-div {
+  margin-bottom: $section-spacing-small;
+
+  input {
+    position: relative;
+    width: fit-content;
+    font-size: 0;
+    top: 1px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 0.9rem;
+      height: 0.9rem;
+      margin-top: -3px;
+      margin-left: -4px;
+      border: 1px solid $dark-background-colour;
+      border-radius: 0.25em;
+      background: $main-background-colour;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      height: 7px;
+      width: 16px;
+      color: $dark-font-colour;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      top: 0px;
+      left: -2px;
+      transform: rotate(-25deg) scale(0.75);
+      opacity: 0;
+      transition: all $transition-duration-one cubic-bezier(0.18, 1.96, 1, 1.96);
+    }
+
+    &:checked:after {
+      opacity: 1;
+      transform: rotate(-45deg) scale(1);
+    }
+  }
+
+  label {
+    text-transform: none;
+    display: inline;
+  }
 }
 
 //********** Honeypot **********

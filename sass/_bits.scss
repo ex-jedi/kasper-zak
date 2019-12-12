@@ -61,6 +61,7 @@ $label-font-size: $font-size-medium;
 $input-font-size: $font-size-small;
 
 $letter-spacing-medium: 10px;
+$letter-spacing-small: 3px;
 
 //********** Spacing **********
 
@@ -190,6 +191,7 @@ $light-background-gradient: linear-gradient(
 //********** Transition Timings**********
 
 $transition-one: 0.3s ease-in-out 0s;
+$transition-duration-one: 0.3s;
 
 //********** Scrollbar Mixin **********
 
