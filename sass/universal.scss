@@ -181,16 +181,46 @@ header {
   line-height: 0.7;
 }
 
+.text-area-label {
+  align-self: flex-start;
+}
+
 .general-contact-form-input {
   flex: 1 1 auto;
   background-color: $main-background-colour;
   border: 0;
   border-bottom: 1px solid $dark-font-colour;
+  font-size: $font-size-small;
+  padding-bottom: 5px;
 
   &:focus,
   &:active {
     border: 0;
     border-bottom: 1px solid $dark-font-colour;
+  }
+}
+
+.text-area-input {
+  border-bottom: 0;
+  line-height: 27px;
+  background-attachment: local;
+  @include horizontal-scrollbar;
+  background-image: linear-gradient(
+      to right,
+      $main-background-colour 0,
+      transparent 0
+    ),
+    linear-gradient(to left, $main-background-colour 0, transparent 0),
+    repeating-linear-gradient(
+      $main-background-colour,
+      $main-background-colour 27px,
+      $dark-font-colour 27px,
+      $dark-font-colour 28px,
+      $main-background-colour 28px
+    );
+
+  &:focus {
+    border-bottom: 0;
   }
 }
 

@@ -191,6 +191,35 @@ $light-background-gradient: linear-gradient(
 
 $transition-one: 0.3s ease-in-out 0s;
 
+//********** Scrollbar Mixin **********
+
+@mixin horizontal-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: scale-color($dark-grey, $lightness: 10%);
+    position: relative;
+    bottom: 10rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    margin: 1px;
+  }
+}
+
 //*=========================================
 //** Media Queries   **
 //*=========================================
