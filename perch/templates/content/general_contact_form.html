@@ -1,0 +1,43 @@
+<section class="general-contact-form-section" id="contact-me">
+    <p class="contact-form-intro-text">
+      <perch:content id="contactFormIntroForm" type="text" label="Contact Form Intro Text" size="l">
+    </p>
+  <div class="general-form-container">
+      <perch:form class="general-contact-form" id="contact" method="post" app="perch_forms">
+          <div>
+              <perch:label for="name">Name</perch:label>
+              <perch:input class="name-input" type="text" id="name" label="Name" required >
+              <perch:error class="form-error" for="name" type="required">Name</perch:error>
+          </div>
+          <div>
+              <perch:label for="email">Email</perch:label>
+              <perch:input class="email-input"  type="email" id="email" label="Email" required>
+              <perch:error class="form-error" for="email" type="required">Please add your email address</perch:error>
+              <perch:error class="form-error" for="email" type="format">Please check your email address</perch:error>
+          </div>
+          <div class="form-identification-number">
+              <perch:label for="messageAreaOne">Message: Leave this field blank if you are a human</perch:label>
+              <perch:input type="textarea" id="messageAreaOne" aria-hidden="true" autocomplete="off" antispam="honeypot" />
+          </div>
+          <div>
+              <perch:label for="message">Message</perch:label>
+              <perch:input class="text-area-input" type="textarea" id="message" label="Message" required>
+              <perch:error class="form-error" for="message" type="required">Please add a message</perch:error>
+          </div>
+          <div class="checkbox-div">
+            <perch:label class="mailing-list-check" for="mailingListCheck">If you would like to receive (very!) occasional updates on my work, photography tips and special offers please tick this box > </perch:label>
+            <perch:input class="mailing-list-check-checkbox" id="mailingListCheck" type="checkbox" label="Mailing List Consent" value="Yes">
+          </div>
+          <div class="checkbox-div consent-checkbox-div">
+            <perch:label class="contact-form-consent" for="contactListConsent">By checking this box you accept the <a target="_blank" title="Opens in new window" href="/privacy-and-cookie-policy">Longshot Photography Privacy and Cookie Policy</a> > </perch:label>
+            <perch:input class="mailing-list-check-checkbox contact-form-consent" id="contactListConsent" type="checkbox" label="Contact Form Consent" value="Yes" required>
+          </div>
+          <perch:input class="submit" type="submit" id="submit" value="Send" />
+          <perch:success>
+              <div class="success">
+                  <perch:content id="success" type="textarea" label="Thank you message" html="true" editor="redactor" />
+              </div>
+          </perch:success>
+      </perch:form>
+  </div>
+</section>

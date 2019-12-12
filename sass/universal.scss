@@ -149,12 +149,34 @@ header {
 // ** Forms  **
 // *=========================================
 
+//* Text area three
+
+.general-contact-form-section {
+  margin: $section-spacing-medium 0;
+  color: $dark-font-colour;
+}
+
+.contact-form-intro-text {
+  @include main-font-stack;
+  font-size: $font-size-large;
+  margin: 0 $section-spacing-medium $section-spacing-medium;
+}
+
 //* Inherit fonts for inputs and buttons
 input,
 button,
 textarea,
 select {
   font: inherit;
+}
+
+//********** Honeypot **********
+
+.form-identification-number {
+  overflow: hidden;
+  position: absolute;
+  z-index: -10;
+  opacity: 0;
 }
 
 // *=========================================

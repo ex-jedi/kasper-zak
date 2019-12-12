@@ -160,16 +160,3 @@
   align-self: flex-end;
   margin: -$section-spacing-small 0 0 -$section-spacing-small;
 }
-
-//* Text area three
-
-.homepage-text-area-three {
-  margin: $section-spacing-medium;
-  color: $dark-font-colour;
-}
-
-.homepage-text-area-three-paragraph {
-  @include main-font-stack;
-  font-size: $font-size-large;
-  margin: 0;
-}
