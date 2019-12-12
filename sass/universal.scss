@@ -312,9 +312,32 @@ select {
 // *=========================================
 
 footer {
-  padding-bottom: $section-spacing-large;
+  @include flex(column);
+  @include utility-font-stack;
+  color: $light-font-colour;
+  align-items: center;
+  padding: $section-spacing-medium 0;
   background-color: $dark-background-colour;
   margin: 0;
+}
+
+.footer-social-media-wrapper {
+  @include flex(row);
+  justify-content: space-between;
+  width: 40%;
+  margin-bottom: $section-spacing-small;
+}
+
+.footer-terms,
+.footer-privacy,
+.footer-copyright {
+  margin-bottom: $section-spacing-small;
+  text-align: center;
+  font-weight: bold;
+}
+
+.footer-link {
+  color: $light-font-colour;
 }
 
 //*=========================================

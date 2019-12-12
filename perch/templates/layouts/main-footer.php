@@ -1,13 +1,17 @@
 <footer class="main-footer">
 <?php perch_content("Footer Social Media"); ?>
 	<div class="footer-legal">
-		<p class="copyright" >&copy; <?php echo date("Y"); ?> Kasper Zak</p>
-		<p class="privacy"><a href="/privacy-policy.php">PRIVACY &amp; COOKIE PRIVACY POLICY</a></p>
-		<p class="terms"><a href="/terms.php">TERMS OF USE</a></p>
+		<p class="footer-terms">
+			<a class="footer-link footer-legals-link"  href="/terms.php">TERMS OF USE</a>
+		</p>
+		<p class="footer-privacy">
+			<a class="footer-link footer-legals-link"  href="/privacy-policy.php">PRIVACY &amp; COOKIE PRIVACY POLICY</a>
+		</p>
+		<p class="footer-copyright" >&copy; <?php echo date("Y"); ?> Kasper Zak</p>
 	</div>
 	<div class="footer-promo">
 		<p>
-			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="" class="promo-link">phoenix & phoenix</a>
+			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="#" class="footer-link promo-link">phoenix & phoenix</a>
 		</p>
 	</div>
 </footer>
