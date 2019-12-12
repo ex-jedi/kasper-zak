@@ -40,6 +40,7 @@
 
 .intro-text-section {
   @include main-font-stack;
+  line-height: normal;
   padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
   margin-top: -$paragraph-spacing-extra-large;
   color: $dark-font-colour;
@@ -158,4 +159,17 @@
 .triptych-two-image-two {
   align-self: flex-end;
   margin: -$section-spacing-small 0 0 -$section-spacing-small;
+}
+
+//* Text area three
+
+.homepage-text-area-three {
+  margin: $section-spacing-medium;
+  color: $dark-font-colour;
+}
+
+.homepage-text-area-three-paragraph {
+  @include main-font-stack;
+  font-size: $font-size-large;
+  margin: 0;
 }
