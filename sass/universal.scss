@@ -236,12 +236,15 @@ select {
 //********** Checkbox **********
 .checkbox-div {
   margin-bottom: $section-spacing-small;
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-start;
 
   input {
     position: relative;
     width: fit-content;
     font-size: 0;
-    top: 1px;
+    top: 0.5rem;
 
     &:before {
       content: "";
@@ -278,7 +281,9 @@ select {
 
   label {
     text-transform: none;
-    display: inline;
+    display: inline-block;
+    font-size: $input-font-size-medium;
+    width: 90%;
   }
 }
 
