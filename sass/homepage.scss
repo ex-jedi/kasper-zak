@@ -1,0 +1,162 @@
+//*==============================================================================
+//** Homepage Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+//* Triptych Section
+
+.triptych-section {
+  @include flex(row);
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.triptych-image {
+  flex: 1 1 auto;
+  height: auto;
+}
+
+.triptych-image-one {
+  width: 45%;
+}
+
+.triptych-image-two {
+  width: 30%;
+  margin: 10rem 0.5rem 0.5rem;
+}
+
+.triptych-image-three {
+  width: 20%;
+}
+
+//* Intro Text
+
+.intro-text-section {
+  @include main-font-stack;
+  line-height: normal;
+  padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
+  margin-top: -$paragraph-spacing-extra-large;
+  color: $dark-font-colour;
+  background-image: url("/images/birds-background-images.png");
+  background-repeat: no-repeat;
+  background-position: left 0 top $section-spacing-medium;
+}
+
+.homepage-intro-text-paragraph {
+  margin: 0 0 $paragraph-spacing-large;
+  width: 100%;
+}
+
+.homepage-intro-text-paragraph-one {
+  font-size: $font-size-extra-large;
+}
+
+.homepage-intro-text-paragraph-two,
+.homepage-intro-text-paragraph-three,
+.homepage-intro-text-paragraph-four {
+  font-size: $font-size-large;
+}
+
+.homepage-intro-text-paragraph-three,
+.homepage-intro-text-paragraph-four {
+  text-align: right;
+}
+
+//* Showreel & Illustration Section
+
+.showreel-and-illustration-section {
+  @include flex(row);
+  margin: 0 $section-spacing-small $section-spacing-small;
+  justify-content: space-between;
+}
+
+.showreel-player {
+  @include flex(column);
+  justify-content: space-between;
+  flex: 0 1 auto;
+  position: relative;
+  width: 800px;
+  height: 800px;
+  background-color: $dark-background-colour;
+  padding: $section-spacing-small;
+}
+
+.showreel-player-arrow {
+  align-self: flex-end;
+}
+
+.showreel-player-button {
+  font-size: $font-size-large;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: $letter-spacing-medium;
+  margin: 0;
+  background-color: inherit;
+  border: 0;
+  text-align: left;
+  color: $light-font-colour;
+}
+
+.homepage-illustration-wrapper {
+  flex: 0 1 auto;
+  width: 40%;
+  margin-top: $section-spacing-large;
+}
+
+//* Text Area Two
+
+.homepage-text-area-two {
+  margin: $section-spacing-medium;
+  color: $dark-font-colour;
+}
+
+.homepage-text-area-two-paragraph {
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  line-height: 1.5;
+  margin: 0;
+}
+
+//* Triptych Section Two
+
+.triptych-section-two {
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    width: 150%;
+    height: 80%;
+    background-color: $accent-background-colour;
+    position: absolute;
+    top: $section-spacing-large;
+    z-index: -1;
+    transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+  }
+}
+
+.triptych-section-two-image {
+  flex: 0 1 auto;
+  width: 65%;
+  height: auto;
+}
+
+.triptych-two-image-one,
+.triptych-two-image-three {
+  align-self: flex-start;
+}
+
+.triptych-two-image-two {
+  align-self: flex-end;
+  margin: -$section-spacing-small 0 0 -$section-spacing-small;
+}
