@@ -30,7 +30,7 @@ html {
 
 body {
   background-color: $main-background-colour;
-  margin: 0 1px;
+  margin: 0;
 }
 
 section {
@@ -312,7 +312,9 @@ select {
 // *=========================================
 
 footer {
-  margin-top: 40rem;
+  padding-bottom: $section-spacing-large;
+  background-color: $dark-background-colour;
+  margin: 0;
 }
 
 //*=========================================

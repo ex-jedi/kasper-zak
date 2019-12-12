@@ -1,12 +1,5 @@
 <footer class="main-footer">
-	<div class="footer-social-media">
-		<a href="#" class="footer-social-media-link">
-			<img class="footer-social-media-icon" src="/images/instagram-icon.svg">
-		</a>
-		<a href="#" class="footer-social-media-link">
-			<img class="footer-social-media-icon" src="/images/twitter-icon.svg">
-		</a>
-	</div>
+<?php perch_content("Footer Social Media"); ?>
 	<div class="footer-legal">
 		<p class="copyright" >&copy; <?php echo date("Y"); ?> Kasper Zak</p>
 		<p class="privacy"><a href="/privacy-policy.php">PRIVACY &amp; COOKIE PRIVACY POLICY</a></p>
