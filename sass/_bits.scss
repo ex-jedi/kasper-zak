@@ -44,16 +44,16 @@ $grid-gap: 0 1rem;
 
 //********** Sizing **********
 
-//* Heading Sizing
-$h1-size: 2.5rem;
-$h2-size: 1.5rem;
-$h3-size: 1rem;
-
 //* Font sizing
 $font-size-extra-large: 10rem;
 $font-size-large: 5rem;
 $font-size-medium: 2.5rem;
 $font-size-small: 1rem;
+
+//* Heading Sizing
+$h1-size: 2.5rem;
+$h2-size: $font-size-large;
+$h3-size: 1rem;
 
 //* Forms
 

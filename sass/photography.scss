@@ -1,0 +1,26 @@
+//*==============================================================================
+//** Photography Page Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+.photography-page-title-wrapper {
+  background-color: $accent-background-colour;
+  width: 100%;
+  height: 80vh;
+  margin-left: $section-spacing-small;
+  padding: $section-spacing-small;
+}
+
+.photography-page-title {
+  @include main-font-stack;
+  color: $light-font-colour;
+  margin: 0;
+  font-size: $h2-size;
+}
