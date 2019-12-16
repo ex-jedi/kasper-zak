@@ -1,0 +1,50 @@
+//*==============================================================================
+//** Photography Page Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+.photography-page-title-wrapper {
+  background-color: $accent-background-colour;
+  width: calc(100% - #{$section-spacing-small});
+  margin-left: auto;
+  height: 80vh;
+  padding: $section-spacing-small;
+}
+
+.photography-page-title {
+  @include main-font-stack;
+  color: $light-font-colour;
+  margin: 0;
+  font-size: $h2-size;
+}
+
+.photo-gallery-section {
+  margin-top: -$section-spacing-extra-large;
+}
+
+.photo-wrapper {
+  margin-bottom: $section-spacing-small;
+  width: calc(100% - #{$section-spacing-medium});
+  margin-right: au;
+}
+
+.double-photo-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+}
+
+.half-width-photo-image {
+  flex: 1 1 auto;
+}
+
+.half-width-photo-image-one {
+  margin-right: $section-spacing-small;
+}
