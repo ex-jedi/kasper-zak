@@ -10,23 +10,28 @@
 // ** Main **
 // *=========================================
 
-.photography-page-title-wrapper {
-  background-color: $accent-background-colour;
-  width: calc(100% - #{$section-spacing-small});
-  margin-left: auto;
-  height: 80vh;
-  padding: $section-spacing-small;
-}
-
 .photography-page-title {
   @include main-font-stack;
   color: $light-font-colour;
-  margin: 0;
+  margin: 0 0 0 $h2-size;
+  padding: $h2-size;
   font-size: $h2-size;
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: $accent-background-colour;
+    width: 100%;
+    height: 90vh;
+  }
 }
 
 .photo-gallery-section {
-  margin-top: -$section-spacing-extra-large;
+  // margin-top: -$section-spacing-extra-large;
 }
 
 .photo-wrapper {
