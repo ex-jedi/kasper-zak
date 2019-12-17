@@ -9,3 +9,29 @@
 // *=========================================
 // ** Main **
 // *=========================================
+
+.commercial-image-wrapper {
+  width: 100%;
+  margin-bottom: $section-spacing-small;
+}
+
+.full-width-commercial-image {
+  width: 100%;
+  height: auto;
+}
+
+.half-width-commercial-image-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-content: center;
+}
+
+.left-half-width-commercial-image {
+  margin-right: $section-spacing-small;
+}
+
+.half-width-commercial-image {
+  flex: 1 1 auto;
+  width: 40%;
+  height: auto;
+}
