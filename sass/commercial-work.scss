@@ -10,6 +10,21 @@
 // ** Main **
 // *=========================================
 
+.commercial-work-title,
+.commercial-work-sub-title {
+  @include main-font-stack;
+  text-align: center;
+  font-size: $h2-size;
+}
+
+.commercial-work-title {
+  color: $dark-font-colour;
+}
+
+.commercial-work-sub-title {
+  color: $light-font-colour;
+}
+
 .commercial-image-wrapper {
   width: 100%;
   margin-bottom: $section-spacing-small;
