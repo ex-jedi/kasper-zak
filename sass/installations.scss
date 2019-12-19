@@ -10,6 +10,10 @@
 // ** Main **
 // *=========================================
 
+body {
+  background: $main-background-gradient;
+}
+
 .header-inner-wrapper {
   margin: $header-spacing 0 0;
 }
