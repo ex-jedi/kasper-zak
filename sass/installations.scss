@@ -15,3 +15,51 @@
   font-size: $h2-size;
   text-align: center;
 }
+
+.installations-link-section {
+  @include flex(row);
+  justify-content: center;
+  margin-bottom: $section-spacing-medium;
+}
+
+.installations-link-wrapper {
+  @include flex(row);
+}
+
+.props-link-wrapper {
+  margin-right: $section-spacing-small;
+}
+
+.sprosser-link-wrapper {
+  justify-content: center;
+  align-items: center;
+}
+
+.installations-link-number,
+.installations-link {
+  color: $light-font-colour;
+}
+
+.installations-link-number {
+  font-size: $h2-size;
+  @include utility-font-stack;
+  font-weight: 300;
+}
+
+.installations-link {
+  @include main-font-stack;
+}
+
+.props-link {
+  font-size: $h1-size;
+}
+
+.sprosser-link-number,
+.sprosser-link {
+  display: inline-block;
+  transform: translateY(-15px);
+}
+
+.sprosser-link {
+  font-size: $h2-size;
+}
