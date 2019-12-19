@@ -10,6 +10,20 @@
 // ** Main **
 // *=========================================
 
+.header-inner-wrapper {
+  margin: $header-spacing 0 0;
+}
+
+.installations-main-content {
+  background-image: url(/images/birds-background-images.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-top: $header-spacing;
+  padding-bottom: $section-spacing-medium;
+  margin-bottom: $section-spacing-small;
+}
+
 .installations-page-title {
   @include main-font-stack;
   font-size: $h2-size;
@@ -19,7 +33,6 @@
 .installations-link-section {
   @include flex(row);
   justify-content: center;
-  margin-bottom: $section-spacing-medium;
 }
 
 .installations-link-wrapper {
