@@ -1,0 +1,17 @@
+//*==============================================================================
+//** Installations Page Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+.installations-page-title {
+  @include main-font-stack;
+  font-size: $h2-size;
+  text-align: center;
+}
