@@ -10,6 +10,8 @@
 // ** Main **
 // *=========================================
 
+//* Page Titles
+
 .general-page-title {
   width: fit-content;
   background-image: url("/images/birds-background-images.png");
@@ -18,6 +20,7 @@
   background-position: center;
   text-transform: capitalize;
   padding: 0 $paragraph-spacing-large;
+  color: $dark-font-colour;
 }
 
 .props-subtitle-wrapper {
@@ -29,10 +32,40 @@
 }
 
 .props-subtitle {
+  color: $dark-font-colour;
   font-weight: normal;
   margin: 0;
 }
 
 .props-subtitle-one {
   margin-right: $section-spacing-small;
+}
+
+//* Gallery
+
+.props-gallery-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: $section-spacing-small;
+  justify-items: stretch;
+  align-items: stretch;
+
+  @include breakpoint(1200) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+.props-image {
+  width: 100%;
+  object-fit: cover;
+}
+
+//* Text section
+
+.props-text-section {
+  @include main-font-stack;
+
+  color: $dark-font-colour;
+  font-size: $font-size-medium;
+  padding: $section-spacing-medium;
 }
