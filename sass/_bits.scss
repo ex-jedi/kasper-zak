@@ -51,7 +51,7 @@ $font-size-medium: 2.5rem;
 $font-size-small: 1rem;
 
 //* Heading Sizing
-$h1-size: 2.5rem;
+$h1-size: $font-size-extra-large;
 $h2-size: $font-size-large;
 $h3-size: 1rem;
 
@@ -70,8 +70,8 @@ $header-spacing: 5rem;
 $header-spacing-large: 10rem;
 
 $h1-spacing-large: 5rem;
-$h1-spacing: 2.5rem;
-$h2-spacing: 1.5rem;
+$h1-spacing: 5rem;
+$h2-spacing: 2.5rem;
 $h3-spacing: 1rem;
 
 //* Article Spacing
@@ -168,10 +168,10 @@ $main-background-colour: $light-beige;
 $accent-background-colour: $dark-beige;
 $dark-background-colour: $dark-grey;
 $light-background-colour: $white;
-$light-background-gradient: linear-gradient(
+$main-background-gradient: linear-gradient(
   180deg,
-  rgb(233, 227, 226) 0%,
-  rgb(212, 206, 205) 100%
+  $light-beige 0%,
+  $dark-beige 100%
 );
 
 //*=========================================

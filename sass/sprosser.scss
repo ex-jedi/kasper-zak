@@ -1,0 +1,84 @@
+//*==============================================================================
+//** Sprosser Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+//* Page Titles
+
+.general-page-title {
+  width: fit-content;
+  background-image: url("/images/birds-background-images.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-transform: capitalize;
+  padding: 0 $paragraph-spacing-large;
+  color: $dark-font-colour;
+}
+
+.installations-subtitle-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  margin: $section-spacing-medium auto;
+}
+
+.installations-subtitle {
+  color: $dark-font-colour;
+  font-weight: normal;
+  margin: 0;
+}
+
+.installations-subtitle-one {
+  margin-right: $section-spacing-small;
+}
+
+.installations-subtitle-two {
+  width: 50%;
+}
+
+//* Sprosser Videos
+
+.sprosser-videos-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  align-items: stretch;
+  margin: 0 $section-spacing-small;
+
+  @include breakpoint(1200) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+.sprosser-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.video-player-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+//* Text
+
+.installations-text-section {
+  @include main-font-stack;
+
+  color: $dark-font-colour;
+  font-size: $font-size-medium;
+  padding: $section-spacing-medium;
+}

@@ -1,0 +1,52 @@
+//*==============================================================================
+//** Commercial Work Page Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+// *=========================================
+// ** Main **
+// *=========================================
+
+.commercial-work-title,
+.commercial-work-sub-title {
+  @include main-font-stack;
+  text-align: center;
+  font-size: $h2-size;
+}
+
+.commercial-work-title {
+  color: $dark-font-colour;
+}
+
+.commercial-work-sub-title {
+  color: $light-font-colour;
+}
+
+.commercial-image-wrapper {
+  width: 100%;
+  margin-bottom: $section-spacing-small;
+}
+
+.full-width-commercial-image {
+  width: 100%;
+  height: auto;
+}
+
+.half-width-commercial-image-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-content: center;
+}
+
+.left-half-width-commercial-image {
+  margin-right: $section-spacing-small;
+}
+
+.half-width-commercial-image {
+  flex: 1 1 auto;
+  width: 40%;
+  height: auto;
+}
