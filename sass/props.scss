@@ -23,7 +23,7 @@
   color: $dark-font-colour;
 }
 
-.props-subtitle-wrapper {
+.installations-subtitle-wrapper {
   @include flex(row);
   justify-content: center;
   @include main-font-stack;
@@ -31,13 +31,13 @@
   margin: $section-spacing-medium auto;
 }
 
-.props-subtitle {
+.installations-subtitle {
   color: $dark-font-colour;
   font-weight: normal;
   margin: 0;
 }
 
-.props-subtitle-one {
+.installations-subtitle-one {
   margin-right: $section-spacing-small;
 }
 
