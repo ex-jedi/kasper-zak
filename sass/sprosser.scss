@@ -9,6 +9,9 @@
 // *=========================================
 // ** Main **
 // *=========================================
+
+//* Page Titles
+
 .general-page-title {
   width: fit-content;
   background-image: url("/images/birds-background-images.png");
@@ -41,4 +44,24 @@
 
 .installations-subtitle-two {
   width: 50%;
+}
+
+//* Sprosser Videos
+
+.sprosser-videos-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: stretch;
+  align-items: stretch;
+  margin: 0 $section-spacing-small;
+
+  @include breakpoint(1200) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+}
+
+.sprosser-image {
+  width: 100%;
+  object-fit: contain;
 }
