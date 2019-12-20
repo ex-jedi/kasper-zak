@@ -19,7 +19,8 @@
   background-size: contain;
   background-position: center;
   text-transform: capitalize;
-  padding: 0 $paragraph-spacing-large;
+  padding: $h2-spacing $paragraph-spacing-large;
+  margin: 0 auto;
   color: $dark-font-colour;
 }
 
