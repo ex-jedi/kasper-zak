@@ -149,6 +149,13 @@ header {
 // ** Main **
 // *=========================================
 
+//* Page title for most pages
+.general-page-title {
+  @include main-font-stack;
+  font-size: $h2-size;
+  text-align: center;
+}
+
 // *=========================================
 // ** Forms  **
 // *=========================================

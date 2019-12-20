@@ -28,12 +28,6 @@ body {
   margin-bottom: $section-spacing-small;
 }
 
-.installations-page-title {
-  @include main-font-stack;
-  font-size: $h2-size;
-  text-align: center;
-}
-
 .installations-link-section {
   @include flex(row);
   justify-content: center;
