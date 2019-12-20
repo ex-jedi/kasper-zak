@@ -9,3 +9,36 @@
 // *=========================================
 // ** Main **
 // *=========================================
+.general-page-title {
+  width: fit-content;
+  background-image: url("/images/birds-background-images.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  text-transform: capitalize;
+  padding: 0 $paragraph-spacing-large;
+  color: $dark-font-colour;
+}
+
+.installations-subtitle-wrapper {
+  @include flex(row);
+  justify-content: center;
+  align-items: center;
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  margin: $section-spacing-medium auto;
+}
+
+.installations-subtitle {
+  color: $dark-font-colour;
+  font-weight: normal;
+  margin: 0;
+}
+
+.installations-subtitle-one {
+  margin-right: $section-spacing-small;
+}
+
+.installations-subtitle-two {
+  width: 50%;
+}
