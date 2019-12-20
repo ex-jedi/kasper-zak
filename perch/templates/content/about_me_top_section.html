@@ -1,5 +1,4 @@
-<section class="about-me-top-section">
-  <div class="about-me-image-wrapper">
+<section class="about-me-section-one">
     <img class="about-me-image" src="<perch:content id="aboutMeImage" type="image" width="1000" label="About Me Image">" alt="<perch:content id="alt" type="text" label="Image description">"
     sizes="40vw"
     srcset="<perch:content type="image" id="aboutMeImage" width="1000" > 1000w,
@@ -7,9 +6,10 @@
     <perch:content type="image" id="aboutMeImage" width="800" > 800w,
     <perch:content type="image" id="aboutMeImage" width="600" > 600w,
     <perch:content type="image" id="aboutMeImage" width="400" > 400w" >
-
+  <div class="about-me-text-wrapper about-me-text-wrapper-one">
+    <perch:content id="aboutMeTextOne" type="textarea" label="Text Section One" editor="redactor"  required  html>
   </div>
-  <div class="about-me-top-text">
-    <perch:content id="aboutMeTopText" type="textarea" label="Text Section One" editor="redactor"  required  html>
-  </div>
+</section>
+<section class="about-me-text-wrapper about-me-text-section-two">
+  <perch:content id="aboutMeTextTwo" type="textarea" label="Text Section Two" editor="redactor"  required  html>
 </section>
