@@ -19,3 +19,20 @@
   text-transform: capitalize;
   padding: 0 $paragraph-spacing-large;
 }
+
+.props-subtitle-wrapper {
+  @include flex(row);
+  justify-content: center;
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  margin: $section-spacing-medium auto;
+}
+
+.props-subtitle {
+  font-weight: normal;
+  margin: 0;
+}
+
+.props-subtitle-one {
+  margin-right: $section-spacing-small;
+}
