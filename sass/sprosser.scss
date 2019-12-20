@@ -72,3 +72,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+//* Text
+
+.installations-text-section {
+  @include main-font-stack;
+
+  color: $dark-font-colour;
+  font-size: $font-size-medium;
+  padding: $section-spacing-medium;
+}
