@@ -10,7 +10,21 @@
 // ** Main **
 // *=========================================
 
-//* Page titles
+//* Wrapper
+
+.about-main-content {
+  @include flex(column);
+}
+
+.about-me-section-one {
+  padding: 0 $section-spacing-small $section-spacing-medium;
+}
+
+.about-me-text-section-two {
+  padding: 0 $section-spacing-medium;
+}
+
+//* Page title
 
 .general-page-title {
   width: fit-content;
@@ -19,6 +33,41 @@
   background-size: contain;
   background-position: center;
   color: $dark-font-colour;
-  padding: $h2-spacing $paragraph-spacing-large;
-  margin: 0 auto;
+  padding: $h2-spacing $section-spacing-small;
+  margin: 0 auto $section-spacing-small;
+}
+
+//* Image
+
+.about-me-image {
+  float: left;
+  width: 35%;
+  margin-right: $section-spacing-small;
+}
+
+//* Text
+
+.about-me-text-wrapper {
+  @include main-font-stack;
+
+  color: $dark-font-colour;
+  font-size: $font-size-medium;
+
+  p {
+    margin-top: 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//* Contact Form
+
+.contact-form-intro-text {
+  background-image: url("/images/birds-background-images.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  padding-top: $section-spacing-small;
 }
