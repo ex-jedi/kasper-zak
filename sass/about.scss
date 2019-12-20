@@ -10,8 +10,18 @@
 // ** Main **
 // *=========================================
 
+//* Wrapper
+
 .about-main-content {
   @include flex(column);
+}
+
+.about-me-section-one {
+  padding: 0 $section-spacing-small $section-spacing-medium;
+}
+
+.about-me-text-section-two {
+  padding: 0 $section-spacing-medium $section-spacing-medium;
 }
 
 //* Page title
@@ -31,8 +41,8 @@
 
 .about-me-image {
   float: left;
-  width: 30%;
-  margin: 0 $section-spacing-small;
+  width: 35%;
+  margin-right: $section-spacing-small;
 }
 
 //* Text
