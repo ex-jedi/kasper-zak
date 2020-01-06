@@ -1,7 +1,6 @@
 <?php include('perch/runtime.php'); ?>
 <?php perch_layout('main-header'); ?>
-<main class="main-content film-main-content" id="main-content">
-	<h1>Hello World</h1>
+<main class="main-content films-main-content" id="main-content">
 	<section>
 	  <?php perch_content('Placeholder'); ?>
 	</section>
