@@ -2,6 +2,6 @@
 <?php perch_layout('main-header'); ?>
 	<div class="page-wrapper">
 		<main class="main-content four-oh-four-main-content">
-        <?php perch_content('Terms And Conditions'); ?>
+        <?php perch_content('404 Page Content'); ?>
 		</main>
 		<?php perch_layout('main-footer'); ?>
