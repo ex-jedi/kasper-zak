@@ -12,8 +12,19 @@
 
 .four-oh-four-section {
   @include flex(row);
+  @include main-font-stack;
+  color: $dark-font-colour;
 }
 
 .four-oh-four-image {
   width: 50%;
+}
+
+.four-oh-four-title {
+  font-size: $font-size-super-large;
+  font-weight: 400;
+}
+
+.four-oh-four-text {
+  font-size: $font-size-medium;
 }
