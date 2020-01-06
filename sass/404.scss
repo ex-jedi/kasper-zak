@@ -14,17 +14,31 @@
   @include flex(row);
   @include main-font-stack;
   color: $dark-font-colour;
+  padding: $section-spacing-medium $section-spacing-small;
+  align-items: flex-start;
+}
+
+.four-oh-four-image-wrapper {
+  flex: 1 1 auto;
+  width: 40%;
+  margin-right: $section-spacing-small;
 }
 
 .four-oh-four-image {
-  width: 50%;
+  transform: rotate(180deg);
+  max-width: 600px;
+}
+
+.four-oh-four-text-wrapper {
+  font-size: $font-size-medium;
+  flex: 1 1 auto;
+  width: 60%;
 }
 
 .four-oh-four-title {
   font-size: $font-size-super-large;
+  text-align: right;
   font-weight: 400;
-}
-
-.four-oh-four-text {
-  font-size: $font-size-medium;
+  margin: 0 $section-spacing-small $section-spacing-small auto;
+  line-height: 1;
 }
