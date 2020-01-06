@@ -24,9 +24,34 @@
   margin-right: $section-spacing-small;
 }
 
+@keyframes ruh-row {
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  60% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
 .four-oh-four-image {
-  transform: rotate(180deg);
   max-width: 600px;
+  animation: ruh-row 2.5s 1s ease-in-out forwards;
 }
 
 .four-oh-four-text-wrapper {
