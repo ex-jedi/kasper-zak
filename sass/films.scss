@@ -24,6 +24,9 @@
 //********** Video Wrapper **********
 
 .video-wrapper {
+  @include flex(column);
+  align-items: center;
+  position: relative;
   margin: 0;
   padding: 0;
   line-height: 0;
@@ -37,6 +40,23 @@
   object-fit: cover;
   padding: 0;
   margin: 0;
+}
+
+//********** Video Text **********
+
+.video-title {
+  @include main-font-stack;
+  position: absolute;
+  top: $section-spacing-medium;
+  font-size: $h2-size;
+  line-height: 1;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  color: $light-font-colour;
+  text-transform: capitalize;
+  //? TODO: Are titles difficult to read?
+  //? background-color: $dark-background-colour;
 }
 
 //*=========================================
