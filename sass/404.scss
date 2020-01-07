@@ -1,0 +1,69 @@
+//*==============================================================================
+//** About Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Main **
+//*=========================================
+
+.four-oh-four-section {
+  @include flex(row);
+  @include main-font-stack;
+  color: $dark-font-colour;
+  padding: $section-spacing-medium $section-spacing-small;
+  align-items: flex-start;
+}
+
+.four-oh-four-image-wrapper {
+  flex: 1 1 auto;
+  width: 40%;
+  margin-right: $section-spacing-small;
+}
+
+@keyframes ruh-row {
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  60% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+.four-oh-four-image {
+  max-width: 600px;
+  animation: ruh-row 2.5s 1s ease-in-out forwards;
+}
+
+.four-oh-four-text-wrapper {
+  font-size: $font-size-medium;
+  flex: 1 1 auto;
+  width: 60%;
+}
+
+.four-oh-four-title {
+  font-size: $font-size-super-large;
+  text-align: right;
+  font-weight: 400;
+  margin: 0 $section-spacing-small $section-spacing-small auto;
+  line-height: 1;
+}

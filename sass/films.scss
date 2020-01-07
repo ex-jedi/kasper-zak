@@ -1,0 +1,93 @@
+//*==============================================================================
+//** Films Styles **
+//*==============================================================================
+
+//* Imports
+
+@import "bits"; //Contains variables, media queries mixins etc.
+
+//*=========================================
+//** Header **
+//*=========================================
+
+.invisible-header {
+  height: 0;
+}
+
+//*=========================================
+//** Main **
+//*=========================================
+
+.films-section {
+  @include flex(column);
+  @include main-font-stack;
+}
+
+//********** Videos **********
+
+//* Video Wrapper
+
+.video-wrapper {
+  @include flex(column);
+  align-items: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+//* Videos
+
+.video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+//* Videos Text
+
+.video-title {
+  position: absolute;
+  top: $section-spacing-medium;
+  font-size: $h2-size;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0 auto;
+  // padding: 10px;
+  text-align: center;
+  color: $light-font-colour;
+  text-transform: capitalize;
+  //? TODO: Are titles difficult to read?
+  // background-color: $dark-background-colour;
+}
+
+.video-counter {
+  @include flex(row);
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  font-size: $font-size-medium;
+  width: $section-spacing-extra-large;
+  font-weight: 400;
+  color: $light-font-colour;
+  position: fixed;
+  z-index: 1;
+  margin: 0 auto;
+  bottom: $section-spacing-medium;
+}
+
+.video-counter-span-two {
+  font-size: $font-size-large;
+}
+
+//*=========================================
+//** Footer **
+//*=========================================
+
+.invisible-footer {
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
