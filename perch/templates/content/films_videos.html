@@ -5,7 +5,7 @@
         <span class="video-counter-span video-counter-span-three">3</span>
         <span class="video-counter-span video-counter-span-four">4</span>
     </div>
-    <div class="video-wrapper video-one-wrapper">
+    <figure class="video-wrapper video-one-wrapper">
         <h2 class="video-title">
             <perch:content id="videoOneTitle" type="text" label="Video One Title" required>
         </h2>
@@ -14,7 +14,20 @@
             <source src="<perch:content id="videoOneOGV" type="file" label="Video One OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoOneWebM" type="file" label="Video One WebM Video">" type="video/webm">
         </video>
-    </div>
+        <ul id="video-controls" class="controls">
+            <li><button id="playpause" type="button">Play/Pause</button></li>
+            <li><button id="stop" type="button">Stop</button></li>
+            <li class="progress">
+            <progress id="progress" value="0" min="0">
+            <span id="progress-bar"></span>
+            </progress>
+            </li>
+            <li><button id="mute" type="button">Mute/Unmute</button></li>
+            <li><button id="volinc" type="button">Vol+</button></li>
+            <li><button id="voldec" type="button">Vol-</button></li>
+            <li><button id="fs" type="button">Fullscreen</button></li>
+        </ul>
+</figure>
     <div class="video-wrapper video-two-wrapper">
         <h2 class="video-title">
             <perch:content id="videoTwoTitle" type="text" label="Video Two Title" required>
