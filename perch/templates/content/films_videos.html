@@ -1,12 +1,12 @@
 <section class="films-section">
-    <div class="video-counter">
+    <div id="video-counter" class="video-counter">
         <span class="video-counter-span video-counter-span-one">1</span>
         <span class="video-counter-span video-counter-span-two">2</span>
         <span class="video-counter-span video-counter-span-three">3</span>
         <span class="video-counter-span video-counter-span-four">4</span>
     </div>
-    <figure id="videoContainer" class="video-wrapper video-one-wrapper">
-        <h2 class="video-title">
+    <figure class="video-wrapper video-one-wrapper">
+        <h2 id="video-title" class="video-title">
             <perch:content id="videoOneTitle" type="text" label="Video One Title" required>
         </h2>
         <video controls id="video" class="video video-one"  poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
@@ -14,19 +14,7 @@
             <source src="<perch:content id="videoOneOGV" type="file" label="Video One OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoOneWebM" type="file" label="Video One WebM Video">" type="video/webm">
         </video>
-        <ul id="video-controls" class="controls">
-            <li><button id="playpause" type="button">Play/Pause</button></li>
-            <li><button id="stop" type="button">Stop</button></li>
-            <li class="progress">
-            <progress id="progress" value="0" min="0">
-            <span id="progress-bar"></span>
-            </progress>
-            </li>
-            <li><button id="mute" type="button">Mute/Unmute</button></li>
-            <li><button id="volinc" type="button">Vol+</button></li>
-            <li><button id="voldec" type="button">Vol-</button></li>
-            <li><button id="fs" type="button">Fullscreen</button></li>
-        </ul>
+        <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
 </figure>
     <div class="video-wrapper video-two-wrapper">
         <h2 class="video-title">
