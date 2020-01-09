@@ -37,25 +37,22 @@ const fullscreen = document.getElementById('fs');
 
 // ********** Video control events **********
 
-// * Add video playing detection
-Object.defineProperty(HTMLMediaElement.prototype, 'playing', {
-  get: function() {
-    return !!(
-      this.currentTime > 0 &&
-      !this.paused &&
-      !this.ended &&
-      this.readyState > 2
-    );
-  },
-});
+// * Play pause function
 
-// * Play pause
-playpause.addEventListener('click', function(e) {
+function playAndPause() {
   if (video.paused || video.ended) {
     video.controls = true;
     video.play();
-  } else if (video.playing) {
+  } else {
     video.pause();
-    video.controls = false;
   }
-});
+}
+playpause.addEventListener('click', playAndPause);
+
+// * Detect if video is paused
+
+function isPaused() {
+  if (!video.seeking) video.controls = false;
+}
+
+video.addEventListener('pause', isPaused);
