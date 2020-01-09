@@ -5,11 +5,11 @@
         <span class="video-counter-span video-counter-span-three">3</span>
         <span class="video-counter-span video-counter-span-four">4</span>
     </div>
-    <figure class="video-wrapper video-one-wrapper">
+    <figure id="videoContainer" class="video-wrapper video-one-wrapper">
         <h2 class="video-title">
             <perch:content id="videoOneTitle" type="text" label="Video One Title" required>
         </h2>
-        <video controls class="video video-one"  poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
+        <video controls id="video" class="video video-one"  poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
             <source src="<perch:content id="videoOneMP4" type="file" label="Video One MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoOneOGV" type="file" label="Video One OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoOneWebM" type="file" label="Video One WebM Video">" type="video/webm">
