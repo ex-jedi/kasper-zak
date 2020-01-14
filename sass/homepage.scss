@@ -29,7 +29,7 @@
 
 .triptych-image-two {
   width: 30%;
-  margin: 10rem 0.5rem 0.5rem;
+  margin: 10rem 0.5rem 0;
 }
 
 .triptych-image-three {
@@ -42,7 +42,7 @@
   @include main-font-stack;
   line-height: normal;
   padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
-  margin-top: -$paragraph-spacing-extra-large;
+  margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
   background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
@@ -57,6 +57,7 @@
 
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
+  line-height: 1;
 }
 
 .homepage-intro-text-paragraph-two,
