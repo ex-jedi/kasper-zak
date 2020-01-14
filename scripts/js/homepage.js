@@ -11,9 +11,16 @@ const tlOne = gsap.timeline({
 tlOne
   .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0 }, '+=1')
   .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0 }, '-=0.2')
+  .addLabel('togetherness', '-=.5')
   .fromTo(
     '.triptych-image-two',
-    { yPercent: 100, opacity: 0 },
-    { yPercent: 0, opacity: 1, ease: Back.easeOut.config(2) },
-    '-=0.2',
+    { opacity: 0 },
+    { opacity: 1, duration: 1.5, ease: 'none' },
+    'togetherness',
+  )
+  .fromTo(
+    '.triptych-image-two',
+    { yPercent: 100 },
+    { yPercent: 0, duration: 2, ease: 'elastic.out(1, 0.3)' },
+    'togetherness',
   );
