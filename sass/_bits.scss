@@ -190,10 +190,18 @@ $main-background-gradient: linear-gradient(
   }
 }
 
-//********** Transition Timings**********
+//********** Transition Timings **********
 
-$transition-one: 0.3s ease-in-out 0s;
-$transition-duration-one: 0.3s;
+//* Times
+$timing-duration-short: 0.3s;
+$timing-duration-medium: 0.6s;
+$timing-duration-long: 1s;
+
+//* Timing Functions
+$ease-in-one: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+$cubic-one: cubic-bezier(0.45, -0.2, 0.45, 1.2);
+$cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 
 //********** Scrollbar Mixin **********
 
