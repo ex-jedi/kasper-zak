@@ -11,7 +11,7 @@ const tlOne = gsap.timeline({
 tlOne
   .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0 }, '+=1')
   .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0 }, '-=0.2')
-  .addLabel('togetherness', '-=.5')
+  .addLabel('togetherness', '-=.3')
   .fromTo(
     '.triptych-image-two',
     { opacity: 0 },
