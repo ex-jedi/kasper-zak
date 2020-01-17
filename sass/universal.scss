@@ -84,7 +84,7 @@ header {
 
 .header-inner-wrapper {
   @include flex(row);
-  margin: $header-spacing 0 $header-spacing;
+  margin: $header-spacing-extra-small 0 $header-spacing-small;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -92,7 +92,7 @@ header {
 }
 
 .main-logo {
-  height: 5rem;
+  height: $section-spacing-medium;
   width: auto;
   margin: 0 auto;
 }
@@ -130,8 +130,8 @@ header {
 
 .main-nav-trigger {
   position: fixed;
-  right: $header-spacing;
-  top: $header-spacing;
+  right: $header-spacing-small;
+  top: $header-spacing-extra-small;
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
@@ -286,7 +286,7 @@ select {
       left: -2px;
       transform: rotate(-25deg) scale(0.75);
       opacity: 0;
-      transition: all $transition-duration-one cubic-bezier(0.18, 1.96, 1, 1.96);
+      transition: all $timing-duration-short cubic-bezier(0.18, 1.96, 1, 1.96);
     }
 
     &:checked:after {

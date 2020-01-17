@@ -61,7 +61,15 @@
   text-transform: capitalize;
   //? TODO: Are titles difficult to read?
   // background-color: $dark-background-colour;
+  transition: all 0.3s ease-in;
 }
+
+.hide-video-title {
+  opacity: 0;
+  transform: translateY(-$section-spacing-small);
+}
+
+//* Video Counter
 
 .video-counter {
   @include flex(row);
@@ -76,10 +84,44 @@
   z-index: 1;
   margin: 0 auto;
   bottom: $section-spacing-medium;
+  transition: all 0.3s ease-in;
+}
+
+.hide-video-counter {
+  opacity: 0;
+  transform: translateY($section-spacing-small);
 }
 
 .video-counter-span-two {
   font-size: $font-size-large;
+}
+
+//********** Video Controls **********
+
+.controls {
+  @include flex(column);
+  justify-content: space-evenly;
+  width: 100%;
+  position: relative;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.video-player-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0.5);
+  transition: all 0.2s ease-in;
+  margin-left: -4%;
+  margin-top: -4.5%;
+  // transform: scale(1) translate(-50%, -50%);
+}
+
+.hide-play-button {
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
 }
 
 //*=========================================

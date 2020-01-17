@@ -25,11 +25,12 @@
 
 .triptych-image-one {
   width: 45%;
+  // transform: translateX(-100%);
 }
 
 .triptych-image-two {
   width: 30%;
-  margin: 10rem 0.5rem 0.5rem;
+  margin: 10rem 0.5rem 0;
 }
 
 .triptych-image-three {
@@ -42,7 +43,7 @@
   @include main-font-stack;
   line-height: normal;
   padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
-  margin-top: -$paragraph-spacing-extra-large;
+  margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
   background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
@@ -57,6 +58,7 @@
 
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
+  line-height: 1;
 }
 
 .homepage-intro-text-paragraph-two,
@@ -161,3 +163,46 @@
   align-self: flex-end;
   margin: -$section-spacing-small 0 0 -$section-spacing-small;
 }
+
+//*=========================================
+//** Animation **
+//*=========================================
+
+// .triptych-image-one {
+//   transform: translateX(-100%);
+//   // Longhand to allow animation delay in other classes
+//   animation-name: fade-from-left;
+//   animation-delay: 0.5s;
+//   animation-duration: 1s;
+//   animation-timing-function: ease-in-one;
+//   animation-fill-mode: forwards;
+// }
+
+// .triptych-image-two {
+//   transform: translateX(100%);
+//   opacity: 0;
+//   // Longhand to allow animation delay in other classes
+//   animation-name: fade-from-left;
+//   animation-delay: 0.5s;
+//   animation-duration: 1s;
+//   animation-timing-function: ease-in-one;
+//   animation-fill-mode: forwards;
+// }
+
+// .triptych-image-three {
+//   transform: translateY(-100%);
+//   opacity: 0;
+//   // Longhand to allow animation delay in other classes
+//   animation-name: fade-from-left;
+//   animation-delay: 0.5s;
+//   animation-duration: 1s;
+//   animation-timing-function: ease-in-one;
+//   animation-fill-mode: forwards;
+// }
+
+// @keyframes fade-from-left {
+//   100% {
+//     opacity: 1;
+//     transform: translateX(0);
+//   }
+// }

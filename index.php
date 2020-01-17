@@ -8,5 +8,5 @@
 	<?php perch_content("Homepage Triptych Two"); ?>
 	<?php perch_content("General Contact Form"); ?>
 </main>
-<?php perch_layout('main-footer'); ?>
+<?php perch_layout('homepage-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
