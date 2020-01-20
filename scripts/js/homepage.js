@@ -24,3 +24,22 @@ tlOne
     { yPercent: 0, duration: 2, ease: 'elastic.out(1, 0.3)' },
     'togetherness',
   );
+
+// ********** ScrollMagic **********
+
+// * Init ScrollMagic
+const controller = new ScrollMagic.Controller();
+
+// * Create Scene
+const sceneOne = new ScrollMagic.Scene({
+  triggerElement: '.intro-text-section',
+})
+  .setClassToggle('.homepage-intro-text-paragraph', 'fade-in')
+  // .reverse(false)
+  .addIndicators({
+    name: 'fade Scene',
+    colorTrigger: 'black',
+    // indent: 200,
+    colorStart: '#79c695',
+  }) // Requires a plugin
+  .addTo(controller);

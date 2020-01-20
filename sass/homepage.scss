@@ -59,12 +59,21 @@
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
+  opacity: 0;
+  transform: rotateX(90deg);
+  transition: all 0.3s ease-out;
+}
+
+.homepage-intro-text-paragraph-one.fade-in {
+  opacity: 1;
+  transform: rotateX(0);
 }
 
 .homepage-intro-text-paragraph-two,
 .homepage-intro-text-paragraph-three,
 .homepage-intro-text-paragraph-four {
   font-size: $font-size-large;
+  opacity: 0;
 }
 
 .homepage-intro-text-paragraph-three,
