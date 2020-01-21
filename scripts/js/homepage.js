@@ -30,16 +30,28 @@ tlOne
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
 
-// * Create Scene
-const sceneOne = new ScrollMagic.Scene({
-  triggerElement: '.intro-text-section',
-})
-  .setClassToggle('.homepage-intro-text-paragraph', 'fade-in')
-  // .reverse(false)
-  .addIndicators({
-    name: 'fade Scene',
-    colorTrigger: 'black',
-    // indent: 200,
-    colorStart: '#79c695',
-  }) // Requires a plugin
-  .addTo(controller);
+// Collect elements to fade in
+const introParagraphs = document.querySelectorAll(
+  '.homepage-intro-text-paragraph',
+);
+// For indicators in the scene
+let counter = 1;
+
+console.log('Intro Paragraphs', introParagraphs);
+
+introParagraphs.forEach(function(item) {
+  const sceneOne = new ScrollMagic.Scene({
+    triggerElement: item,
+    triggerHook: 0.6,
+    reverse: false,
+  })
+    .setClassToggle(item, 'fade-in')
+    .addIndicators({
+      name: `fade Scene ${counter}`,
+      colorTrigger: 'black',
+      colorStart: '#f00',
+    }) // Requires a plugin
+    .addTo(controller);
+
+  counter++;
+});

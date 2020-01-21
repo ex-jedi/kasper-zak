@@ -11,6 +11,8 @@ const app = new Vue({
   },
 });
 
+// TODO - Put below into separate video page file
+
 // *=========================================
 // ** Video Controls  **
 // *=========================================

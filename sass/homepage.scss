@@ -54,17 +54,17 @@
 .homepage-intro-text-paragraph {
   margin: 0 0 $paragraph-spacing-large;
   width: 100%;
+  opacity: 0;
+  transform: rotateX(90deg);
+  transition: all 0.6s ease-out;
 }
 
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
-  opacity: 0;
-  transform: rotateX(90deg);
-  transition: all 0.3s ease-out;
 }
 
-.homepage-intro-text-paragraph-one.fade-in {
+.homepage-intro-text-paragraph.fade-in {
   opacity: 1;
   transform: rotateX(0);
 }
