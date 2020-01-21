@@ -43,14 +43,14 @@ introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
     triggerHook: 0.6,
-    reverse: false,
+    // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
-    .addIndicators({
-      name: `fade Scene ${counter}`,
-      colorTrigger: 'black',
-      colorStart: '#f00',
-    }) // Requires a plugin
+    // .addIndicators({
+    //   name: `fade Scene ${counter}`,
+    //   colorTrigger: 'black',
+    //   colorStart: '#f00',
+    // }) // Requires a plugin
     .addTo(controller);
 
   counter++;
