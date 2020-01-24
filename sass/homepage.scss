@@ -25,16 +25,18 @@
 
 .triptych-image-one {
   width: 45%;
-  // transform: translateX(-100%);
+  opacity: 0;
 }
 
 .triptych-image-two {
   width: 30%;
   margin: 10rem 0.5rem 0;
+  opacity: 0;
 }
 
 .triptych-image-three {
   width: 20%;
+  opacity: 0;
 }
 
 //* Intro Text
