@@ -20,6 +20,8 @@
 <script type="text/javascript" src="/scripts/minified/vue.js" ></script>
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
+<!-- ScrollMagic Greensock  -->
+<script src="/scripts/minified/animation.gsap.min.js"></script>
 <!-- TODO: Remove Indicators -->
 <script src="/scripts/minified/debug.addIndicators.min.js"></script>
 <!-- Greensock -->

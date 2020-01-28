@@ -74,3 +74,15 @@ tlTwo.to('.showreel-player', 2, {
   clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
   ease: Power3.easeOut,
 });
+
+const showReel = new ScrollMagic.Scene({
+  triggerElement: '.showreel-player',
+  triggerHook: 0.3,
+})
+  .addIndicators({
+    name: 'showreel',
+    colorTrigger: '#800080',
+    colorStart: '#f00',
+  })
+  .setTween(tlTwo)
+  .addTo(controller);
