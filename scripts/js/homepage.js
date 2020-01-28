@@ -35,7 +35,7 @@ tlOne
     'togetherness',
   );
 
-// ********** ScrollMagic **********
+// ********** Intro Paragraphs **********
 
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
@@ -47,8 +47,6 @@ const introParagraphs = document.querySelectorAll(
 // For indicators in the scene
 let counter = 1;
 
-console.log('Intro Paragraphs', introParagraphs);
-
 introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
@@ -56,12 +54,23 @@ introParagraphs.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
-    // .addIndicators({
-    //   name: `fade Scene ${counter}`,
-    //   colorTrigger: 'black',
-    //   colorStart: '#f00',
-    // }) // Requires a plugin
+    .addIndicators({
+      name: `fade Scene ${counter}`,
+      colorTrigger: 'black',
+      colorStart: '#f00',
+    }) // Requires a plugin
     .addTo(controller);
 
   counter++;
+});
+
+// ********** Showreel Player **********
+
+const tlTwo = gsap.timeline({
+  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
+});
+
+tlTwo.to('.showreel-player', 2, {
+  clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+  ease: Power3.easeOut,
 });

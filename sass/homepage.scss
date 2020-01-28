@@ -100,6 +100,18 @@
   height: 800px;
   background-color: $dark-background-colour;
   padding: $section-spacing-small;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+  // animation: 1s polygon forwards;
+}
+
+@keyframes polygon {
+  0% {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 .showreel-player-arrow {
