@@ -105,6 +105,7 @@
 
 .showreel-player-arrow {
   align-self: flex-end;
+  transform: rotate(-5deg);
 }
 
 .showreel-player-button {
@@ -117,6 +118,7 @@
   border: 0;
   text-align: left;
   color: $light-font-colour;
+  opacity: 0;
 }
 
 .homepage-illustration-wrapper {
