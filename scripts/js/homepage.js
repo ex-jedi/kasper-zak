@@ -129,7 +129,7 @@ triptychImageTwo.forEach(function(item) {
     triggerHook: 0.5,
     // reverse: false,
   })
-    .setClassToggle(item, '.triptych-image-slide-in')
+    .setClassToggle(item, 'triptych-image-slide-in')
     .addIndicators({
       name: `triptych ${counterTwo}`,
       colorTrigger: '#c709f7',
