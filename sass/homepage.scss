@@ -57,18 +57,11 @@
   margin: 0 0 $paragraph-spacing-large;
   width: 100%;
   opacity: 0;
-  transform: rotateX(90deg);
-  transition: all 0.6s ease-out;
 }
 
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
-}
-
-.homepage-intro-text-paragraph.fade-in {
-  opacity: 1;
-  transform: rotateX(0);
 }
 
 .homepage-intro-text-paragraph-two,
@@ -182,41 +175,13 @@
 //** Animation **
 //*=========================================
 
-// .triptych-image-one {
-//   transform: translateX(-100%);
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
-
-// .triptych-image-two {
-//   transform: translateX(100%);
-//   opacity: 0;
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
-
-// .triptych-image-three {
-//   transform: translateY(-100%);
-//   opacity: 0;
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
-
-// @keyframes fade-from-left {
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
+.homepage-main-content {
+  .fade-in-text {
+    transform: rotateX(90deg);
+    transition: all 0.6s ease-out;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}

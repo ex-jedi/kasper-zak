@@ -41,9 +41,7 @@ tlOne
 const controller = new ScrollMagic.Controller();
 
 // Collect elements to fade in
-const introParagraphs = document.querySelectorAll(
-  '.homepage-intro-text-paragraph',
-);
+const introParagraphs = document.querySelectorAll('.fade-in-text');
 
 // For indicators in the scene
 let counter = 1;
@@ -52,7 +50,7 @@ let counter = 1;
 introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.6,
+    triggerHook: 0.5,
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
