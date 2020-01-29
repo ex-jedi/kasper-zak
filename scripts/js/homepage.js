@@ -111,3 +111,31 @@ const showReel = new ScrollMagic.Scene({
   })
   .setTween(tlTwo)
   .addTo(controller);
+
+// ********** Homepage Triptych Two **********
+
+// Collect elements to fade in
+const triptychImageTwo = document.querySelectorAll(
+  '.triptych-section-two-image',
+);
+
+// For indicators in the scene
+let counterTwo = 1;
+
+// Loop through elements to add animation
+triptychImageTwo.forEach(function(item) {
+  const sceneTwo = new ScrollMagic.Scene({
+    triggerElement: item,
+    triggerHook: 0.5,
+    // reverse: false,
+  })
+    .setClassToggle(item, '.triptych-image-slide-in')
+    .addIndicators({
+      name: `triptych ${counterTwo}`,
+      colorTrigger: '#c709f7',
+      colorStart: '#c709f7',
+    }) // Requires a plugin
+    .addTo(controller);
+
+  counterTwo++;
+});
