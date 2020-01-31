@@ -76,7 +76,7 @@ function infiniteNextSlide() {
 
 // Used as callback function when Triptych GSAP timeline completes
 function slideInterval() {
-  slideChange = setInterval(nextSlide, 300);
+  slideChange = setInterval(nextSlide, 125);
 }
 
 // * Repeat image slideshow on mouse enter
