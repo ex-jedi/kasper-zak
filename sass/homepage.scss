@@ -164,15 +164,15 @@
 .triptych-two-image-one,
 .triptych-two-image-three {
   align-self: flex-start;
-  transform: translateX(-100%);
-  transition: all 0.6s $cubic-one;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: all 1.3s $ease-out-two;
 }
 
 .triptych-two-image-two {
   align-self: flex-end;
   margin: -$section-spacing-small 0 0 -$section-spacing-small;
-  transform: translateX(100%);
-  transition: all 0.6s $cubic-one;
+  clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+  transition: all 1.3s $ease-out-two;
 }
 
 //*=========================================
@@ -191,5 +191,5 @@
 }
 
 .triptych-image-slide-in {
-  transform: translateX(0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
