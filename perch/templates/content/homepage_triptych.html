@@ -6,8 +6,15 @@
     <perch:content type="image" id="triptychImageOne" width="400" > 400w" >
 
     <div class="triptych-slides-wrapper">
-			<perch:repeater id="triptychImageSlider" label="Triptych Image Slider" max="10">
-				<img class="triptych-image triptych-image-two triptych-image-two-showing" src="<perch:content id="triptychImageTwo" type="image" width="1000" label="Triptych Image Two">" alt="<perch:content id="altTwo" type="text" label="Image description">"
+			<img class="triptych-image triptych-image-two triptych-image-two-showing" src="<perch:content id="triptychImageTwoFirst" type="image" width="1000" label="First Triptych Slideshow Image" divider-before="Triptich Slideshow" >" alt="<perch:content id="altTwoFirst" type="text" label="Image description">"
+			sizes="100vh"
+			srcset="<perch:content type="image" id="triptychImageTwoFirst" width="1000" > 1000w,
+			<perch:content type="image" id="triptychImageTwoFirst" width="800" > 800w,
+			<perch:content type="image" id="triptychImageTwoFirst" width="600" > 600w,
+			<perch:content type="image" id="triptychImageTwoFirst" width="400" > 400w" >
+
+			<perch:repeater id="triptychImageSlider" label="Triptych Slider Images" max="10">
+				<img class="triptych-image triptych-image-two" src="<perch:content id="triptychImageTwo" type="image" width="1000" label="Triptych Image Two">" alt="<perch:content id="altTwo" type="text" label="Image description">"
 				sizes="100vh"
 				srcset="<perch:content type="image" id="triptychImageTwo" width="1000" > 1000w,
 				<perch:content type="image" id="triptychImageTwo" width="800" > 800w,

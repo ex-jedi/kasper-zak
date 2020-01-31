@@ -35,6 +35,29 @@ tlOne
     'togetherness',
   );
 
+// ********** Homepage Triptych Slider **********
+
+const slides = document.querySelectorAll(
+  '.triptych-slides-wrapper .triptych-image-two',
+);
+const slidesLength = slides.length - 1;
+console.log(slidesLength);
+let currentSlide = 0;
+const slideInterval = setInterval(nextSlide, 2000);
+
+function nextSlide() {
+  slides[currentSlide].className = 'triptych-image-two';
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].className =
+    'triptych-image triptych-image-two triptych-image-two-showing';
+
+  if (currentSlide === slidesLength) {
+    clearInterval(slideInterval);
+  }
+}
+
+// nextSlide();
+
 // ********** Intro Paragraphs **********
 
 // * Init ScrollMagic
