@@ -23,7 +23,7 @@ tlOne
   )
   .addLabel('togetherness', '-=.3')
   .fromTo(
-    '.triptych-image-two',
+    '.triptych-slides-wrapper',
     { opacity: 0 },
     { opacity: 1, duration: 1.5, ease: 'none' },
     'togetherness',
