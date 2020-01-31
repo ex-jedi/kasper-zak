@@ -85,7 +85,7 @@ const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
 let keepOnSliding;
 
 TriptychSlider.addEventListener('mouseenter', function() {
-  keepOnSliding = setInterval(infiniteNextSlide, 200);
+  keepOnSliding = setInterval(infiniteNextSlide, 125);
 });
 TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);
