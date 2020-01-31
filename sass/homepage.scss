@@ -29,10 +29,29 @@
 }
 
 .triptych-slides-wrapper {
-  width: 30%;
+  width: 500px;
+  height: 500px;
   margin: 10rem 0.5rem 0;
   opacity: 0;
   position: relative;
+}
+
+.triptych-image-two {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  object-position: center;
+  object-fit: cover;
+  transition: opacity 0.1s;
+}
+
+.triptych-image-two-showing {
+  z-index: 2;
+  opacity: 1;
 }
 
 .triptych-image-three {
