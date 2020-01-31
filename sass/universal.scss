@@ -214,8 +214,9 @@ header {
 
 .text-area-input {
   border-bottom: 0;
-  line-height: 27px;
+  line-height: 1.85rem;
   background-attachment: local;
+  resize: none;
   @include horizontal-scrollbar;
   background-image: linear-gradient(
       to right,
@@ -225,10 +226,10 @@ header {
     linear-gradient(to left, $main-background-colour 0, transparent 0),
     repeating-linear-gradient(
       $main-background-colour,
-      $main-background-colour 27px,
-      $dark-font-colour 27px,
-      $dark-font-colour 28px,
-      $main-background-colour 28px
+      $main-background-colour 1.8rem,
+      $dark-font-colour 1.8rem,
+      $dark-font-colour 1.85rem,
+      $main-background-colour 1.85rem
     );
 
   &:focus {
