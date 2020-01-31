@@ -49,8 +49,8 @@
   color: $dark-font-colour;
   background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
-  background-position: left 0 top $section-spacing-medium;
-  background-size: contain;
+  background-position: left $section-spacing-small top $section-spacing-medium;
+  background-size: 50%;
 }
 
 .homepage-intro-text-paragraph {
