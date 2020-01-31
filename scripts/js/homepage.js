@@ -31,7 +31,12 @@ tlOne
   .fromTo(
     '.triptych-image-two',
     { yPercent: 100 },
-    { yPercent: 0, duration: 2, ease: 'elastic.out(1, 0.3)' },
+    {
+      yPercent: 0,
+      duration: 2,
+      ease: 'elastic.out(1, 0.3)',
+      onComplete: slideInterval,
+    },
     'togetherness',
   );
 
@@ -43,8 +48,9 @@ const slides = document.querySelectorAll(
 const slidesLength = slides.length - 1;
 console.log(slidesLength);
 let currentSlide = 0;
-const slideInterval = setInterval(nextSlide, 2000);
+let slideChange;
 
+// Function to run through slideshow once
 function nextSlide() {
   slides[currentSlide].className = 'triptych-image-two';
   currentSlide = (currentSlide + 1) % slides.length;
@@ -52,11 +58,38 @@ function nextSlide() {
     'triptych-image triptych-image-two triptych-image-two-showing';
 
   if (currentSlide === slidesLength) {
-    clearInterval(slideInterval);
+    clearInterval(slideChange);
   }
 }
 
-// nextSlide();
+// Function to run through slideshow infinitely
+function infiniteNextSlide() {
+  slides[currentSlide].className = 'triptych-image-two';
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].className =
+    'triptych-image triptych-image-two triptych-image-two-showing';
+
+  if (currentSlide === slidesLength) {
+    clearInterval(slideChange);
+  }
+}
+
+// Used as callback function when Triptych GSAP timeline completes
+function slideInterval() {
+  slideChange = setInterval(nextSlide, 300);
+}
+
+// * Repeat image slideshow on mouse enter
+const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
+
+let keepOnSliding;
+
+TriptychSlider.addEventListener('mouseenter', function() {
+  keepOnSliding = setInterval(infiniteNextSlide, 200);
+});
+TriptychSlider.addEventListener('mouseleave', function() {
+  clearInterval(keepOnSliding);
+});
 
 // ********** Intro Paragraphs **********
 
