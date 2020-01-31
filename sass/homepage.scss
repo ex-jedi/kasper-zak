@@ -28,10 +28,30 @@
   opacity: 0;
 }
 
-.triptych-image-two {
-  width: 30%;
+.triptych-slides-wrapper {
+  width: 500px;
+  height: 500px;
   margin: 10rem 0.5rem 0;
   opacity: 0;
+  position: relative;
+}
+
+.triptych-image-two {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  object-position: center;
+  object-fit: cover;
+  transition: opacity 0.1s;
+}
+
+.triptych-image-two-showing {
+  z-index: 2;
+  opacity: 1;
 }
 
 .triptych-image-three {
@@ -49,26 +69,19 @@
   color: $dark-font-colour;
   background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
-  background-position: left 0 top $section-spacing-medium;
-  background-size: contain;
+  background-position: left $section-spacing-small top $section-spacing-medium;
+  background-size: 50%;
 }
 
 .homepage-intro-text-paragraph {
   margin: 0 0 $paragraph-spacing-large;
   width: 100%;
   opacity: 0;
-  transform: rotateX(90deg);
-  transition: all 0.6s ease-out;
 }
 
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
-}
-
-.homepage-intro-text-paragraph.fade-in {
-  opacity: 1;
-  transform: rotateX(0);
 }
 
 .homepage-intro-text-paragraph-two,
@@ -171,52 +184,32 @@
 .triptych-two-image-one,
 .triptych-two-image-three {
   align-self: flex-start;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: all 1.3s $ease-out-two;
 }
 
 .triptych-two-image-two {
   align-self: flex-end;
   margin: -$section-spacing-small 0 0 -$section-spacing-small;
+  clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+  transition: all 1.3s $ease-out-two;
 }
 
 //*=========================================
 //** Animation **
 //*=========================================
 
-// .triptych-image-one {
-//   transform: translateX(-100%);
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
+.homepage-main-content {
+  .fade-in-text {
+    transform: rotateX(90deg);
+    transition: all 0.6s ease-out;
+  }
+  .fade-in {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
 
-// .triptych-image-two {
-//   transform: translateX(100%);
-//   opacity: 0;
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
-
-// .triptych-image-three {
-//   transform: translateY(-100%);
-//   opacity: 0;
-//   // Longhand to allow animation delay in other classes
-//   animation-name: fade-from-left;
-//   animation-delay: 0.5s;
-//   animation-duration: 1s;
-//   animation-timing-function: ease-in-one;
-//   animation-fill-mode: forwards;
-// }
-
-// @keyframes fade-from-left {
-//   100% {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
-// }
+.triptych-image-slide-in {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}

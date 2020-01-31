@@ -23,7 +23,7 @@ tlOne
   )
   .addLabel('togetherness', '-=.3')
   .fromTo(
-    '.triptych-image-two',
+    '.triptych-slides-wrapper',
     { opacity: 0 },
     { opacity: 1, duration: 1.5, ease: 'none' },
     'togetherness',
@@ -31,9 +31,65 @@ tlOne
   .fromTo(
     '.triptych-image-two',
     { yPercent: 100 },
-    { yPercent: 0, duration: 2, ease: 'elastic.out(1, 0.3)' },
+    {
+      yPercent: 0,
+      duration: 2,
+      ease: 'elastic.out(1, 0.3)',
+      onComplete: slideInterval,
+    },
     'togetherness',
   );
+
+// ********** Homepage Triptych Slider **********
+
+const slides = document.querySelectorAll(
+  '.triptych-slides-wrapper .triptych-image-two',
+);
+const slidesLength = slides.length - 1;
+console.log(slidesLength);
+let currentSlide = 0;
+let slideChange;
+
+// Function to run through slideshow once
+function nextSlide() {
+  slides[currentSlide].className = 'triptych-image-two';
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].className =
+    'triptych-image triptych-image-two triptych-image-two-showing';
+
+  if (currentSlide === slidesLength) {
+    clearInterval(slideChange);
+  }
+}
+
+// Function to run through slideshow infinitely
+function infiniteNextSlide() {
+  slides[currentSlide].className = 'triptych-image-two';
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].className =
+    'triptych-image triptych-image-two triptych-image-two-showing';
+
+  if (currentSlide === slidesLength) {
+    clearInterval(slideChange);
+  }
+}
+
+// Used as callback function when Triptych GSAP timeline completes
+function slideInterval() {
+  slideChange = setInterval(nextSlide, 125);
+}
+
+// * Repeat image slideshow on mouse enter
+const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
+
+let keepOnSliding;
+
+TriptychSlider.addEventListener('mouseenter', function() {
+  keepOnSliding = setInterval(infiniteNextSlide, 125);
+});
+TriptychSlider.addEventListener('mouseleave', function() {
+  clearInterval(keepOnSliding);
+});
 
 // ********** Intro Paragraphs **********
 
@@ -41,9 +97,7 @@ tlOne
 const controller = new ScrollMagic.Controller();
 
 // Collect elements to fade in
-const introParagraphs = document.querySelectorAll(
-  '.homepage-intro-text-paragraph',
-);
+const introParagraphs = document.querySelectorAll('.fade-in-text');
 
 // For indicators in the scene
 let counter = 1;
@@ -52,7 +106,7 @@ let counter = 1;
 introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.6,
+    triggerHook: 0.5,
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
@@ -113,3 +167,55 @@ const showReel = new ScrollMagic.Scene({
   })
   .setTween(tlTwo)
   .addTo(controller);
+
+// ********** Homepage Triptych Two **********
+
+// Collect elements to fade in
+const triptychImageTwo = document.querySelectorAll(
+  '.triptych-section-two-image',
+);
+
+// For indicators in the scene
+let counterTwo = 1;
+
+// Loop through elements to add animation
+triptychImageTwo.forEach(function(item) {
+  const sceneTwo = new ScrollMagic.Scene({
+    triggerElement: item,
+    triggerHook: 0.5,
+    // reverse: false,
+  })
+    .setClassToggle(item, 'triptych-image-slide-in')
+    .addIndicators({
+      name: `triptych ${counterTwo}`,
+      colorTrigger: '#c709f7',
+      colorStart: '#c709f7',
+    }) // Requires a plugin
+    .addTo(controller);
+
+  counterTwo++;
+});
+
+// * Parallax Scene
+
+var parallaxTl = gsap.timeline();
+parallaxTl.from(
+  '.homepage-illustration',
+  2,
+  { y: '-70%', ease: Power0.easeNone },
+  0,
+);
+
+let slideParallaxScene = new ScrollMagic.Scene({
+  triggerElement: '.homepage-illustration',
+  triggerHook: 1,
+  duration: '150%',
+})
+  .setTween(parallaxTl)
+  .addTo(controller)
+  .addIndicators({
+    name: 'parallax',
+    colorTrigger: 'blue',
+    colorStart: 'blue',
+    colorEnd: 'red',
+  }); // Requires a plugin;;

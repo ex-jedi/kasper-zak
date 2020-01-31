@@ -181,17 +181,6 @@ $main-background-gradient: linear-gradient(
 //** Effects and Animation  **
 //*=========================================
 
-//********** Animation Stagger **********
-
-@mixin stagger-anim-delay($elem, $initial-delay, $stagger-delay) {
-  @for $i from 1 through $elem {
-    &:nth-of-type(#{$i}) {
-      animation-delay: $initial-delay + $stagger-delay * $i;
-    }
-    $i: $i - 1;
-  }
-}
-
 //********** Transition Timings **********
 
 //* Times
@@ -201,6 +190,8 @@ $timing-duration-long: 1s;
 
 //* Timing Functions
 $ease-in-one: cubic-bezier(0.25, 0.1, 0.25, 1);
+$ease-out-one: cubic-bezier(0, 0.36, 0.03, 1);
+$ease-out-two: cubic-bezier(0.14, 0.53, 0.32, 1);
 
 $cubic-one: cubic-bezier(0.45, -0.2, 0.45, 1.2);
 $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
@@ -231,6 +222,24 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
     height: 1px;
     padding: 1px;
     margin: 1px;
+  }
+}
+
+//********** Keyframes **********
+
+//* Bounce
+@keyframes bounce {
+  25% {
+    transform: translateY(-1rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
