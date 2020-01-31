@@ -15,7 +15,7 @@ body {
 }
 
 .header-inner-wrapper {
-  margin: $header-spacing 0 0;
+  margin: $header-spacing-medium 0 0;
 }
 
 .installations-main-content {
@@ -23,7 +23,7 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding-top: $header-spacing;
+  padding-top: $header-spacing-medium;
   padding-bottom: $section-spacing-medium;
   margin-bottom: $section-spacing-small;
 }

@@ -344,6 +344,16 @@ footer {
   margin-bottom: $section-spacing-small;
 }
 
+.footer-social-media-link {
+  &:hover {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: $cubic-two;
+    animation-fill-mode: forwards;
+  }
+}
+
 .footer-terms,
 .footer-privacy,
 .footer-copyright {

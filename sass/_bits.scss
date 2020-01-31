@@ -181,17 +181,6 @@ $main-background-gradient: linear-gradient(
 //** Effects and Animation  **
 //*=========================================
 
-//********** Animation Stagger **********
-
-@mixin stagger-anim-delay($elem, $initial-delay, $stagger-delay) {
-  @for $i from 1 through $elem {
-    &:nth-of-type(#{$i}) {
-      animation-delay: $initial-delay + $stagger-delay * $i;
-    }
-    $i: $i - 1;
-  }
-}
-
 //********** Transition Timings **********
 
 //* Times
@@ -231,6 +220,24 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
     height: 1px;
     padding: 1px;
     margin: 1px;
+  }
+}
+
+//********** Keyframes **********
+
+//* Bounce
+@keyframes bounce {
+  25% {
+    transform: translateY(-1rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 
