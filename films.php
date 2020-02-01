@@ -5,5 +5,5 @@
 	  <?php perch_content('Films Page Videos'); ?>
 	</section>
 </main>
-<?php perch_layout('invisible-footer'); ?>
+<?php perch_layout('films-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
