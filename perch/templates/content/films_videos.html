@@ -5,44 +5,44 @@
         <span class="video-counter-span video-counter-span-three">3</span>
         <span class="video-counter-span video-counter-span-four">4</span>
     </div>
-    <figure class="video-wrapper video-one-wrapper">
+    <div class="video-wrapper video-one-wrapper" @click="playPauseControls">
         <h2 id="video-title" class="video-title">
             <perch:content id="videoOneTitle" type="text" label="Video One Title" required>
         </h2>
-        <video controls id="video" class="video video-one" @click="pluggedIn"  poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
+        <video controls id="video" class="video video-one"   poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
             <source src="<perch:content id="videoOneMP4" type="file" label="Video One MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoOneOGV" type="file" label="Video One OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoOneWebM" type="file" label="Video One WebM Video">" type="video/webm">
         </video>
         <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
-</figure>
-    <div class="video-wrapper video-two-wrapper">
+</div>
+    <div class="video-wrapper video-two-wrapper" @click="playPauseControls">
         <h2 class="video-title">
             <perch:content id="videoTwoTitle" type="text" label="Video Two Title" required>
         </h2>
-        <video controls class="video video-two" @click="pluggedIn"  poster="<perch:content id="videoPosterTwo" type="image" label="Video Placeholder Image" required divider-before="Video Two">">
+        <video controls class="video video-two"  poster="<perch:content id="videoPosterTwo" type="image" label="Video Placeholder Image" required divider-before="Video Two">">
             <source src="<perch:content id="videoTwoMP4" type="file" label="Video Two MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoTwoOGV" type="file" label="Video Two OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoTwoWebM" type="file" label="Video Two WebM Video">" type="video/webm">
         </video>
         <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
     </div>
-    <div class="video-wrapper video-three-wrapper">
+    <div class="video-wrapper video-three-wrapper" @click="playPauseControls">
         <h2 class="video-title">
             <perch:content id="videoThreeTitle" type="text" label="Video Three Title" required>
         </h2>
-        <video controls class="video video-three" @click="pluggedIn"  poster="<perch:content id="videoPosterThree" type="image" label="Video Placeholder Image" required divider-before="Video Three">">
+        <video controls class="video video-three" poster="<perch:content id="videoPosterThree" type="image" label="Video Placeholder Image" required divider-before="Video Three">">
             <source src="<perch:content id="videoThreeMP4" type="file" label="Video Three MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoThreeOGV" type="file" label="Video Three OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoThreeWebM" type="file" label="Video Three WebM Video">" type="video/webm">
         </video>
         <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
     </div>
-    <div class="video-wrapper video-four-wrapper">
+    <div class="video-wrapper video-four-wrapper" @click="playPauseControls">
         <h2 class="video-title">
             <perch:content id="videoFourTitle" type="text" label="Video Four Title" required>
         </h2>
-        <video controls class="video video-four" @click="pluggedIn"  poster="<perch:content id="videoPosterFour" type="image" label="Video Placeholder Image" required divider-before="Video Four">">
+        <video controls class="video video-four" poster="<perch:content id="videoPosterFour" type="image" label="Video Placeholder Image" required divider-before="Video Four">">
             <source src="<perch:content id="videoFourMP4" type="file" label="Video Four MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoFourOGV" type="file" label="Video Four OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoFourWebM" type="file" label="Video Four WebM Video">" type="video/webm">

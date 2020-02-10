@@ -1,2 +1,2 @@
-const filmsApp=new Vue({el:"#vue-films-wrapper",data:{switch:!1},methods:{pluggedIn(e){console.log(e)}}});
+let videoWrapper=document.querySelectorAll(".video-wrapper");const video=document.querySelectorAll(".video");let videoCounter=document.getElementById("video-counter");function playAndPause(){let e=this.childNodes[3];console.log("Video",e);let d=this.childNodes[1],o=this.childNodes[5];e.paused||e.ended?(e.play(),e.controls=!0,o.classList.add("hide-play-button"),d.classList.add("hide-video-title"),videoCounter.classList.add("hide-video-counter")):e.pause()}video.forEach((function(e){e.controls=!1})),videoWrapper.forEach(e=>e.addEventListener("click",playAndPause));
 //# sourceMappingURL=films-min.js.map

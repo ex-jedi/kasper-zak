@@ -5,49 +5,61 @@
 // ** Video Controls  **
 // *=========================================
 
-const filmsApp = new Vue({
-  el: '#vue-films-wrapper',
-  data: {
-    switch: false,
-  },
-  methods: {
-    pluggedIn(e) {
-      console.log(e);
-    },
-  },
-});
+// const filmsApp = new Vue({
+//   el: '#vue-films-wrapper',
+//   data: {
+//     switch: false,
+//   },
+//   methods: {
+//     playPauseControls(e) {
+//       e.stopPropagation();
+//       console.log(e.target.className);
+//     },
+//   },
+// });
 
 // ********** Video control containers **********
 
-// var video = document.querySelectorAll('.video');
-// console.log(video);
-// const videoTitle = document.querySelectorAll('.video-title');
-// const videoCounter = document.getElementById('video-counter');
+// Targets all video wrappers for control functions
+let videoWrapper = document.querySelectorAll('.video-wrapper');
 
-// // * Hide default video controls
-// video.controls = false;
+// Targents all video to remove controls on page load
+const video = document.querySelectorAll('.video');
 
-// // ********** Video control buttons **********
+// In peril!
+let videoCounter = document.getElementById('video-counter');
 
-// const playpause = document.querySelectorAll('.video-player-icon');
+// Hide default video controls
+video.forEach(function(elem) {
+  elem.controls = false;
+});
 
-// // ********** Video control events **********
+// ********** Video control events **********
 
-// // * Play pause function
-// function playAndPause(e) {
-//   console.log(e);
-//   if (video.paused || video.ended) {
-//     this.video.controls = true;
-//     this.video.play();
-//     this.playpause.classList.add('hide-play-button');
-//     this.videoTitle.classList.add('hide-video-title');
-//     this.videoCounter.classList.add('hide-video-counter');
-//   } else {
-//     this.video.pause();
-//   }
-// }
+// * Play pause function
+function playAndPause() {
+  let actualVideo = this.childNodes[3];
+  console.log('Video', actualVideo);
 
-// video.forEach(item => item.addEventListener('click', playAndPause));
+  let videoTitle = this.childNodes[1];
+  // console.log('Title', videoTitle);
+
+  let videoIcon = this.childNodes[5];
+  // console.log('Icon', videoIcon);
+
+  if (actualVideo.paused || actualVideo.ended) {
+    actualVideo.play();
+    actualVideo.controls = true;
+    videoIcon.classList.add('hide-play-button');
+    videoTitle.classList.add('hide-video-title');
+    videoCounter.classList.add('hide-video-counter');
+  } else {
+    actualVideo.pause();
+  }
+}
+
+// Adding controls function to video wrappers
+videoWrapper.forEach(item => item.addEventListener('click', playAndPause));
 
 // // * Detect if video is paused
 // function isPaused() {
@@ -60,4 +72,4 @@ const filmsApp = new Vue({
 //   }
 // }
 
-// video.addEventListener('pause', isPaused);
+// video.forEach(elem => elem.addEventListener('pause', isPaused));
