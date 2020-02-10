@@ -22,7 +22,7 @@ const playpause = document.getElementById('playpause');
 
 // * Play pause function
 function playAndPause(e) {
-  console.log(e);
+  console.log(this);
   if (video.paused || video.ended) {
     video.controls = true;
     video.play();
