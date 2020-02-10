@@ -24,16 +24,10 @@ video.forEach(function(elem) {
 // ********** Video control events **********
 
 // * Play pause function
-function playAndPause(e) {
-  // Searcing for the things
-  let videoTitle = this.parentNode.childNodes[1];
-  // console.log('Video Title', videoTitle);
-
-  let videoIcon = this;
-  // console.log('Icon', videoIcon);
-
-  let videoActual = this.parentNode.childNodes[3];
-  // console.log('Video', videoActual);
+function playAndPause() {
+  const videoTitle = this.parentNode.childNodes[1];
+  const videoIcon = this;
+  const videoActual = this.parentNode.childNodes[3];
 
   // Play pause and controls
   if (videoActual.paused || videoActual.ended) {
@@ -49,16 +43,19 @@ function playAndPause(e) {
 
 videoPlayButton.forEach(item => item.addEventListener('click', playAndPause));
 
-// // * Detect if video is paused
-// function isPaused() {
-//   // Hide controls unless user is seeking
-//   console.log('Paused', this);
-//   if (!video.seeking) {
-//     video.controls = false;
+// * Detect if video is paused
+function isPaused() {
+  // Hide controls unless user is seeking
+  let video = this;
+  let videoTitle = this.parentNode.childNodes[1];
+  let videoIcon = this.parentNode.childNodes[5];
 
-//   }
-// }
+  if (!video.seeking) {
+    video.controls = false;
+    videoIcon.classList.remove('hide-play-button');
+    videoTitle.classList.remove('hide-video-title');
+    videoCounter.classList.remove('hide-video-counter');
+  }
+}
 
-// video.forEach(element => {
-//   element.addEventListener('pause', isPaused);
-// });
+video.forEach(elem => elem.addEventListener('pause', isPaused));
