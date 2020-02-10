@@ -8,7 +8,6 @@
 // ********** Video control containers **********
 
 const videoPlayButton = document.querySelectorAll('.play-button');
-console.log('Play Button', videoPlayButton);
 
 // Targents all video to remove controls on page load
 const video = document.querySelectorAll('.video');
@@ -17,7 +16,8 @@ const video = document.querySelectorAll('.video');
 const videoCounter = document.getElementById('video-counter');
 
 // Hide default video controls
-video.forEach(function(elem) {
+video.forEach(elem => {
+  // eslint-disable-next-line no-param-reassign
   elem.controls = false;
 });
 
@@ -46,12 +46,12 @@ videoPlayButton.forEach(item => item.addEventListener('click', playAndPause));
 // * Detect if video is paused
 function isPaused() {
   // Hide controls unless user is seeking
-  let video = this;
-  let videoTitle = this.parentNode.childNodes[1];
-  let videoIcon = this.parentNode.childNodes[5];
+  const videoPaused = this;
+  const videoTitle = this.parentNode.childNodes[1];
+  const videoIcon = this.parentNode.childNodes[5];
 
-  if (!video.seeking) {
-    video.controls = false;
+  if (!videoPaused.seeking) {
+    videoPaused.controls = false;
     videoIcon.classList.remove('hide-play-button');
     videoTitle.classList.remove('hide-video-title');
     videoCounter.classList.remove('hide-video-counter');
