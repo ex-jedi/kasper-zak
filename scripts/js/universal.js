@@ -33,7 +33,8 @@ const playpause = document.getElementById('playpause');
 // ********** Video control events **********
 
 // * Play pause function
-function playAndPause() {
+function playAndPause(e) {
+  console.log(e);
   if (video.paused || video.ended) {
     video.controls = true;
     video.play();
