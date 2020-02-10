@@ -110,11 +110,6 @@ introParagraphs.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
-    .addIndicators({
-      name: `fade Scene ${counter}`,
-      colorTrigger: 'black',
-      colorStart: '#f00',
-    }) // Requires a plugin
     .addTo(controller);
 
   counter++;
@@ -160,11 +155,6 @@ const showReel = new ScrollMagic.Scene({
   triggerHook: 0.4,
   // reverse: false,
 })
-  .addIndicators({
-    name: 'showreel',
-    colorTrigger: '#800080',
-    colorStart: '#f00',
-  })
   .setTween(tlTwo)
   .addTo(controller);
 
@@ -186,11 +176,6 @@ triptychImageTwo.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'triptych-image-slide-in')
-    .addIndicators({
-      name: `triptych ${counterTwo}`,
-      colorTrigger: '#c709f7',
-      colorStart: '#c709f7',
-    }) // Requires a plugin
     .addTo(controller);
 
   counterTwo++;
@@ -212,10 +197,4 @@ let slideParallaxScene = new ScrollMagic.Scene({
   duration: '150%',
 })
   .setTween(parallaxTl)
-  .addTo(controller)
-  .addIndicators({
-    name: 'parallax',
-    colorTrigger: 'blue',
-    colorStart: 'blue',
-    colorEnd: 'red',
-  }); // Requires a plugin;;
+  .addTo(controller);
