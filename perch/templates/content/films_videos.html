@@ -1,22 +1,23 @@
-<section class="films-section" id="vue-films-wrapper">
+<section class="films-section">
     <div id="video-counter" class="video-counter">
         <span class="video-counter-span video-counter-span-one">1</span>
         <span class="video-counter-span video-counter-span-two">2</span>
         <span class="video-counter-span video-counter-span-three">3</span>
         <span class="video-counter-span video-counter-span-four">4</span>
     </div>
-    <div class="video-wrapper video-one-wrapper" @click="playPauseControls">
+    <div class="video-wrapper video-one-wrapper">
         <h2 id="video-title" class="video-title">
             <perch:content id="videoOneTitle" type="text" label="Video One Title" required>
         </h2>
-        <video controls id="video" class="video video-one"   poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
+        <video controls class="video video-one" poster="<perch:content id="videoPosterOne" type="image" label="Video Placeholder Image" required divider-before="Video One">">
             <source src="<perch:content id="videoOneMP4" type="file" label="Video One MP4 Video">" type="video/mp4">
             <source src="<perch:content id="videoOneOGV" type="file" label="Video One OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoOneWebM" type="file" label="Video One WebM Video">" type="video/webm">
         </video>
-        <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
+        <!-- TODO: Change into a real button before Andy Bell sees! -->
+        <img class="play-button video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
 </div>
-    <div class="video-wrapper video-two-wrapper" @click="playPauseControls">
+    <div class="video-wrapper video-two-wrapper">
         <h2 class="video-title">
             <perch:content id="videoTwoTitle" type="text" label="Video Two Title" required>
         </h2>
@@ -25,9 +26,9 @@
             <source src="<perch:content id="videoTwoOGV" type="file" label="Video Two OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoTwoWebM" type="file" label="Video Two WebM Video">" type="video/webm">
         </video>
-        <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
+        <img class="play-button video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
     </div>
-    <div class="video-wrapper video-three-wrapper" @click="playPauseControls">
+    <div class="video-wrapper video-three-wrapper">
         <h2 class="video-title">
             <perch:content id="videoThreeTitle" type="text" label="Video Three Title" required>
         </h2>
@@ -36,9 +37,9 @@
             <source src="<perch:content id="videoThreeOGV" type="file" label="Video Three OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoThreeWebM" type="file" label="Video Three WebM Video">" type="video/webm">
         </video>
-        <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
+        <img class="play-button video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
     </div>
-    <div class="video-wrapper video-four-wrapper" @click="playPauseControls">
+    <div class="video-wrapper video-four-wrapper">
         <h2 class="video-title">
             <perch:content id="videoFourTitle" type="text" label="Video Four Title" required>
         </h2>
@@ -47,6 +48,6 @@
             <source src="<perch:content id="videoFourOGV" type="file" label="Video Four OGV Video">" type="video/ogv">
             <source src="<perch:content id="videoFourWebM" type="file" label="Video Four WebM Video">" type="video/webm">
         </video>
-        <img id="playpause" class="video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
+        <img class="play-button video-player-icon" src="/images/video-player-icon.svg" alt="Video player icon" >
     </div>
 </section>
