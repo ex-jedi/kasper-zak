@@ -11,8 +11,8 @@ const filmsApp = new Vue({
     switch: false,
   },
   methods: {
-    pluggedIn() {
-      alert('hi');
+    pluggedIn(e) {
+      console.log(e);
     },
   },
 });
