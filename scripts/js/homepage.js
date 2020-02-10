@@ -34,7 +34,7 @@ tlOne
     {
       yPercent: 0,
       duration: 2,
-      ease: 'elastic.out(1, 0.3)',
+      ease: 'elastic.out(1, 0.5)',
       onComplete: slideInterval,
     },
     'togetherness',
