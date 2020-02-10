@@ -348,6 +348,7 @@ footer {
 .footer-social-media-link {
   &:hover {
     animation-name: bounce;
+    animation-delay: 0.2s;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-timing-function: $cubic-two;
