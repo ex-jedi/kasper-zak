@@ -107,14 +107,21 @@
   padding-left: 0;
 }
 
-.video-player-icon {
+.play-button {
   position: absolute;
-  top: 50%;
+  background-image: url("/images/video-player-icon.svg");
+  background-size: cover;
+  height: 15rem;
+  width: 13rem;
+  border: 0;
+  background-color: transparent;
+  top: 40%;
   left: 50%;
   transform: scale(0.5);
   transition: all 0.2s ease-in;
   margin-left: -4%;
   margin-top: -4.5%;
+  cursor: pointer;
 }
 
 .hide-play-button {
