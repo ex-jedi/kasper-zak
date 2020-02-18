@@ -55,7 +55,6 @@
   font-weight: 400;
   line-height: 1;
   margin: 0 auto;
-  // padding: 10px;
   text-align: center;
   color: $light-font-colour;
   text-transform: capitalize;
@@ -73,6 +72,7 @@
 
 .video-counter {
   @include flex(row);
+  position: absolute;
   justify-content: space-between;
   align-self: center;
   align-items: center;
@@ -80,11 +80,14 @@
   width: $section-spacing-extra-large;
   font-weight: 400;
   color: $light-font-colour;
-  position: fixed;
   z-index: 1;
   margin: 0 auto;
   bottom: $section-spacing-medium;
   transition: all 0.3s ease-in;
+}
+
+.video-counter-active {
+  font-size: $font-size-large;
 }
 
 .hide-video-counter {
