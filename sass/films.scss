@@ -55,9 +55,10 @@
   font-weight: 400;
   line-height: 1;
   margin: 0 auto;
-  // padding: 10px;
+  padding: 0 1rem;
   text-align: center;
   color: $light-font-colour;
+  background-color: $transparent-dark-background-colour;
   text-transform: capitalize;
   //? TODO: Are titles difficult to read?
   // background-color: $dark-background-colour;
@@ -73,27 +74,29 @@
 
 .video-counter {
   @include flex(row);
+  position: absolute;
   justify-content: space-between;
-  align-self: center;
   align-items: center;
   font-size: $font-size-medium;
   width: $section-spacing-extra-large;
   font-weight: 400;
   color: $light-font-colour;
-  position: fixed;
   z-index: 1;
+  background-color: $transparent-dark-background-colour;
   margin: 0 auto;
+  padding: 0 1rem;
   bottom: $section-spacing-medium;
   transition: all 0.3s ease-in;
+  line-height: 1;
+}
+
+.video-counter-active {
+  font-size: $font-size-large;
 }
 
 .hide-video-counter {
   opacity: 0;
   transform: translateY($section-spacing-small);
-}
-
-.video-counter-span-two {
-  font-size: $font-size-large;
 }
 
 //********** Video Controls **********
@@ -107,14 +110,21 @@
   padding-left: 0;
 }
 
-.video-player-icon {
+.play-button {
   position: absolute;
-  top: 50%;
+  background-image: url("/images/video-player-icon.svg");
+  background-size: cover;
+  height: 15rem;
+  width: 13rem;
+  border: 0;
+  background-color: transparent;
+  top: 40%;
   left: 50%;
   transform: scale(0.5);
   transition: all 0.2s ease-in;
   margin-left: -4%;
   margin-top: -4.5%;
+  cursor: pointer;
 }
 
 .hide-play-button {

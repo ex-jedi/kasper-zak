@@ -13,7 +13,7 @@ const videoPlayButton = document.querySelectorAll('.play-button');
 const video = document.querySelectorAll('.video');
 
 // In peril!
-const videoCounter = document.getElementById('video-counter');
+// const videoCounter = document.getElementById('video-counter');
 
 // Hide default video controls
 video.forEach(elem => {
@@ -28,6 +28,7 @@ function playAndPause() {
   const videoTitle = this.parentNode.childNodes[1];
   const videoIcon = this;
   const videoActual = this.parentNode.childNodes[3];
+  const videoCounter = this.parentNode.childNodes[7];
 
   // Play pause and controls
   if (videoActual.paused || videoActual.ended) {
@@ -49,6 +50,7 @@ function isPaused() {
   const videoPaused = this;
   const videoTitle = this.parentNode.childNodes[1];
   const videoIcon = this.parentNode.childNodes[5];
+  const videoCounter = this.parentNode.childNodes[7];
 
   if (!videoPaused.seeking) {
     videoPaused.controls = false;
