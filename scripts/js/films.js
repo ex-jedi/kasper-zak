@@ -9,11 +9,8 @@
 
 const videoPlayButton = document.querySelectorAll('.play-button');
 
-// Targents all video to remove controls on page load
+// Targets all video to remove controls on page load
 const video = document.querySelectorAll('.video');
-
-// In peril!
-// const videoCounter = document.getElementById('video-counter');
 
 // Hide default video controls
 video.forEach(elem => {
@@ -25,10 +22,11 @@ video.forEach(elem => {
 
 // * Play pause function
 function playAndPause() {
-  const videoTitle = this.parentNode.childNodes[1];
+  const parentElement = this.parentNode;
   const videoIcon = this;
-  const videoActual = this.parentNode.childNodes[3];
-  const videoCounter = this.parentNode.childNodes[7];
+  const videoTitle = parentElement.childNodes[1];
+  const videoActual = parentElement.childNodes[3];
+  const videoCounter = parentElement.childNodes[7];
 
   // Play pause and controls
   if (videoActual.paused || videoActual.ended) {
@@ -47,10 +45,12 @@ videoPlayButton.forEach(item => item.addEventListener('click', playAndPause));
 // * Detect if video is paused
 function isPaused() {
   // Hide controls unless user is seeking
+  const parentElement = this.parentNode;
+
   const videoPaused = this;
-  const videoTitle = this.parentNode.childNodes[1];
-  const videoIcon = this.parentNode.childNodes[5];
-  const videoCounter = this.parentNode.childNodes[7];
+  const videoTitle = parentElement.childNodes[1];
+  const videoIcon = parentElement.childNodes[5];
+  const videoCounter = parentElement.childNodes[7];
 
   if (!videoPaused.seeking) {
     videoPaused.controls = false;
