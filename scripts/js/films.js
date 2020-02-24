@@ -49,7 +49,7 @@ function isPaused() {
   const videoTitle = videoWrapper.querySelector('.video-title');
   const videoButton = videoWrapper.querySelector('.play-button');
   const videoCounter = videoWrapper.querySelector('.video-counter');
-  const videoPaused = this;
+  const videoPaused = videoWrapper.querySelector('.video');
 
   if (!videoPaused.seeking) {
     videoPaused.controls = false;
