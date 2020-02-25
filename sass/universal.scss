@@ -350,7 +350,7 @@ footer {
     animation-name: bounce;
     animation-delay: 0.2s;
     animation-duration: 1s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1.5;
     animation-timing-function: $cubic-two;
     animation-fill-mode: forwards;
   }
