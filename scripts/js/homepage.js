@@ -134,12 +134,12 @@ tlTwo
   .fromTo(
     '.showreel-player-arrow',
     { yPercent: -10, opacity: 0 },
-    { yPercent: 0, opacity: 1, onComplete: onComplete },
+    { yPercent: 0, opacity: 1, onComplete },
   );
 
 // GSAP callback to add repeating animation
 function onComplete() {
-  var shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 4 });
+  const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 4 });
   shake.to('.showreel-player-arrow', 0.15, {
     x: -5,
     y: 5,
@@ -166,6 +166,7 @@ const triptychImageTwo = document.querySelectorAll(
 );
 
 // For indicators in the scene
+// TODO: What's this for?
 let counterTwo = 1;
 
 // Loop through elements to add animation
@@ -183,7 +184,7 @@ triptychImageTwo.forEach(function(item) {
 
 // * Parallax Scene
 
-var parallaxTl = gsap.timeline();
+const parallaxTl = gsap.timeline();
 parallaxTl.from(
   '.homepage-illustration',
   2,
@@ -191,7 +192,7 @@ parallaxTl.from(
   0,
 );
 
-let slideParallaxScene = new ScrollMagic.Scene({
+const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
   triggerHook: 1,
   duration: '150%',
