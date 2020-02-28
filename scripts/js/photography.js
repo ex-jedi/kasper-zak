@@ -2,24 +2,7 @@
 // ** Photography  **
 // *=========================================
 
-// Main timeline
-// const tlOne = gsap.timeline({
-//   defaults: { duration: 0.5, ease: Back.easeOut.config(1) },
-// });
-
-// tlOne
-//   .fromTo(
-//     '.half-width-photo-image-one',
-//     { clipPath: 'inset(0% 100% 0% 0%)' },
-//     { clipPath: 'inset(0% 0% 0% 0%)' },
-//   )
-//   .fromTo(
-//     '.half-width-photo-image-two',
-//     { clipPath: 'inset(0% 100% 0% 0%)' },
-//     { clipPath: 'inset(0% 0% 0% 0%)' },
-//   );
-
-// * Init ScrollMagic
+// * Photo wipe
 const controller = new ScrollMagic.Controller();
 const photoImage = document.querySelectorAll('.photo-image');
 

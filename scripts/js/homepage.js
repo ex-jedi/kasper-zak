@@ -195,7 +195,7 @@ parallaxTl.from(
 const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
   triggerHook: 1,
-  duration: '150%',
+  duration: '10%',
 })
   .setTween(parallaxTl)
   .addTo(controller);

@@ -31,30 +31,38 @@
   }
 }
 
+.photo-gallery-section {
+  @include flex(column);
+}
+
 .photo-wrapper {
   margin: 0 0 $section-spacing-small;
   width: 100%;
-  // width: calc(100% - #{$section-spacing-medium});
 }
 
 .double-photo-wrapper {
   @include flex(row);
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
 }
 
-.photo-wrapper-one {
-  width: auto;
+.full-width-photo-image-wrapper {
+  flex: 0 0 auto;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .full-width-photo-image {
-  width: 100%;
   clip-path: inset(0% 0% 0% 100%);
 }
 
 .half-width-photo-image {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
   width: 47%;
+  height: auto;
+  justify-content: space-between;
   clip-path: inset(0% 100% 0% 0%);
 }
 
