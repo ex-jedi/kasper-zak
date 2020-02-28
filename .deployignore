@@ -1,6 +1,6 @@
 ## Directories and files in git but not deployed to server
 sass/**
-#scripts/js/**
+scripts/js/**
 .htaccess
 .gitignore
 .sass-lint.yml
