@@ -56,6 +56,7 @@
 
 .full-width-photo-image {
   clip-path: inset(0% 0% 0% 100%);
+  transition: all 1.5s $ease-out-two;
 }
 
 .half-width-photo-image {
@@ -64,13 +65,10 @@
   height: auto;
   justify-content: space-between;
   clip-path: inset(0% 100% 0% 0%);
+  transition: all 1s $ease-out-two;
 }
 
 //* Image wipe
-
-.photo-image {
-  transition: all 1.3s $ease-out-two;
-}
 
 .photo-image-reveal {
   clip-path: inset(0% 0% 0% 0%);
