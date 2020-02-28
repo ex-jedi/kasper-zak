@@ -125,12 +125,19 @@
   margin-left: -4%;
   margin-top: -4.5%;
   cursor: pointer;
+
+  &:active {
+    outline: none;
+    border: none;
+  }
 }
 
 .hide-play-button {
   opacity: 0;
   transform: scale(0);
   pointer-events: none;
+  outline: none;
+  border: none;
 }
 
 //*=========================================
