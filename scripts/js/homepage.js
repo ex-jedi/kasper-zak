@@ -188,14 +188,14 @@ const parallaxTl = gsap.timeline();
 parallaxTl.from(
   '.homepage-illustration',
   2,
-  { y: '-70%', ease: Power0.easeNone },
+  { y: '-50%', ease: Power0.easeNone },
   0,
 );
 
 const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
   triggerHook: 1,
-  duration: '10%',
+  duration: '150%',
 })
   .setTween(parallaxTl)
   .addTo(controller);
