@@ -14,8 +14,8 @@
   @include main-font-stack;
   color: $light-font-colour;
   margin: 0 0 0 $h2-size;
-  padding: $h2-size;
-  font-size: $h1-size;
+  padding: $heading-spacing-medium;
+  font-size: $h2-size;
   position: relative;
   text-align-last: left;
 
