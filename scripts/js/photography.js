@@ -12,10 +12,6 @@ photoImage.forEach(function(elem) {
     triggerHook: 0.4,
   })
     .setClassToggle(elem, 'photo-image-reveal')
-    .addIndicators({
-      name: 'photo',
-      colorTrigger: '#f00',
-    })
     .addTo(controller);
 });
 
