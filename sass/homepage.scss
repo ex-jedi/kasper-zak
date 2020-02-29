@@ -64,7 +64,7 @@
 .intro-text-section {
   @include main-font-stack;
   line-height: normal;
-  padding: 0 $section-spacing-extra-large $article-spacing-extra-large;
+  padding: 0 $section-spacing-extra-large $section-spacing-small;
   margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
   background-image: url("/images/birds-background-images.png");
@@ -138,6 +138,10 @@
   flex: 0 1 auto;
   width: 40%;
   margin-top: $section-spacing-large;
+}
+
+.homepage-illustration {
+  width: 100%;
 }
 
 //* Text Area Two

@@ -44,7 +44,7 @@ section {
 //* Headings
 
 h2 {
-  margin: $h2-spacing auto;
+  margin: $heading-spacing-small auto;
 }
 
 //* Containers
@@ -58,7 +58,7 @@ h2 {
 //* Images
 
 img {
-  max-width: 100%;
+  // width: 100%;
   display: block;
 }
 

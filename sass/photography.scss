@@ -14,8 +14,8 @@
   @include main-font-stack;
   color: $light-font-colour;
   margin: 0 0 0 $h2-size;
-  padding: $h2-size;
-  font-size: $h1-size;
+  padding: $heading-spacing-medium;
+  font-size: $h2-size;
   position: relative;
   text-align-last: left;
 
@@ -31,36 +31,48 @@
   }
 }
 
+.photo-gallery-section {
+  @include flex(column);
+}
+
 .photo-wrapper {
-  margin-bottom: $section-spacing-small;
+  margin: 0 0 $section-spacing-medium;
   width: 100%;
-  // width: calc(100% - #{$section-spacing-medium});
 }
 
 .double-photo-wrapper {
   @include flex(row);
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  height: 95vh;
 }
 
-.photo-wrapper-one {
-  width: auto;
-  margin-right: $section-spacing-small;
+.full-width-photo-image-wrapper {
+  flex: 0 0 auto;
+  height: 95vh;
+  overflow: hidden;
 }
 
 .full-width-photo-image {
+  clip-path: inset(0% 0% 0% 100%);
+  transition: all 1.5s $ease-out-two;
+  // height: 100vh;
   width: 100%;
+  object-fit: cover;
 }
 
 .half-width-photo-image {
-  flex: 1 1 auto;
-  width: 40%;
+  flex: 0 1 auto;
+  width: 48%;
+  // height: 100vh;
+  justify-content: space-between;
+  clip-path: inset(0% 100% 0% 0%);
+  transition: all 1s $ease-out-two;
 }
 
-.half-width-photo-image-one {
-  margin-right: $section-spacing-small;
-}
+//* Image wipe
 
-.photo-image-two {
-  margin-top: $paragraph-spacing-medium;
+.photo-image-reveal {
+  clip-path: inset(0% 0% 0% 0%);
 }

@@ -2,31 +2,29 @@
 // ** Photography  **
 // *=========================================
 
-// Main timeline
-const tlOne = gsap.timeline({
-  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
-});
-
-// * Init ScrollMagic
+// * Photo wipe
 const controller = new ScrollMagic.Controller();
-
 const photoImage = document.querySelectorAll('.photo-image');
 
-photoImage.forEach(function(item) {
-  const sceneTwo = new ScrollMagic.Scene({
-    triggerElement: item,
-    triggerHook: 0.5,
-    // reverse: false,
+photoImage.forEach(function(elem) {
+  const sceneOne = new ScrollMagic.Scene({
+    triggerElement: elem.parentElement,
+    triggerHook: 0.4,
   })
-    .addIndicators({
-      name: 'photo',
-      colorTrigger: '#f00',
-    })
+    .setClassToggle(elem, 'photo-image-reveal')
     .addTo(controller);
 });
 
-const header = document.querySelector('h2');
-header.addEventListener('click', function() {
-  debugger;
-  alert('Hello.');
+// * Parallax
+const parallaxTl = gsap.timeline();
+parallaxTl.from(photoImage, 2, { y: '-75px', ease: 'none' }, 0);
+
+photoImage.forEach(function(elem) {
+  const slideParallaxScene = new ScrollMagic.Scene({
+    triggerElement: elem.parentElement,
+    triggerHook: 0.2,
+    duration: '100%',
+  })
+    .setTween(parallaxTl)
+    .addTo(controller);
 });
