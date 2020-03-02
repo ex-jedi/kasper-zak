@@ -7,6 +7,7 @@
 	<?php perch_content("Homepage Text Area Two"); ?>
 	<?php perch_content("Homepage Triptych Two"); ?>
 	<?php perch_content("General Contact Form"); ?>
+	<?php perch_content("Showreel Player"); ?>
 </main>
 <?php perch_layout('homepage-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
