@@ -188,7 +188,7 @@ const parallaxTl = gsap.timeline();
 parallaxTl.from(
   '.homepage-illustration',
   2,
-  { y: '-50%', ease: Power0.easeNone },
+  { y: '-70%', ease: Power0.easeNone },
   0,
 );
 
