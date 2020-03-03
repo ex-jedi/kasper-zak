@@ -216,3 +216,7 @@ playerButton.addEventListener('click', () => {
     }, 100);
   }
 });
+
+showreelVideo.addEventListener('pause', function() {
+  showreelVideo.style.border = '1rem solid #f00';
+});
