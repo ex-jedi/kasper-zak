@@ -206,9 +206,13 @@ const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
 
 playerButton.addEventListener('click', () => {
-  if (showreelVideo.style.display === 'block') {
-    showreelVideo.style.display = 'none';
+  if (showreelVideo.classList.contains('video-reveal')) {
+    showreelVideo.classList.remove('video-reveal');
   } else {
     showreelVideo.style.display = 'block';
+    setTimeout(() => {
+      showreelVideo.classList.add('video-reveal');
+      showreelVideo.play();
+    }, 100);
   }
 });
