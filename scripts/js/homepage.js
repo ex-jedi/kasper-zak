@@ -199,3 +199,24 @@ const slideParallaxScene = new ScrollMagic.Scene({
 })
   .setTween(parallaxTl)
   .addTo(controller);
+
+// ********** Showreel Player **********
+
+const playerButton = document.querySelector('.showreel-player-button');
+const showreelVideo = document.querySelector('.showreel-video');
+
+playerButton.addEventListener('click', () => {
+  if (showreelVideo.classList.contains('video-reveal')) {
+    showreelVideo.classList.remove('video-reveal');
+  } else {
+    showreelVideo.style.display = 'block';
+    setTimeout(() => {
+      showreelVideo.classList.add('video-reveal');
+      showreelVideo.play();
+    }, 100);
+  }
+});
+
+showreelVideo.addEventListener('pause', function() {
+  showreelVideo.style.border = '1rem solid #f00';
+});

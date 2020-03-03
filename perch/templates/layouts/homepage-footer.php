@@ -16,8 +16,6 @@
 	</div>
 </footer>
 </div> <!-- wrapper div -->
-<!-- TODO: Change Vue to production version -->
-<script type="text/javascript" src="/scripts/minified/vue.js" ></script>
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
 <!-- ScrollMagic Greensock  -->

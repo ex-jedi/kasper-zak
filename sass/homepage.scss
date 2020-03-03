@@ -122,12 +122,15 @@
 }
 
 .showreel-player-button {
+  @include utility-font-stack;
+
   font-size: $font-size-large;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: $letter-spacing-medium;
   margin: 0;
   background-color: inherit;
+  cursor: pointer;
   border: 0;
   text-align: left;
   color: $light-font-colour;
@@ -204,7 +207,21 @@
 //*=========================================
 
 .showreel-video {
-  width: 100vw;
+  width: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: scale(0.25);
+  opacity: 0;
+  transition: all 0.6s ease-in;
+}
+
+.video-reveal {
+  border: 1rem solid $main-background-colour;
+  transform: scale(1);
+  opacity: 1;
 }
 
 //*=========================================
