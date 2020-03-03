@@ -199,3 +199,16 @@ const slideParallaxScene = new ScrollMagic.Scene({
 })
   .setTween(parallaxTl)
   .addTo(controller);
+
+// ********** Showreel Player **********
+
+const playerButton = document.querySelector('.showreel-player-button');
+const showreelVideo = document.querySelector('.showreel-video');
+
+playerButton.addEventListener('click', () => {
+  if (showreelVideo.style.display === 'block') {
+    showreelVideo.style.display = 'none';
+  } else {
+    showreelVideo.style.display = 'block';
+  }
+});

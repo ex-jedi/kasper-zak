@@ -122,12 +122,15 @@
 }
 
 .showreel-player-button {
+  @include utility-font-stack;
+
   font-size: $font-size-large;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: $letter-spacing-medium;
   margin: 0;
   background-color: inherit;
+  cursor: pointer;
   border: 0;
   text-align: left;
   color: $light-font-colour;
@@ -205,6 +208,7 @@
 
 .showreel-video {
   width: 100vw;
+  display: none;
 }
 
 //*=========================================
