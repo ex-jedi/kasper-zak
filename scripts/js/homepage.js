@@ -208,6 +208,11 @@ const showreelVideoWrapper = document.querySelector(
   '.homepage-showreel-wrapper',
 );
 
+// * Play showreel
+function playShowreel() {
+  showreelVideo.play();
+}
+
 // * GSAP timeline
 const showreelTl = gsap.timeline({
   paused: true,
@@ -224,8 +229,9 @@ showreelTl
     showreelVideo,
     { clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)' },
     {
-      ease: 'power2.inOut',
+      ease: 'power4.inOut',
       clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
+      onComplete: playShowreel,
     },
   );
 
