@@ -211,19 +211,22 @@ const showreelVideoWrapper = document.querySelector(
 // * GSAP timeline
 const showreelTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power2.out' },
+  defaults: { duration: 1.5, ease: 'none' },
 });
 
 showreelTl
   .fromTo(
     showreelVideoWrapper,
-    { duration: 1, clipPath: 'inset(0 100% 0 0)' },
-    { duration: 1, clipPath: 'inset(0 0 0 0)' },
+    { clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)' },
+    { ease: 'power3.in', clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0)' },
   )
   .fromTo(
     showreelVideo,
-    { duration: 1, clipPath: 'inset(0 0 100% 0)' },
-    { duration: 1, clipPath: 'inset(0 0 0 0)' },
+    { clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)' },
+    {
+      ease: 'power2.inOut',
+      clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
+    },
   );
 
 showreelVideo.pause();

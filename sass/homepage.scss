@@ -216,13 +216,12 @@
   left: 0;
   z-index: 2;
   padding: $paragraph-spacing-small;
-  clip-path: inset(0 100% 0 0);
+  clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
 }
 
 .showreel-video {
   width: 98%;
   height: 98%;
-  transition: all 0.6s ease-in;
 }
 
 .video-reveal {
