@@ -206,22 +206,38 @@
 //** Showreel Player **
 //*=========================================
 
-.showreel-video {
-  width: 100%;
-  display: none;
+.homepage-showreel-wrapper {
   position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: $main-background-colour;
   top: 0;
   right: 0;
+  left: 0;
   z-index: 2;
-  transform: scale(0.25);
-  opacity: 0;
+  padding: $paragraph-spacing-small;
+  display: none;
+}
+
+.showreel-video {
+  width: 98%;
+  height: 98%;
   transition: all 0.6s ease-in;
 }
 
 .video-reveal {
-  border: 1rem solid $main-background-colour;
   transform: scale(1);
   opacity: 1;
+}
+
+//Hides rest of page when showreel player is visible
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 //*=========================================

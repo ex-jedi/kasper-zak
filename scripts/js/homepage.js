@@ -202,8 +202,14 @@ const slideParallaxScene = new ScrollMagic.Scene({
 
 // ********** Showreel Player **********
 
+const showreelTl = gsap.timeline({
+  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
+});
+
 const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
+
+showreelVideo.pause();
 
 playerButton.addEventListener('click', () => {
   if (showreelVideo.classList.contains('video-reveal')) {
@@ -217,6 +223,4 @@ playerButton.addEventListener('click', () => {
   }
 });
 
-showreelVideo.addEventListener('pause', function() {
-  showreelVideo.style.border = '1rem solid #f00';
-});
+showreelVideo.addEventListener('pause', function() {});
