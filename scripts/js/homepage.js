@@ -202,25 +202,35 @@ const slideParallaxScene = new ScrollMagic.Scene({
 
 // ********** Showreel Player **********
 
-const showreelTl = gsap.timeline({
-  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
-});
-
 const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
+const showreelVideoWrapper = document.querySelector(
+  '.homepage-showreel-wrapper',
+);
+
+// * GSAP timeline
+const showreelTl = gsap.timeline({
+  paused: true,
+  defaults: { ease: 'power2.out' },
+});
+
+showreelTl
+  .fromTo(
+    showreelVideoWrapper,
+    { duration: 1, clipPath: 'inset(0 100% 0 0)' },
+    { duration: 1, clipPath: 'inset(0 0 0 0)' },
+  )
+  .fromTo(
+    showreelVideo,
+    { duration: 1, clipPath: 'inset(0 0 100% 0)' },
+    { duration: 1, clipPath: 'inset(0 0 0 0)' },
+  );
 
 showreelVideo.pause();
 
 playerButton.addEventListener('click', () => {
-  if (showreelVideo.classList.contains('video-reveal')) {
-    showreelVideo.classList.remove('video-reveal');
-  } else {
-    showreelVideo.style.display = 'block';
-    setTimeout(() => {
-      showreelVideo.classList.add('video-reveal');
-      showreelVideo.play();
-    }, 100);
-  }
+  showreelTl.play();
+  console.log('Play');
 });
 
-showreelVideo.addEventListener('pause', function() {});
+// showreelVideo.addEventListener('pause', function() {});
