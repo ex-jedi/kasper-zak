@@ -234,11 +234,7 @@ showreelTl
     },
   );
 
-// showreelVideo.pause();
-
 playerButton.addEventListener('click', () => {
   showreelTl.play();
   console.log('Play');
 });
-
-// showreelVideo.addEventListener('pause', function() {});
