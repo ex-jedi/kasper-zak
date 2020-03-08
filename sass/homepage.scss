@@ -239,6 +239,21 @@
   left: 0;
 }
 
+.close-button {
+  @include utility-font-stack;
+  background-color: $main-background-colour;
+  border: 2px solid $white;
+  padding: $paragraph-spacing-small $paragraph-spacing-medium;
+  font-size: $font-size-medium;
+  font-weight: bold;
+  box-shadow: none;
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 //*=========================================
 //** Animation **
 //*=========================================

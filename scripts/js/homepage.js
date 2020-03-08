@@ -233,9 +233,9 @@ function showCloseButton(playerStatus) {
     gsap.to(closeButton, { duration: 0.6, opacity: 0 });
   }
 }
+
 function onPlayerStateChange(event) {
   showCloseButton(event.data);
-  console.log(event.data);
 }
 
 // * Play YouTune showreel embed
@@ -275,9 +275,8 @@ closeButton.addEventListener('mouseenter', () => {
   gsap.to(closeButton, { duration: 0.6, opacity: 1 });
 });
 
-closeButton.addEventListener('mouseout', () => {
-  if (!player.paused || !player.ended)
-    gsap.to(closeButton, { duration: 0.6, opacity: 0 });
+closeButton.addEventListener('mouseout', e => {
+  gsap.to(closeButton, { duration: 0.6, opacity: 0 });
 });
 
 closeButton.addEventListener('click', e => {
