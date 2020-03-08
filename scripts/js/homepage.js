@@ -202,15 +202,16 @@ const slideParallaxScene = new ScrollMagic.Scene({
 
 // ********** Showreel Player **********
 
+// Grabbing page elements
 const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
 const showreelVideoWrapper = document.querySelector(
   '.homepage-showreel-wrapper',
 );
 const closeButton = document.querySelector('.close-button');
+const noScrollWrapper = document.querySelector('body');
 
 // * YouTube API Gubbins
-
 const tag = document.createElement('script');
 tag.id = 'iframe-demo';
 tag.src = 'https://www.youtube.com/iframe_api';
@@ -238,7 +239,7 @@ function onPlayerStateChange(event) {
   showCloseButton(event.data);
 }
 
-// * Play YouTune showreel embed
+//  Play YouTube showreel callback for GSAP timeline
 function playShowreel() {
   player.playVideo();
 }
@@ -266,22 +267,38 @@ showreelTl
   )
   .to(closeButton, { duration: 0.3, opacity: 0, onComplete: playShowreel });
 
+// Showreel play and add class to hide scrollbar
 playerButton.addEventListener('click', () => {
   showreelTl.play();
-  console.log('Play');
+  setTimeout(() => {
+    noScrollWrapper.classList.add('no-scroll');
+  }, 1500);
 });
 
+// Show showreel close button on hover
 closeButton.addEventListener('mouseenter', () => {
   gsap.to(closeButton, { duration: 0.6, opacity: 1 });
 });
 
-closeButton.addEventListener('mouseout', e => {
+// Hide close showreel button when mouse leaves
+closeButton.addEventListener('mouseout', () => {
   gsap.to(closeButton, { duration: 0.6, opacity: 0 });
 });
 
-closeButton.addEventListener('click', e => {
-  console.log(e);
-  closeButton.style.opacity = 1;
-  showreelTl.reverse();
-  player.stopVideo();
-});
+// Close showreel event handler
+function stopShowreel(event) {
+  if (event.type === 'click' || event.key === 'Escape') {
+    closeButton.style.opacity = 1;
+    showreelTl.reverse();
+    player.stopVideo();
+    setTimeout(() => {
+      noScrollWrapper.classList.remove('no-scroll');
+    }, 1500);
+  }
+}
+
+// Showreel Close Button
+closeButton.addEventListener('click', stopShowreel);
+
+// Close Showreel with Escape key
+window.addEventListener('keyup', stopShowreel);
