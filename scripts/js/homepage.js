@@ -207,11 +207,41 @@ const showreelVideo = document.querySelector('.showreel-video');
 const showreelVideoWrapper = document.querySelector(
   '.homepage-showreel-wrapper',
 );
+const closeButton = document.querySelector('.close-button');
 
-// * Play showreel
-// function playShowreel() {
-//   showreelVideo.play();
-// }
+// * YouTube API Gubbins
+
+const tag = document.createElement('script');
+tag.id = 'iframe-demo';
+tag.src = 'https://www.youtube.com/iframe_api';
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('showreel-iframe', {
+    events: {
+      onStateChange: onPlayerStateChange,
+    },
+  });
+}
+
+function showCloseButton(playerStatus) {
+  if (playerStatus === 2 || playerStatus === 0) {
+    gsap.to(closeButton, { duration: 0.6, opacity: 1 });
+  } else if (playerStatus === 1) {
+    gsap.to(closeButton, { duration: 0.6, opacity: 0 });
+  }
+}
+function onPlayerStateChange(event) {
+  showCloseButton(event.data);
+  console.log(event.data);
+}
+
+// * Play YouTune showreel embed
+function playShowreel() {
+  player.playVideo();
+}
 
 // * GSAP timeline
 const showreelTl = gsap.timeline({
@@ -220,6 +250,7 @@ const showreelTl = gsap.timeline({
 });
 
 showreelTl
+  .set(closeButton, { opacity: 1 })
   .fromTo(
     showreelVideoWrapper,
     { clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)' },
@@ -232,9 +263,26 @@ showreelTl
       ease: 'power4.inOut',
       clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
     },
-  );
+  )
+  .to(closeButton, { duration: 0.3, opacity: 0, onComplete: playShowreel });
 
 playerButton.addEventListener('click', () => {
   showreelTl.play();
   console.log('Play');
+});
+
+closeButton.addEventListener('mouseenter', () => {
+  gsap.to(closeButton, { duration: 0.6, opacity: 1 });
+});
+
+closeButton.addEventListener('mouseout', () => {
+  if (!player.paused || !player.ended)
+    gsap.to(closeButton, { duration: 0.6, opacity: 0 });
+});
+
+closeButton.addEventListener('click', e => {
+  console.log(e);
+  closeButton.style.opacity = 1;
+  showreelTl.reverse();
+  player.stopVideo();
 });
