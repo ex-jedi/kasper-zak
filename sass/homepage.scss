@@ -206,22 +206,54 @@
 //** Showreel Player **
 //*=========================================
 
-.showreel-video {
-  width: 100%;
-  display: none;
+.homepage-showreel-wrapper {
   position: fixed;
+  width: 100%;
+  background-color: $dark-grey;
+  height: 100%;
   top: 0;
   right: 0;
+  left: 0;
   z-index: 2;
-  transform: scale(0.25);
-  opacity: 0;
-  transition: all 0.6s ease-in;
+  padding: $paragraph-spacing-small;
+  clip-path: polygon(0 0, 0 100%, 0 100%, 0 0);
+  margin: 0;
+  padding: 0;
+}
+
+.showreel-video {
+  width: 100%;
+  height: 100%;
 }
 
 .video-reveal {
-  border: 1rem solid $main-background-colour;
   transform: scale(1);
   opacity: 1;
+}
+
+//Hides rest of page when showreel player is visible
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.close-button {
+  @include utility-font-stack;
+  background-color: $main-background-colour;
+  border: 2px solid $white;
+  padding: $paragraph-spacing-small $paragraph-spacing-medium;
+  font-size: $font-size-medium;
+  font-weight: bold;
+  box-shadow: none;
+  position: absolute;
+  z-index: 2;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 //*=========================================

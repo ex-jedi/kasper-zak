@@ -19,7 +19,8 @@
   background-size: contain;
   background-position: center;
   text-transform: capitalize;
-  padding: $h2-spacing $paragraph-spacing-large;
+  //TODO: Check Below
+  padding: $heading-spacing-small $paragraph-spacing-large;
   margin: 0 auto;
   color: $dark-font-colour;
 }

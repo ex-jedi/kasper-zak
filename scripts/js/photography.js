@@ -24,9 +24,3 @@ photoImage.forEach(function(item) {
     })
     .addTo(controller);
 });
-
-const header = document.querySelector('h2');
-header.addEventListener('click', function() {
-  debugger;
-  alert('Hello.');
-});

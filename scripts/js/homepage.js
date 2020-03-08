@@ -202,21 +202,103 @@ const slideParallaxScene = new ScrollMagic.Scene({
 
 // ********** Showreel Player **********
 
+// Grabbing page elements
 const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
+const showreelVideoWrapper = document.querySelector(
+  '.homepage-showreel-wrapper',
+);
+const closeButton = document.querySelector('.close-button');
+const noScrollWrapper = document.querySelector('body');
 
-playerButton.addEventListener('click', () => {
-  if (showreelVideo.classList.contains('video-reveal')) {
-    showreelVideo.classList.remove('video-reveal');
-  } else {
-    showreelVideo.style.display = 'block';
-    setTimeout(() => {
-      showreelVideo.classList.add('video-reveal');
-      showreelVideo.play();
-    }, 100);
+// * YouTube API Gubbins
+const tag = document.createElement('script');
+tag.id = 'iframe-demo';
+tag.src = 'https://www.youtube.com/iframe_api';
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('showreel-iframe', {
+    events: {
+      onStateChange: onPlayerStateChange,
+    },
+  });
+}
+
+function showCloseButton(playerStatus) {
+  if (playerStatus === 2 || playerStatus === 0) {
+    gsap.to(closeButton, { duration: 0.6, opacity: 1 });
+  } else if (playerStatus === 1) {
+    gsap.to(closeButton, { duration: 0.6, opacity: 0 });
   }
+}
+
+function onPlayerStateChange(event) {
+  showCloseButton(event.data);
+}
+
+//  Play YouTube showreel callback for GSAP timeline
+function playShowreel() {
+  player.playVideo();
+}
+
+// * GSAP timeline
+const showreelTl = gsap.timeline({
+  paused: true,
+  defaults: { duration: 1.5, ease: 'none' },
 });
 
-showreelVideo.addEventListener('pause', function() {
-  showreelVideo.style.border = '1rem solid #f00';
+showreelTl
+  .set(closeButton, { opacity: 1 })
+  .fromTo(
+    showreelVideoWrapper,
+    { clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)' },
+    { ease: 'power3.in', clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0)' },
+  )
+  .fromTo(
+    showreelVideo,
+    { clipPath: 'polygon(0 0, 0 0, 100% 0, 100% 0)' },
+    {
+      ease: 'power4.inOut',
+      clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
+    },
+  )
+  .to(closeButton, { duration: 0.3, opacity: 0, onComplete: playShowreel });
+
+// Showreel play and add class to hide scrollbar
+playerButton.addEventListener('click', () => {
+  showreelTl.play();
+  setTimeout(() => {
+    noScrollWrapper.classList.add('no-scroll');
+  }, 1500);
 });
+
+// Show showreel close button on hover
+closeButton.addEventListener('mouseenter', () => {
+  gsap.to(closeButton, { duration: 0.6, opacity: 1 });
+});
+
+// Hide close showreel button when mouse leaves
+closeButton.addEventListener('mouseout', () => {
+  gsap.to(closeButton, { duration: 0.6, opacity: 0 });
+});
+
+// Close showreel event handler
+function stopShowreel(event) {
+  if (event.type === 'click' || event.key === 'Escape') {
+    closeButton.style.opacity = 1;
+    showreelTl.reverse();
+    player.stopVideo();
+    setTimeout(() => {
+      noScrollWrapper.classList.remove('no-scroll');
+    }, 1500);
+  }
+}
+
+// Showreel Close Button
+closeButton.addEventListener('click', stopShowreel);
+
+// Close Showreel with Escape key
+window.addEventListener('keyup', stopShowreel);
