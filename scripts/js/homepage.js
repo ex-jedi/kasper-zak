@@ -209,9 +209,9 @@ const showreelVideoWrapper = document.querySelector(
 );
 
 // * Play showreel
-function playShowreel() {
-  showreelVideo.play();
-}
+// function playShowreel() {
+//   showreelVideo.play();
+// }
 
 // * GSAP timeline
 const showreelTl = gsap.timeline({
@@ -231,11 +231,10 @@ showreelTl
     {
       ease: 'power4.inOut',
       clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
-      onComplete: playShowreel,
     },
   );
 
-showreelVideo.pause();
+// showreelVideo.pause();
 
 playerButton.addEventListener('click', () => {
   showreelTl.play();
