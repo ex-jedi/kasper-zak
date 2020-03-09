@@ -31,11 +31,20 @@ html {
 body {
   background-color: $main-background-colour;
   margin: 0;
+  position: relative;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  background-color: $main-background-colour;
 }
 
 section {
   position: relative;
 }
+
+
 
 // *=========================================
 // ** Content container and block **
@@ -75,6 +84,8 @@ a {
 header {
   @include flex(row);
   position: relative;
+  z-index: 3;
+  background-color: $main-background-colour;
 }
 
 .main-header {
@@ -110,6 +121,7 @@ header {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .main-nav-ul {
@@ -139,7 +151,6 @@ header {
   height: 5rem;
   font-weight: bold;
   text-transform: uppercase;
-  z-index: 1;
 }
 
 .main-nav-closer {
@@ -336,6 +347,11 @@ footer {
   padding: $section-spacing-medium 0;
   background-color: $dark-background-colour;
   margin: 0;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .footer-social-media-wrapper {
