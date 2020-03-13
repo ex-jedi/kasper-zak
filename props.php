@@ -5,5 +5,6 @@
 	<?php perch_content("Page Subtitles"); ?>
 	<?php perch_content("Props Gallery"); ?>
 	<?php perch_content("Props Text"); ?>
+</main>
 <?php perch_layout('main-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
