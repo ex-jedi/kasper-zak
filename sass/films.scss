@@ -58,6 +58,14 @@ html {
   object-fit: cover;
   padding: 0;
   margin: 0;
+  //Darkens video to make titles readable
+  filter: brightness(50%);
+  transition: all 0.3s ease-in;
+}
+
+// Removes dark filter
+.bright-video {
+  filter: brightness(100%);
 }
 
 //* Videos Text
@@ -72,11 +80,10 @@ html {
   padding: 0 1rem;
   text-align: center;
   color: $light-font-colour;
-  background-color: $transparent-dark-background-colour;
   text-transform: capitalize;
   //? TODO: Are titles difficult to read?
-  // background-color: $dark-background-colour;
   transition: all 0.3s ease-in;
+  z-index: 2;
 }
 
 .hide-video-title {
@@ -96,7 +103,6 @@ html {
   font-weight: 400;
   color: $light-font-colour;
   z-index: 1;
-  background-color: $transparent-dark-background-colour;
   margin: 0 auto;
   padding: 0 1rem;
   bottom: $section-spacing-medium;
