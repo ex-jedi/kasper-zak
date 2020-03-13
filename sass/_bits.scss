@@ -199,6 +199,7 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 
 //********** Scrollbar Mixin **********
 
+//TODO: Check if This is being used anywhere
 @mixin horizontal-scrollbar {
   &::-webkit-scrollbar {
     width: 0.25rem;
