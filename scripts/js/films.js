@@ -18,6 +18,9 @@ video.forEach(elem => {
   elem.controls = false;
 });
 
+// * Other elements to control
+const mainNav = document.querySelector('.main-nav');
+
 // ********** Video control events **********
 
 // * Play pause function
@@ -35,6 +38,7 @@ function playAndPause() {
     videoButton.classList.add('hide-play-button');
     videoTitle.classList.add('hide-video-title');
     videoCounter.classList.add('hide-video-counter');
+    mainNav.classList.add('hide-main-nav');
   } else if (!video.seeking) {
     videoActual.pause();
   }
@@ -56,6 +60,7 @@ function isPaused() {
     videoButton.classList.remove('hide-play-button');
     videoTitle.classList.remove('hide-video-title');
     videoCounter.classList.remove('hide-video-counter');
+    mainNav.classList.remove('hide-main-nav');
   }
 }
 

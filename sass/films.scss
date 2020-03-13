@@ -27,6 +27,15 @@ html {
   @include main-font-stack;
 }
 
+.main-nav {
+  transition: all 0.3s ease-in;
+}
+
+// Hide main nav when video plays
+.hide-main-nav {
+  opacity: 0;
+  pointer-events: none;
+}
 //********** Videos **********
 
 //* Video Wrapper
