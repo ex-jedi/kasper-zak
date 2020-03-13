@@ -18,6 +18,10 @@
 //** Main **
 //*=========================================
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 .films-section {
   @include flex(column);
   @include main-font-stack;
@@ -34,6 +38,7 @@
   margin: 0;
   padding: 0;
   line-height: 0;
+  scroll-snap-align: start;
 }
 
 //* Videos
