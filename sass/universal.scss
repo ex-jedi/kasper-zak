@@ -44,8 +44,6 @@ section {
   position: relative;
 }
 
-
-
 // *=========================================
 // ** Content container and block **
 // *=========================================
@@ -106,6 +104,7 @@ header {
   height: $section-spacing-medium;
   width: auto;
   margin: 0 auto;
+  padding: 0;
 }
 
 // *=========================================
