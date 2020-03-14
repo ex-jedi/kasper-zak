@@ -18,11 +18,24 @@
 //** Main **
 //*=========================================
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 .films-section {
   @include flex(column);
   @include main-font-stack;
 }
 
+.main-nav {
+  transition: all 0.3s ease-in;
+}
+
+// Hide main nav when video plays
+.hide-main-nav {
+  opacity: 0;
+  pointer-events: none;
+}
 //********** Videos **********
 
 //* Video Wrapper
@@ -34,6 +47,7 @@
   margin: 0;
   padding: 0;
   line-height: 0;
+  scroll-snap-align: start;
 }
 
 //* Videos
@@ -44,13 +58,22 @@
   object-fit: cover;
   padding: 0;
   margin: 0;
+  //Darkens video to make titles readable
+  filter: brightness(50%);
+  transition: all 0.3s ease-in;
+  position: relative;
+}
+
+// Removes dark filter
+.bright-video {
+  filter: brightness(100%);
 }
 
 //* Videos Text
 
 .video-title {
   position: absolute;
-  top: $section-spacing-medium;
+  top: $section-spacing-small;
   font-size: $h2-size;
   font-weight: 400;
   line-height: 1;
@@ -58,11 +81,10 @@
   padding: 0 1rem;
   text-align: center;
   color: $light-font-colour;
-  background-color: $transparent-dark-background-colour;
   text-transform: capitalize;
   //? TODO: Are titles difficult to read?
-  // background-color: $dark-background-colour;
   transition: all 0.3s ease-in;
+  z-index: 2;
 }
 
 .hide-video-title {
@@ -82,10 +104,9 @@
   font-weight: 400;
   color: $light-font-colour;
   z-index: 1;
-  background-color: $transparent-dark-background-colour;
   margin: 0 auto;
   padding: 0 1rem;
-  bottom: $section-spacing-medium;
+  bottom: $section-spacing-small;
   transition: all 0.3s ease-in;
   line-height: 1;
 }
@@ -113,19 +134,20 @@
 .play-button {
   position: absolute;
   background-image: url("/images/video-player-icon.svg");
-  background-size: cover;
-  height: 15rem;
-  width: 13rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 11rem;
+  width: 11rem;
   border: 0;
   background-color: transparent;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: scale(0.5);
+  margin: 0;
+  padding: 0;
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
   transition: all 0.2s ease-in;
-  margin-left: -4%;
-  margin-top: -4.5%;
   cursor: pointer;
-
   &:active {
     outline: none;
     border: none;
@@ -134,7 +156,7 @@
 
 .hide-play-button {
   opacity: 0;
-  transform: scale(0);
+  transform: translateX(-50%) translateY(-50%) scale(0);
   pointer-events: none;
   outline: none;
   border: none;
