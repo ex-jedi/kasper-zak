@@ -1,3 +1,16 @@
 h1 {
-  font-family: 'Roboto Slab', serif;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700 !important;
+}
+
+.field-wrap,
+.input-simple,
+.button-simple,
+.reset-link {
+  font-size: 17px !important;
+  color: #171212 !important;
+}
+
+.button-simple {
+  border: 1px solid #ccc !important;
 }

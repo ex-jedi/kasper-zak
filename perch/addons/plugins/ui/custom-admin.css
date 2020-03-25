@@ -1,59 +1,88 @@
 /* Redefine/override any CSS variables here */
 body {
-    /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
+  /* GROUP VARIABLES -- DECORATION -- COLOURS -- THEME
     =================================================== */
-    --colour-main: #FF8040;
-    --colour-main-hover: #000;
-    --admin-colour-one: #dedfdf;
-    --admin-colour-two: rgb(253, 253, 253);
-    /* GROUP VARIABLES -- DECORATION -- TEXT
+  --colour-main: #ff8000;
+  --colour-main-hover: #424242;
+  --admin-colour-one: #bebebe;
+  --admin-colour-two: rgb(253, 253, 253);
+  --admin-color-dark: hsl(216, 12%, 8%);
+
+  /* GROUP VARIABLES -- DECORATION -- TEXT
     =================================================== */
-    --font-family-main: 'Open Sans', Arial, sans-serif;
-    --font-family-headline: 'Roboto Slab', serif;
-    /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
+  --font-family-main: 'Roboto', Arial, sans-serif;
+  --font-family-headline: 'Montserrat', Arial, sans-serif;
+  /* GROUP VARIABLES -- DECORATION -- TEXT -- WEIGHTS
     =================================================== */
-    --font-family-main-weight-normal: 400;
-    --font-family-headline-strong: 700;
+  --font-family-main-weight-normal: 400;
+  --font-family-headline-strong: 700;
 }
 
 /* Add any brand specific CSS here */
 
-  html {
-    font-size: 20px;
-  }
+html {
+  font-size: 20px;
+}
 
-  body {
-    font-family: var(--font-family-main);
-  }
+body {
+  font-family: var(--font-family-main);
+}
 
-  h1,
-  h2,
-  h3,
-  label,
-  header a,
-  .smartbar li a {
-    font-family: var(--font-family-headline) !important;
-    font-weight: var(--font-family-headline-strong) !important;
+h1,
+h2,
+h3,
+label,
+header a,
+.smartbar li a {
+  font-family: var(--font-family-headline) !important;
+  font-weight: var(--font-family-headline-strong) !important;
+}
+
+/* Main Nav  */
+.utilnav a span {
+  opacity: 1;
+}
+
+/* Sidebar style  */
+.sidebar,
+.sidebar .badge {
+  background-color: var(--admin-color-dark);
+}
+
+.subnav li a {
+  border-left: 4px solid var(--admin-color-dark);
+}
+
+.sidebar a,
+.sidebar h2,
+.sidebar h3 {
+  color: #fff !important;
+  opacity: 1;
+}
+
+/* Max font size so text fits  */
+.sidebar-back {
+  font-size: 22px;
 }
 
 /* Adds space above block item title bar */
-  .block-item {
-    padding-top: var(--rhythm-s);
-  }
+.block-item {
+  padding-top: var(--rhythm-s);
+}
 
-  /*Adds border to block item title bar  */
-  .block-item .divider {
-    border: 1px solid var(--colour-perch-border-grey)
-  }
+/*Adds border to block item title bar  */
+.block-item .divider {
+  border: 1px solid var(--admin-colour-one);
+}
 
-  /* Adjusting smartbar and divider icon position for larger fonts */
-.smartbar a svg, .smartbar button svg {
-    margin-top: 5px;
-  }
+/* Adjusting smartbar and divider icon position for larger fonts */
+.smartbar a svg,
+.smartbar button svg {
+  margin-top: 5px;
+}
 
-
-  /* Hides markitup header so users don't format embedded code. */
-  div.markItUpHeader {
-    display: none;
-    visibility: hidden;
-  }
+/* Hides markitup header so users don't format embedded code. */
+div.markItUpHeader {
+  display: none;
+  visibility: hidden;
+}
