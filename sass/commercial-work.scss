@@ -15,14 +15,9 @@
   @include main-font-stack;
   text-align: center;
   font-size: $h2-size;
-}
-
-.commercial-work-title {
   color: $dark-font-colour;
-}
-
-.commercial-work-sub-title {
-  color: $light-font-colour;
+  margin: 0 auto;
+  padding: $heading-spacing-medium 0;
 }
 
 .commercial-image-wrapper {
