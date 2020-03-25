@@ -30,6 +30,6 @@
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
 <!-- Homepage JS File  -->
 <!-- TODO: Change to minified for production -->
-<script src="/scripts/js/photography.js"></script>
+<script src="/scripts/minified/photography-min.js"></script>
 </body>
 </html>
