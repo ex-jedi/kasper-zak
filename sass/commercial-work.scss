@@ -10,6 +10,10 @@
 // ** Main **
 // *=========================================
 
+.commercial-work-section {
+  padding-bottom: $section-spacing-small;
+}
+
 .commercial-work-title,
 .commercial-work-sub-title {
   @include main-font-stack;
@@ -23,6 +27,10 @@
 .commercial-image-wrapper {
   width: 100%;
   margin-bottom: $section-spacing-small;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .full-width-commercial-image {
