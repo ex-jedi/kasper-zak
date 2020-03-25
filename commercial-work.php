@@ -4,5 +4,5 @@
 	<?php perch_content("Page Titles"); ?>
 	<?php perch_content('Commercial Work Gallery'); ?>
 </main>
-<?php perch_layout('main-footer'); ?>
+<?php perch_layout('commercial-work-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
