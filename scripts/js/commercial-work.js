@@ -16,9 +16,5 @@ commercialImage.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'commercial-image-reveal')
-    .addIndicators({
-      name: 'photo',
-      colorTrigger: '#f00',
-    })
     .addTo(controller);
 });

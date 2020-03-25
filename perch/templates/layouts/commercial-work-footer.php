@@ -18,12 +18,9 @@
 </div> <!-- wrapper div -->
 <!-- ScrollMagic main JS  -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
-<!-- ScrollMagic indicators  -->
-<script src="/scripts/minified/debug.addIndicators.min.js"></script>
 <!-- General JS file -->
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script><!-- Local universal JS files -->
 <!-- Page Js  -->
-<!-- TODO: Change to minified version -->
-<script src="/scripts/js/commercial-work.js"></script>
+<script src="/scripts/minified/commercial-work-min.js"></script>
 </body>
 </html>
