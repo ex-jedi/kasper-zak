@@ -28,6 +28,8 @@
 .full-width-commercial-image {
   width: 100%;
   height: auto;
+  clip-path: inset(0% 100% 0% 0%);
+  transition: all 1.5s 0.1s $ease-out-two;
 }
 
 .half-width-commercial-image-wrapper {
@@ -44,4 +46,11 @@
   flex: 1 1 auto;
   width: 40%;
   height: auto;
+  clip-path: inset(0% 0% 0% 100%);
+  transition: all 1s 0.1s $ease-out-two;
+}
+
+//* Image wipe
+.commercial-image-reveal {
+  clip-path: inset(0% 0% 0% 0%);
 }
