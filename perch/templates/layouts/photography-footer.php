@@ -16,20 +16,11 @@
 	</div>
 </footer>
 </div> <!-- wrapper div -->
-<!-- TODO: Change Vue to production  version -->
-<script type="text/javascript" src="/scripts/minified/vue.js" ></script>
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
-<!-- ScrollMagic Greensock  -->
-<script src="/scripts/minified/animation.gsap.min.js"></script>
-<!-- TODO: Remove Indicators -->
-<script src="/scripts/minified/debug.addIndicators.min.js"></script>
-<!-- Greensock -->
-<script src="/scripts/minified/gsap.min.js"></script>
 <!-- General JS file -->
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
 <!-- Homepage JS File  -->
-<!-- TODO: Change to minified for production -->
 <script src="/scripts/minified/photography-min.js"></script>
 </body>
 </html>

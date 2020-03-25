@@ -14,9 +14,5 @@ photoImage.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'photo-image-reveal')
-    .addIndicators({
-      name: 'photo',
-      colorTrigger: '#f00',
-    })
     .addTo(controller);
 });
