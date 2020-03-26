@@ -36,9 +36,8 @@
 .full-width-commercial-image {
   width: 100%;
   height: auto;
-  clip-path: inset(0% 99% 0% 0%);
-  opacity: 0;
-  transition: clip-path 1.5s $ease-out-two, opacity 0.1s 1.3s linear;
+  clip-path: inset(0% 100% 0% 0%);
+  transition: all 1.5s 0.3s $ease-out-two;
 }
 
 .half-width-commercial-image-wrapper {
@@ -55,14 +54,11 @@
   flex: 1 1 auto;
   width: 40%;
   height: auto;
-  opacity: 0;
-  clip-path: inset(0% 0% 0% 99%);
-  transition: clip-path 1.5s $ease-out-two, opacity 0.1s 1.3s linear;
+  clip-path: inset(0% 0% 0% 100%);
+  transition: all 1s 0.3s $ease-out-two;
 }
 
 //* Image wipe
 .commercial-image-reveal {
-  opacity: 1;
   clip-path: inset(0% 0% 0% 0%);
-  transition: clip-path 1.5s $ease-out-two, opacity 0.2s linear;
 }
