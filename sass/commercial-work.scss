@@ -10,29 +10,34 @@
 // ** Main **
 // *=========================================
 
+.commercial-work-section {
+  padding-bottom: $section-spacing-small;
+}
+
 .commercial-work-title,
 .commercial-work-sub-title {
   @include main-font-stack;
   text-align: center;
   font-size: $h2-size;
-}
-
-.commercial-work-title {
   color: $dark-font-colour;
-}
-
-.commercial-work-sub-title {
-  color: $light-font-colour;
+  margin: 0 auto;
+  padding: $heading-spacing-medium 0;
 }
 
 .commercial-image-wrapper {
   width: 100%;
   margin-bottom: $section-spacing-small;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .full-width-commercial-image {
   width: 100%;
   height: auto;
+  clip-path: inset(0% 100% 0% 0%);
+  transition: all 1.5s 0.3s $ease-out-two;
 }
 
 .half-width-commercial-image-wrapper {
@@ -49,4 +54,11 @@
   flex: 1 1 auto;
   width: 40%;
   height: auto;
+  clip-path: inset(0% 0% 0% 100%);
+  transition: all 1s 0.3s $ease-out-two;
+}
+
+//* Image wipe
+.commercial-image-reveal {
+  clip-path: inset(0% 0% 0% 0%);
 }
