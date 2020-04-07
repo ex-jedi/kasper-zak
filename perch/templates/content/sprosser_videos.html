@@ -1,30 +1,27 @@
 <section class="sprosser-videos-section">
-    <img src="/images/video-player-icon.svg" alt="Video player icon" class="video-player-icon">
-    <img class="sprosser-image sprosser-image-one" loading="lazy"src="<perch:content id="sprosserGalleryImageOne" type="image" width="1000" label="Sprosser Image One">" alt="<perch:content id="altOne" type="text" label="Image description">"
-    sizes="50vh"
-    srcset="<perch:content type="image" id="sprosserGalleryImageOne" width="1000" > 1000w,
-    <perch:content type="image" id="sprosserGalleryImageOne" width="800" > 800w,
-    <perch:content type="image" id="sprosserGalleryImageOne" width="600" > 600w,
-    <perch:content type="image" id="sprosserGalleryImageOne" width="400" > 400w" >
+    <!-- <img src="/images/video-player-icon.svg" alt="Video player icon" class="video-player-icon"> -->
+    <button id="play-button" class="play-button" aria-label="Play"></button>
+        <video preload="none" class="sprosser-video video-one" poster="<perch:content id="sprosserVideoPoster" type="image" label="Video Placeholder Image" required >">
+            <source src="/video/sproser.mp4" type="video/mp4">
+            <!-- <source src="" type="video/ogv"> -->
+            <!-- <source src="" type="video/webm"> -->
+        </video>
 
-    <img class="sprosser-image sprosser-image-two" loading="lazy"src="<perch:content id="sprosserGalleryImageTwo" type="image" width="1000" label="Sprosser Image Two">" alt="<perch:content id="altTwo" type="text" label="Image description">"
-    sizes="50vh"
-    srcset="<perch:content type="image" id="sprosserGalleryImageTwo" width="1000" > 1000w,
-    <perch:content type="image" id="sprosserGalleryImageTwo" width="800" > 800w,
-    <perch:content type="image" id="sprosserGalleryImageTwo" width="600" > 600w,
-    <perch:content type="image" id="sprosserGalleryImageTwo" width="400" > 400w" >
+        <video preload="none" class="sprosser-video video-two" poster="<perch:content id="sprosserVideoPoster" type="image">">
+            <source src="/video/sproser.mp4" type="video/mp4">
+            <!-- <source src="" type="video/ogv"> -->
+            <!-- <source src="" type="video/webm"> -->
+        </video>
 
-    <img class="sprosser-image sprosser-image-three" loading="lazy"src="<perch:content id="sprosserGalleryImageThree" type="image" width="1000" label="Sprosser Image Three">" alt="<perch:content id="altThree" type="text" label="Image description">"
-    sizes="50vh"
-    srcset="<perch:content type="image" id="sprosserGalleryImageThree" width="1000" > 1000w,
-    <perch:content type="image" id="sprosserGalleryImageThree" width="800" > 800w,
-    <perch:content type="image" id="sprosserGalleryImageThree" width="600" > 600w,
-    <perch:content type="image" id="sprosserGalleryImageThree" width="400" > 400w" >
+        <video preload="none" class="sprosser-video video-three" poster="<perch:content id="sprosserVideoPoster" type="image">">
+            <source src="/video/sproser.mp4" type="video/mp4">
+            <!-- <source src="" type="video/ogv"> -->
+            <!-- <source src="" type="video/webm"> -->
+        </video>
 
-    <img class="sprosser-image sprosser-image-four" loading="lazy"src="<perch:content id="sprosserGalleryImageFour" type="image" width="1000" label="Sprosser Image Four">" alt="<perch:content id="altFour" type="text" label="Image description">"
-    sizes="50vh"
-    srcset="<perch:content type="image" id="sprosserGalleryImageFour" width="1000" > 1000w,
-    <perch:content type="image" id="sprosserGalleryImageFour" width="800" > 800w,
-    <perch:content type="image" id="sprosserGalleryImageFour" width="600" > 600w,
-    <perch:content type="image" id="sprosserGalleryImageFour" width="400" > 400w" >
+        <video preload="none" class="sprosser-video video-four" poster="<perch:content id="sprosserVideoPoster" type="image">">
+            <source src="/video/sproser.mp4" type="video/mp4">
+            <!-- <source src="" type="video/ogv"> -->
+            <!-- <source src="" type="video/webm"> -->
+        </video>
 </section>
