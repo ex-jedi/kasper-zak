@@ -6,5 +6,5 @@
 	<?php perch_content("Sprosser Videos"); ?>
 	<?php perch_content("Sprosser Text"); ?>
 </main>
-<?php perch_layout('main-footer'); ?>
+<?php perch_layout('sprosser-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->

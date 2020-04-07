@@ -17,8 +17,11 @@
 </footer>
 </div> <!-- wrapper div -->
 <!-- TODO: Change Vue to production version or delete -->
-<script type="text/javascript" src="/scripts/minified/vue.js" ></script>
+<!-- <script type="text/javascript" src="/scripts/minified/vue.js" ></script> -->
 <!-- General JS file -->
-<script type="text/javascript" src="/scripts/minified/universal-min.js"></script><!-- Local universal JS files -->
+<script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
+<!-- Sprosser Js file  -->
+<!-- TODO: Change to minified  -->
+<script src="/scripts/js/sprosser.js"></script>
 </body>
 </html>
