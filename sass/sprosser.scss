@@ -64,18 +64,20 @@
 
 .sprosser-video {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .play-button {
   position: absolute;
+  z-index: 2;
   background-image: url("/images/video-player-icon.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 11rem;
   width: 11rem;
-  border: 0;
+  border: none;
+  outline: none;
   background-color: transparent;
   top: 50%;
   left: 50%;
