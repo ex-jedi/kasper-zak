@@ -25,7 +25,11 @@ body {
   background-position: center;
   padding-top: $header-spacing-medium;
   padding-bottom: $section-spacing-medium;
-  margin-bottom: $section-spacing-small;
+  margin-bottom: 0;
+}
+
+.general-page-title {
+  color: $dark-font-colour;
 }
 
 .installations-link-section {
@@ -46,31 +50,35 @@ body {
   align-items: center;
 }
 
-.installations-link-number,
-.installations-link {
-  color: $light-font-colour;
-}
-
-.installations-link-number {
-  font-size: $h2-size;
-  @include utility-font-stack;
-  font-weight: 300;
-}
-
 .installations-link {
   @include main-font-stack;
+  color: $dark-font-colour;
+  line-height: 1;
 }
 
 .props-link {
-  font-size: $h1-size;
+  display: inline-block;
+  font-size: $font-size-extra-large;
 }
 
-.sprosser-link-number,
 .sprosser-link {
   display: inline-block;
-  transform: translateY(-15px);
+  font-size: $font-size-large;
 }
 
-.sprosser-link {
-  font-size: $h2-size;
+.installations-link-number {
+  @include utility-font-stack;
+  color: inherit;
+  font-weight: 700;
+}
+
+.props-link-number {
+  font-size: $font-size-large;
+  vertical-align: top;
+  margin-top: -11px;
+  display: inline-block;
+}
+
+.sprosser-link-number {
+  vertical-align: bottom;
 }
