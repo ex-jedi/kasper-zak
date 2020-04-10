@@ -1,8 +1,10 @@
 // *=========================================
-// ** Sprosser page JS file  **
+// ** Sprosser page JS file **
 // *=========================================
+
 console.clear();
 // Get play button and videos
+
 const playButton = document.querySelector('.play-button');
 const allVideos = document.querySelectorAll('.sprosser-video');
 const videoOne = document.querySelector('.video-one');
