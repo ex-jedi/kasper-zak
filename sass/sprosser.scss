@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -13,7 +13,7 @@
 //* Page Titles
 .general-page-title {
   width: fit-content;
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -66,34 +66,62 @@
   object-fit: cover;
 }
 
-.play-button {
+.play-button-wrapper {
   position: absolute;
+  @include flex(column);
+  justify-content: center;
+  align-items: center;
   z-index: 2;
-  background-image: url("/images/video-player-icon.svg");
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.5);
+  height: 15rem;
+  width: 15rem;
+
+  &:hover {
+    .pause-button {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+.play-button {
+  background-image: url('/images/video-player-icon.svg');
+}
+
+.pause-button {
+  background-image: url('/images/pause button.svg');
+  opacity: 0;
+  transform: scale(0);
+  display: none;
+}
+
+.play-button,
+.pause-button {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 11rem;
-  width: 11rem;
+  height: 12rem;
+  width: 12rem;
   border: none;
   outline: none;
   background-color: transparent;
-  top: 50%;
-  left: 50%;
   margin: 0;
   padding: 0;
-  transform: translateX(-50%) translateY(-50%) scale(0.5);
   transition: all 0.2s ease-in;
   cursor: pointer;
+
   &:active {
     outline: none;
     border: none;
   }
 }
 
-.hide-play-button {
+.hide-play-and-pause-button {
   transform: scale(0);
   opacity: 0;
+  pointer-events: none;
 }
 
 //* Text
