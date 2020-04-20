@@ -7,10 +7,6 @@ console.clear();
 
 const playButton = document.querySelector('.play-button');
 const allVideos = document.querySelectorAll('.sprosser-video');
-const videoOne = document.querySelector('.video-one');
-const videoTwo = document.querySelector('.video-two');
-const videoThree = document.querySelector('.video-three');
-const videoFour = document.querySelector('.video-four');
 
 // Play button click handler
 function playButtonClickHandler() {
