@@ -10,11 +10,25 @@ const pauseButton = document.querySelector('.pause-button');
 const videoButtonsWrapper = document.querySelector('.play-button-wrapper');
 const allVideos = document.querySelectorAll('.sprosser-video');
 
+// Video mouseover audio track selector
+function videoMouseoverHandler(e) {
+  const { target } = e;
+  allVideos.forEach(video => {
+    if (video !== target) {
+      video.muted = true;
+      video.style.borderColor = '#fff';
+    }
+    target.style.borderColor = '#f00';
+    target.muted = false;
+  });
+}
+
 // Play button click handler
 function playButtonClickHandler() {
-  allVideos.forEach(videos => {
-    if (videos.paused || videos.ended) {
-      videos.play();
+  allVideos.forEach(video => {
+    if (video.paused || video.ended) {
+      video.play();
+      video.addEventListener('mouseover', videoMouseoverHandler);
       playButton.classList.add('hide-play-and-pause-button');
       playButton.addEventListener(
         'transitionend',
@@ -29,11 +43,11 @@ function playButtonClickHandler() {
 }
 
 function pauseButtonClickHandler() {
-  allVideos.forEach(videos => {
+  allVideos.forEach(video => {
     pauseButton.style.display = 'none';
     playButton.style.display = 'block';
     setTimeout(() => playButton.classList.remove('hide-play-and-pause-button'), 100);
-    videos.pause();
+    video.pause();
   });
 }
 
