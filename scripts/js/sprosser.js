@@ -28,11 +28,7 @@ function playButtonClickHandler() {
   allVideos.forEach(video => {
     if (video.paused || video.ended) {
       video.play();
-      if (video.muted) {
-        video.style.borderColor = '#fff';
-      } else {
-        video.style.borderColor = '#f00';
-      }
+      video.muted ? (video.style.borderColor = '#fff') : (video.style.borderColor = '#f00');
       video.addEventListener('mouseover', videoMouseoverHandler);
       playButton.classList.add('hide-play-and-pause-button');
       playButton.addEventListener(
