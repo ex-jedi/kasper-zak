@@ -9,25 +9,10 @@ const tlOne = gsap.timeline({
 });
 
 tlOne
-  .fromTo(
-    '.triptych-image-one',
-    { xPercent: -100 },
-    { xPercent: 0, opacity: 1 },
-    '+=1',
-  )
-  .fromTo(
-    '.triptych-image-three',
-    { xPercent: 100 },
-    { xPercent: 0, opacity: 1 },
-    '-=0.2',
-  )
+  .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0, opacity: 1 }, '+=1')
+  .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0, opacity: 1 }, '-=0.2')
   .addLabel('togetherness', '-=.3')
-  .fromTo(
-    '.triptych-slides-wrapper',
-    { opacity: 0 },
-    { opacity: 1, duration: 1.5, ease: 'none' },
-    'togetherness',
-  )
+  .fromTo('.triptych-slides-wrapper', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'none' }, 'togetherness')
   .fromTo(
     '.triptych-image-two',
     { yPercent: 100 },
@@ -37,14 +22,12 @@ tlOne
       ease: 'elastic.out(1, 0.5)',
       onComplete: slideInterval,
     },
-    'togetherness',
+    'togetherness'
   );
 
 // ********** Homepage Triptych Slider **********
 
-const slides = document.querySelectorAll(
-  '.triptych-slides-wrapper .triptych-image-two',
-);
+const slides = document.querySelectorAll('.triptych-slides-wrapper .triptych-image-two');
 const slidesLength = slides.length - 1;
 console.log(slidesLength);
 let currentSlide = 0;
@@ -54,8 +37,7 @@ let slideChange;
 function nextSlide() {
   slides[currentSlide].className = 'triptych-image-two';
   currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].className =
-    'triptych-image triptych-image-two triptych-image-two-showing';
+  slides[currentSlide].className = 'triptych-image triptych-image-two triptych-image-two-showing';
 
   if (currentSlide === slidesLength) {
     clearInterval(slideChange);
@@ -66,8 +48,7 @@ function nextSlide() {
 function infiniteNextSlide() {
   slides[currentSlide].className = 'triptych-image-two';
   currentSlide = (currentSlide + 1) % slides.length;
-  slides[currentSlide].className =
-    'triptych-image triptych-image-two triptych-image-two-showing';
+  slides[currentSlide].className = 'triptych-image triptych-image-two triptych-image-two-showing';
 
   if (currentSlide === slidesLength) {
     clearInterval(slideChange);
@@ -76,7 +57,7 @@ function infiniteNextSlide() {
 
 // Used as callback function when Triptych GSAP timeline completes
 function slideInterval() {
-  slideChange = setInterval(nextSlide, 125);
+  slideChange = setInterval(nextSlide, 200);
 }
 
 // * Repeat image slideshow on mouse enter
@@ -85,7 +66,7 @@ const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
 let keepOnSliding;
 
 TriptychSlider.addEventListener('mouseenter', function() {
-  keepOnSliding = setInterval(infiniteNextSlide, 125);
+  keepOnSliding = setInterval(infiniteNextSlide, 200);
 });
 TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);
@@ -126,16 +107,8 @@ tlTwo
   .to('.showreel-player', {
     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
   })
-  .fromTo(
-    '.showreel-player-button',
-    { xPercent: -100 },
-    { xPercent: 0, opacity: 1 },
-  )
-  .fromTo(
-    '.showreel-player-arrow',
-    { yPercent: -10, opacity: 0 },
-    { yPercent: 0, opacity: 1, onComplete },
-  );
+  .fromTo('.showreel-player-button', { xPercent: -100 }, { xPercent: 0, opacity: 1 })
+  .fromTo('.showreel-player-arrow', { yPercent: -10, opacity: 0 }, { yPercent: 0, opacity: 1, onComplete });
 
 // GSAP callback to add repeating animation
 function onComplete() {
@@ -161,9 +134,7 @@ const showReel = new ScrollMagic.Scene({
 // ********** Homepage Triptych Two **********
 
 // Collect elements to fade in
-const triptychImageTwo = document.querySelectorAll(
-  '.triptych-section-two-image',
-);
+const triptychImageTwo = document.querySelectorAll('.triptych-section-two-image');
 
 // For indicators in the scene
 // TODO: What's this for?
@@ -185,12 +156,7 @@ triptychImageTwo.forEach(function(item) {
 // * Parallax Scene
 
 const parallaxTl = gsap.timeline();
-parallaxTl.from(
-  '.homepage-illustration',
-  2,
-  { y: '-70%', ease: Power0.easeNone },
-  0,
-);
+parallaxTl.from('.homepage-illustration', 2, { y: '-70%', ease: Power0.easeNone }, 0);
 
 const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
@@ -205,9 +171,7 @@ const slideParallaxScene = new ScrollMagic.Scene({
 // Grabbing page elements
 const playerButton = document.querySelector('.showreel-player-button');
 const showreelVideo = document.querySelector('.showreel-video');
-const showreelVideoWrapper = document.querySelector(
-  '.homepage-showreel-wrapper',
-);
+const showreelVideoWrapper = document.querySelector('.homepage-showreel-wrapper');
 const closeButton = document.querySelector('.close-button');
 const noScrollWrapper = document.querySelector('body');
 
@@ -255,7 +219,7 @@ showreelTl
   .fromTo(
     showreelVideoWrapper,
     { clipPath: 'polygon(0 0, 0 100%, 0 100%, 0 0)' },
-    { ease: 'power3.in', clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0)' },
+    { ease: 'power3.in', clipPath: 'polygon(100% 0, 100% 100%, 0 100%, 0 0)' }
   )
   .fromTo(
     showreelVideo,
@@ -263,7 +227,7 @@ showreelTl
     {
       ease: 'power4.inOut',
       clipPath: 'polygon(0 0, 0 100%, 100% 100%, 100% 0)',
-    },
+    }
   )
   .to(closeButton, { duration: 0.3, opacity: 0, onComplete: playShowreel });
 
