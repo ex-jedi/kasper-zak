@@ -10,6 +10,12 @@
 #Header set Cache-Control "max-age=2592000, public"
 #</filesMatch>
 
+# 404 Page
+ErrorDocument 404 /404.php
+
+# 403 Page
+ErrorDocument 403 /404.php
+
 <IfModule mod_rewrite.c>
 RewriteEngine on
 # 301 redirect to https
