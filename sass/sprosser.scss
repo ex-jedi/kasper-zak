@@ -23,7 +23,7 @@
   color: $dark-font-colour;
 }
 
-.installations-subtitle-wrapper {
+.sprosser-subtitle-wrapper {
   @include flex(row);
   justify-content: center;
   align-items: center;
@@ -32,17 +32,17 @@
   margin: $section-spacing-medium auto;
 }
 
-.installations-subtitle {
+.sprosser-subtitle {
   color: $dark-font-colour;
   font-weight: normal;
   margin: 0;
 }
 
-.installations-subtitle-one {
+.sprosser-subtitle-one {
   margin-right: $section-spacing-small;
 }
 
-.installations-subtitle-two {
+.sprosser-subtitle-two {
   width: 50%;
 }
 
@@ -128,7 +128,7 @@
 
 //* Text
 
-.installations-text-section {
+.sprosser-text-section {
   @include main-font-stack;
 
   color: $dark-font-colour;
