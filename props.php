@@ -6,5 +6,6 @@
 	<?php perch_content("Props Gallery"); ?>
 	<?php perch_content("Props Text"); ?>
 </main>
-<?php perch_layout('main-footer'); ?>
+<?php perch_layout('universal-footer'); ?>
+<?php perch_layout('props-footer-end-js'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->

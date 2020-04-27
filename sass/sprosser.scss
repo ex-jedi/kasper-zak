@@ -23,7 +23,7 @@
   color: $dark-font-colour;
 }
 
-.installations-subtitle-wrapper {
+.sprosser-subtitle-wrapper {
   @include flex(row);
   justify-content: center;
   align-items: center;
@@ -32,17 +32,17 @@
   margin: $section-spacing-medium auto;
 }
 
-.installations-subtitle {
+.sprosser-subtitle {
   color: $dark-font-colour;
   font-weight: normal;
   margin: 0;
 }
 
-.installations-subtitle-one {
+.sprosser-subtitle-one {
   margin-right: $section-spacing-small;
 }
 
-.installations-subtitle-two {
+.sprosser-subtitle-two {
   width: 50%;
 }
 
@@ -51,10 +51,12 @@
 .sprosser-videos-section {
   position: relative;
   display: grid;
+  width: auto;
+  overflow: hidden;
   grid-template-columns: repeat(2, 1fr);
   justify-items: stretch;
   align-items: stretch;
-  margin: 0 $section-spacing-small;
+  margin: 0 $paragraph-spacing-small;
 
   @include breakpoint(1200) {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
@@ -128,10 +130,22 @@
 
 //* Text
 
-.installations-text-section {
+.sprosser-text-section {
   @include main-font-stack;
 
   color: $dark-font-colour;
   font-size: $font-size-medium;
   padding: $section-spacing-medium;
+}
+
+.sprosser-fade-in {
+  // Set up fade in
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.sprosser-fade-in-reveal {
+  transform: rotateX(0);
+  opacity: 1;
 }

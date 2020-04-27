@@ -2,15 +2,32 @@
 // ** Sprosser page JS file **
 // *=========================================
 
-console.clear();
-// Get play button and videos
+// ********** Text Fade In **********
 
+// * Init ScrollMagic
+const controller = new ScrollMagic.Controller();
+
+const fadeInText = document.querySelectorAll('.sprosser-fade-in');
+// Loop through elements to add animation
+fadeInText.forEach(function(text) {
+  const sceneOne = new ScrollMagic.Scene({
+    triggerElement: text,
+    triggerHook: 0.8,
+    // reverse: false,
+  })
+    .setClassToggle(text, 'sprosser-fade-in-reveal')
+    .addTo(controller);
+});
+
+// ********** Videos **********
+
+// Get play button and videos
 const playButton = document.querySelector('.play-button');
 const pauseButton = document.querySelector('.pause-button');
-const videoButtonsWrapper = document.querySelector('.play-button-wrapper');
-const allVideos = document.querySelectorAll('.sprosser-video');
+const allVideos = Array.from(document.querySelectorAll('.sprosser-video'));
 
-// Video mouseover audio track selector
+// Play audio of video on hover and mute the others
+// Add border color to video with active audio
 function videoMouseoverHandler(e) {
   const { target } = e;
   allVideos.forEach(video => {
@@ -28,9 +45,10 @@ function playButtonClickHandler() {
   allVideos.forEach(video => {
     if (video.paused || video.ended) {
       video.play();
+      // eslint-disable-next-line no-unused-expressions
       video.muted ? (video.style.borderColor = '#fff') : (video.style.borderColor = '#f00');
-      video.addEventListener('mouseover', videoMouseoverHandler);
       playButton.classList.add('hide-play-and-pause-button');
+      video.addEventListener('mouseover', videoMouseoverHandler);
       playButton.addEventListener(
         'transitionend',
         () => {
@@ -52,6 +70,14 @@ function pauseButtonClickHandler() {
   });
 }
 
-// Add event listener to button
+function videosEndedHandler() {
+  const ended = allVideos.every(video => video.ended);
+  if (ended) pauseButtonClickHandler();
+}
+
+// Add event listener to play button
 playButton.addEventListener('click', playButtonClickHandler);
+// Add event listener to pause button
 pauseButton.addEventListener('click', pauseButtonClickHandler);
+// Add event listener to all videos
+allVideos.forEach(video => video.addEventListener('ended', videosEndedHandler));
