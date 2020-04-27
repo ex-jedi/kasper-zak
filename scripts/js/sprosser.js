@@ -25,7 +25,7 @@ fadeInText.forEach(function(text) {
 // Get play button and videos
 const playButton = document.querySelector('.play-button');
 const pauseButton = document.querySelector('.pause-button');
-const allVideos = document.querySelectorAll('.sprosser-video');
+const allVideos = Array.from(document.querySelectorAll('.sprosser-video'));
 
 // Play audio of video on hover and mute the others
 // Add border color to video with active audio
@@ -71,13 +71,20 @@ function pauseButtonClickHandler() {
 }
 
 function videosEndedHandler() {
-  const counter = 1;
-  if (video.paused || video.ended) {
-    console.log(`Video ${counter} Ended`);
-  }
+  let counter = 0;
+  allVideos.forEach(video => {
+    if (video.ended) {
+      counter += 1;
+    }
+    if (counter === allVideos.length) {
+      pauseButtonClickHandler();
+    }
+  });
 }
 
 // Add event listener to play button
 playButton.addEventListener('click', playButtonClickHandler);
 // Add event listener to pause button
 pauseButton.addEventListener('click', pauseButtonClickHandler);
+// Add event listener to all videos
+allVideos.forEach(video => video.addEventListener('ended', videosEndedHandler));
