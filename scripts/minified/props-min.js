@@ -1,2 +1,2 @@
-const fadeInText=document.querySelectorAll(".props-fade-in");
+const controller=new ScrollMagic.Controller,fadeInParagraphs=document.querySelectorAll(".installations-text-section p");fadeInParagraphs.forEach(e=>e.classList.add("fade-in"));const fadeInText=document.querySelectorAll(".fade-in");fadeInText.forEach((function(e){new ScrollMagic.Scene({triggerElement:e,triggerHook:.7}).setClassToggle(e,"fade-in-reveal").addIndicators().addTo(controller)}));
 //# sourceMappingURL=props-min.js.map
