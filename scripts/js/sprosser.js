@@ -46,6 +46,7 @@ function playButtonClickHandler() {
   allVideos.forEach(video => {
     if (video.paused || video.ended) {
       video.play();
+      // eslint-disable-next-line no-unused-expressions
       video.muted ? (video.style.borderColor = '#fff') : (video.style.borderColor = '#f00');
       playButton.classList.add('hide-play-and-pause-button');
       video.addEventListener('mouseover', videoMouseoverHandler);
@@ -73,7 +74,6 @@ function pauseButtonClickHandler() {
 function videosEndedHandler() {
   const ended = allVideos.every(video => video.ended);
   if (ended) pauseButtonClickHandler();
-  console.log('Ended', ended);
 }
 
 // Add event listener to play button

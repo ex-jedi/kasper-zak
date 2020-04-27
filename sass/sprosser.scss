@@ -51,10 +51,12 @@
 .sprosser-videos-section {
   position: relative;
   display: grid;
+  width: auto;
+  overflow: hidden;
   grid-template-columns: repeat(2, 1fr);
   justify-items: stretch;
   align-items: stretch;
-  margin: 0 $section-spacing-small;
+  margin: 0 $paragraph-spacing-small;
 
   @include breakpoint(1200) {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
