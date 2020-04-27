@@ -18,10 +18,6 @@
 </div> <!-- wrapper div -->
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
-<!-- TODO: Remove Indicators -->
-<script src="/scripts/minified/debug.addIndicators.min.js"></script>
-<!-- TODO: Change Vue to production version or delete -->
-<!-- <script type="text/javascript" src="/scripts/minified/vue.js" ></script> -->
 <!-- General JS file -->
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
 <!-- Sprosser Js file  -->
