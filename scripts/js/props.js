@@ -31,7 +31,6 @@ fadeInText.forEach(function(text) {
 const photoImageFadeIn = document.querySelectorAll('.props-image');
 
 photoImageFadeIn.forEach(function(item) {
-  debugger;
   const sceneTwo = new ScrollMagic.Scene({
     triggerElement: item,
     triggerHook: 0.6,
