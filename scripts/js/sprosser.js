@@ -71,15 +71,9 @@ function pauseButtonClickHandler() {
 }
 
 function videosEndedHandler() {
-  let counter = 0;
-  allVideos.forEach(video => {
-    if (video.ended) {
-      counter += 1;
-    }
-    if (counter === allVideos.length) {
-      pauseButtonClickHandler();
-    }
-  });
+  const ended = allVideos.every(video => video.ended);
+  if (ended) pauseButtonClickHandler();
+  console.log('Ended', ended);
 }
 
 // Add event listener to play button
