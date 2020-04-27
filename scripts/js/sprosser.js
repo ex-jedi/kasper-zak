@@ -2,6 +2,24 @@
 // ** Sprosser page JS file **
 // *=========================================
 
+// ********** Text Fade In **********
+
+// * Init ScrollMagic
+const controller = new ScrollMagic.Controller();
+
+const fadeInText = document.querySelectorAll('.sprosser-fade-in');
+// Loop through elements to add animation
+fadeInText.forEach(function(text) {
+  const sceneOne = new ScrollMagic.Scene({
+    triggerElement: text,
+    triggerHook: 0.8,
+    // reverse: false,
+  })
+    .setClassToggle(text, 'sprosser-fade-in-reveal')
+    .addIndicators()
+    .addTo(controller);
+});
+
 // ********** Videos **********
 
 // Get play button and videos
