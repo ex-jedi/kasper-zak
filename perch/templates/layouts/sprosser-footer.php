@@ -21,7 +21,6 @@
 <!-- General JS file -->
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
 <!-- Sprosser Js file  -->
-<!-- TODO: Change to minified  -->
-<script src="/scripts/js/sprosser.js"></script>
+<script src="/scripts/minified/sprosser-min.js"></script>
 </body>
 </html>
