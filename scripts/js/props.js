@@ -2,10 +2,10 @@
 // ** Props   **
 // *=========================================
 
-// ********** Text Fade In **********
-
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
+
+// ********** Text Fade In **********
 
 const fadeInParagraphs = document.querySelectorAll('.installations-text-section p');
 fadeInParagraphs.forEach(paragraph => paragraph.classList.add('fade-in'));
@@ -19,6 +19,27 @@ fadeInText.forEach(function(text) {
     // reverse: false,
   })
     .setClassToggle(text, 'fade-in-reveal')
-    .addIndicators()
+    .addIndicators({
+      name: 'Text fade',
+      colorTrigger: '#f00',
+    })
+    .addTo(controller);
+});
+
+// ********** Photo Fade In **********
+
+const photoImageFadeIn = document.querySelectorAll('.props-image');
+
+photoImageFadeIn.forEach(function(item) {
+  debugger;
+  const sceneTwo = new ScrollMagic.Scene({
+    triggerElement: item,
+    triggerHook: 0.6,
+    // reverse: false,
+  })
+    .setClassToggle(item, 'photo-image-reveal')
+    .addIndicators({
+      name: 'Photo fade',
+    })
     .addTo(controller);
 });
