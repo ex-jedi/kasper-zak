@@ -16,7 +16,6 @@ fadeInText.forEach(function(text) {
     // reverse: false,
   })
     .setClassToggle(text, 'sprosser-fade-in-reveal')
-    .addIndicators()
     .addTo(controller);
 });
 
