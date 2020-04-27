@@ -9,5 +9,5 @@
 	<?php perch_content("General Contact Form"); ?>
 </main>
 	<?php perch_content("Showreel Player"); ?>
-	<?php perch_layout('homepage-footer'); ?>
-<!-- <?php PerchUtil::output_debug(); ?> -->
+	<?php perch_layout('universal-footer'); ?>
+	<?php perch_layout('homepage-footer-end-js'); ?>
