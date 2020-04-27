@@ -19,10 +19,6 @@ fadeInText.forEach(function(text) {
     // reverse: false,
   })
     .setClassToggle(text, 'fade-in-reveal')
-    .addIndicators({
-      name: 'Text fade',
-      colorTrigger: '#f00',
-    })
     .addTo(controller);
 });
 
@@ -37,8 +33,5 @@ photoImageFadeIn.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'photo-image-reveal')
-    .addIndicators({
-      name: 'Photo fade',
-    })
     .addTo(controller);
 });
