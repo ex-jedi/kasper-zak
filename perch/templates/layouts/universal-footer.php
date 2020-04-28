@@ -1,3 +1,4 @@
+<!-- Universal footer  -->
 <footer class="main-footer">
 <?php perch_content("Footer Social Media"); ?>
 	<div class="footer-legal">
