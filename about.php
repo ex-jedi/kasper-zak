@@ -5,5 +5,6 @@
 	<?php perch_content("Image And Text"); ?>
 	<?php perch_content("General Contact Form"); ?>
 </main>
-<?php perch_layout('main-footer'); ?>
+<?php perch_layout('universal-footer'); ?>
+<?php perch_layout('about-footer-end-js'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
