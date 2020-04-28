@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -28,7 +28,7 @@
 
 .general-page-title {
   width: fit-content;
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -43,6 +43,8 @@
   float: left;
   width: 35%;
   margin-right: $section-spacing-small;
+
+  animation: bounce 5s ease-in-out infinite alternate;
 }
 
 //* Text
@@ -62,10 +64,23 @@
   }
 }
 
+//* Text fade in
+
+.fade-in-text {
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-reveal {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
 //* Contact Form
 
 .contact-form-intro-text {
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;
