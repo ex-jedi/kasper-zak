@@ -1,0 +1,20 @@
+//*==============================================================================
+//** Terms and Conditions &  **
+//*==============================================================================
+
+//* Imports
+
+@import 'bits'; //Contains variables, media queries mixins etc.
+
+//* Page Titles
+.general-page-title {
+  width: fit-content;
+  background-image: url('/images/birds-background-images.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: $heading-spacing-large $paragraph-spacing-large;
+  font-size: $font-size-large;
+  margin: 0 auto;
+  color: $dark-font-colour;
+}
