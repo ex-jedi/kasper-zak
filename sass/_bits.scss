@@ -11,9 +11,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
-    "h h h h"
-    "m m m m"
-    "f f f f";
+    'h h h h'
+    'm m m m'
+    'f f f f';
   grid-gap: $grid-gap;
 }
 
@@ -32,13 +32,13 @@ $grid-gap: 0 1rem;
 
 //* Font Stacks
 @mixin main-font-stack {
-  font-family: "baskerville-poster-pt", serif;
+  font-family: 'baskerville-poster-pt', serif;
   font-weight: 400;
   line-height: 1.5;
 }
 
 @mixin utility-font-stack {
-  font-family: "calluna-sans", sans-serif;
+  font-family: 'calluna-sans', sans-serif;
   font-weight: 400;
 }
 
@@ -54,6 +54,7 @@ $font-size-small: 1rem;
 //* Heading Sizing
 $h1-size: $font-size-extra-large;
 $h2-size: $font-size-extra-large;
+$h2-size-small: $font-size-large;
 $h3-size: 1rem;
 
 //* Forms
@@ -219,7 +220,7 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 
   &::after,
   &::before {
-    content: "";
+    content: '';
     width: 1px;
     height: 1px;
     padding: 1px;

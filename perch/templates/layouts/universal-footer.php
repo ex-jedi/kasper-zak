@@ -1,3 +1,4 @@
+<!-- Universal footer  -->
 <footer class="main-footer">
 <?php perch_content("Footer Social Media"); ?>
 	<div class="footer-legal">
@@ -11,7 +12,7 @@
 	</div>
 	<div class="footer-promo">
 		<p>
-			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="#" class="footer-link promo-link">phoenix & phoenix</a>
+			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="https://phoenixandphoenix.co/" class="footer-link promo-link">phoenix & phoenix</a>
 		</p>
 	</div>
 </footer>
