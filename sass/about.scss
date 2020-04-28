@@ -62,6 +62,19 @@
   }
 }
 
+//* Text fade in
+
+.fade-in-text {
+  transform: rotateX(90deg);
+  opacity: 0;
+  transition: all 0.6s ease-out;
+}
+
+.fade-in-reveal {
+  opacity: 1;
+  transform: rotateX(0);
+}
+
 //* Contact Form
 
 .contact-form-intro-text {
