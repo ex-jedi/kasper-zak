@@ -20,6 +20,5 @@ fadeInText.forEach(function(text) {
     // reverse: false,
   })
     .setClassToggle(text, 'fade-in-reveal')
-    .addIndicators()
     .addTo(controller);
 });

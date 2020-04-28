@@ -1,5 +1,3 @@
-<!-- TODO: Change Vue to production version or delete -->
-<script type="text/javascript" src="/scripts/minified/vue.js"></script>
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
 <!-- TODO: Remove Indicators -->
