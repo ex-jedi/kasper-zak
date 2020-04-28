@@ -14,7 +14,13 @@
   background-size: contain;
   background-position: center;
   padding: $heading-spacing-large $paragraph-spacing-large;
-  font-size: $font-size-large;
+  font-size: $h2-size-small;
   margin: 0 auto;
   color: $dark-font-colour;
+}
+
+.legals-text-section {
+  @include main-font-stack;
+  font-size: $font-size-medium;
+  padding: 0 $section-spacing-medium $section-spacing-medium;
 }
