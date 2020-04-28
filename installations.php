@@ -3,6 +3,7 @@
 <main class="main-content installations-main-content" id="main-content">
 	<?php perch_content("Page Title"); ?>
 	<?php perch_layout("installations-links"); ?>
+	<?php perch_layout("svg-divider"); ?>
 </main>
 <?php perch_layout('main-footer'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
