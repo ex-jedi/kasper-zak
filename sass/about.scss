@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -28,7 +28,7 @@
 
 .general-page-title {
   width: fit-content;
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -65,7 +65,7 @@
 //* Contact Form
 
 .contact-form-intro-text {
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top right;

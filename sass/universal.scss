@@ -5,7 +5,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Wrappers **
@@ -38,6 +38,7 @@ main {
   position: relative;
   z-index: 2;
   background-color: $main-background-colour;
+  overflow: hidden;
 }
 
 section {
@@ -273,7 +274,7 @@ select {
     top: 0.5rem;
 
     &:before {
-      content: "";
+      content: '';
       display: inline-block;
       width: 0.9rem;
       height: 0.9rem;
@@ -285,7 +286,7 @@ select {
     }
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 7px;
       width: 16px;
@@ -331,6 +332,15 @@ select {
   position: absolute;
   z-index: -10;
   opacity: 0;
+}
+
+//********** Section divider **********
+
+.section-divider {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0;
 }
 
 // *=========================================
