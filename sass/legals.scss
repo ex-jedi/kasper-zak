@@ -13,10 +13,11 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding: $heading-spacing-large $paragraph-spacing-large;
   font-size: $h2-size-small;
-  margin: 0 auto;
+  line-height: 1;
+  margin: $section-spacing-medium auto;
   color: $dark-font-colour;
+  z-index: 1;
 }
 
 .birds-background-image {
@@ -32,6 +33,14 @@
   @include main-font-stack;
   font-size: $font-size-medium;
   padding: 0 $section-spacing-medium $section-spacing-medium;
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 
   @include breakpoint(1500) {
     padding: 0 $section-spacing-small $section-spacing-small;
