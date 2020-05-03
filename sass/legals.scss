@@ -23,4 +23,12 @@
   @include main-font-stack;
   font-size: $font-size-medium;
   padding: 0 $section-spacing-medium $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    padding: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    padding: 0 $section-spacing-extra-small $section-spacing-extra-small;
+  }
 }
