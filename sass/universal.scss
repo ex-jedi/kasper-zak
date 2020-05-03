@@ -382,6 +382,9 @@ footer {
   left: 0;
   width: 100%;
   z-index: 1;
+  //FIXME: Tricky when footer overflows vertically
+  overflow: scroll;
+  max-height: 100vh;
 }
 
 .footer-social-media-wrapper {

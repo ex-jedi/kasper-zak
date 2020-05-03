@@ -28,6 +28,10 @@
   max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
+
+  @include breakpoint(700) {
+    display: none;
+  }
 }
 
 .legals-text-section {

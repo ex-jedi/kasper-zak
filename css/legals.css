@@ -43,6 +43,11 @@
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
 }
+@media (max-width: 700px) {
+  .birds-background-image {
+    display: none;
+  }
+}
 
 .legals-text-section {
   font-family: "baskerville-poster-pt", serif;
