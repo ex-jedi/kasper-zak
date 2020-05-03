@@ -18,6 +18,14 @@
   margin: $section-spacing-medium auto;
   color: $dark-font-colour;
   z-index: 1;
+
+  @include breakpoint(900) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+  }
 }
 
 .birds-background-image {

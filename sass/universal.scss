@@ -104,7 +104,7 @@ header {
     margin: $header-spacing-small;
   }
   //* Last breakpoint
-  @include breakpoint(375) {
+  @include breakpoint(400) {
     margin: $header-spacing-extra-small;
   }
 }

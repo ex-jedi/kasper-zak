@@ -31,6 +31,16 @@
   color: #2f2f2f;
   z-index: 1;
 }
+@media (max-width: 900px) {
+  .general-page-title {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 400px) {
+  .general-page-title {
+    font-size: 3rem;
+  }
+}
 
 .birds-background-image {
   position: absolute;
