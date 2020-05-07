@@ -65,6 +65,7 @@ function pauseButtonClickHandler() {
   allVideos.forEach(video => {
     pauseButton.style.display = 'none';
     playButton.style.display = 'block';
+    video.removeEventListener('mouseover', videoMouseoverHandler);
     setTimeout(() => playButton.classList.remove('hide-play-and-pause-button'), 100);
     video.pause();
   });
