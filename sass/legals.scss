@@ -15,12 +15,13 @@
   background-position: center;
   font-size: $h2-size-small;
   line-height: 1;
-  margin: $section-spacing-medium auto;
+  margin: $heading-spacing-large auto;
   color: $dark-font-colour;
   z-index: 1;
 
   @include breakpoint(900) {
     font-size: $h2-size-smaller;
+    margin: $heading-spacing-medium auto;
   }
 
   @include breakpoint(400) {
