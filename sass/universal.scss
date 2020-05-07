@@ -103,11 +103,11 @@ header {
   width: 100%;
   //* Menu breakpoint
   @include breakpoint(700) {
-    margin: $header-spacing-small;
+    margin: $header-spacing-small $header-spacing-small 0;
   }
   //* Last breakpoint
   @include breakpoint(400) {
-    margin: $header-spacing-extra-small;
+    margin: $header-spacing-extra-small $header-spacing-extra-small 0;
   }
 }
 

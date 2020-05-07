@@ -24,8 +24,13 @@
     margin: $heading-spacing-medium auto;
   }
 
+  @include breakpoint(700) {
+    margin: $heading-spacing-small auto;
+  }
+
   @include breakpoint(400) {
     font-size: $h2-size-extra-small;
+    margin: $heading-spacing-tiny auto;
   }
 }
 
@@ -37,6 +42,10 @@
   max-width: 80%;
   left: 50%;
   transform: translateX(-50%);
+
+  @include breakpoint(900) {
+    top: -300px;
+  }
 
   @include breakpoint(700) {
     display: none;
