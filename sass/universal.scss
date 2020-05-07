@@ -19,6 +19,8 @@ html {
   -webkit-tap-highlight-color: transparent;
   font-size: 20px;
   overflow-x: hidden;
+  // Fixes stick footer overflow
+  background-color: $dark-background-colour;
 }
 
 // * Box sizing rules
@@ -382,8 +384,7 @@ footer {
   left: 0;
   width: 100%;
   z-index: 1;
-  //FIXME: Tricky when footer overflows vertically
-  overflow: scroll;
+  // Fixes stick footer overflow
   max-height: 100vh;
 }
 
