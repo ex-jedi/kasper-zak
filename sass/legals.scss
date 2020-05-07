@@ -9,10 +9,6 @@
 //* Page Titles
 .general-page-title {
   width: fit-content;
-  // background-image: url('/images/birds-background-images.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   font-size: $h2-size-small;
   line-height: 1;
   margin: $heading-spacing-large auto;
@@ -70,6 +66,12 @@
   }
 
   @include breakpoint(900) {
+    font-size: $font-size-smaller;
     padding: 0 $section-spacing-extra-small $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-small;
+    padding: 0 $section-spacing-tiny $section-spacing-tiny;
   }
 }
