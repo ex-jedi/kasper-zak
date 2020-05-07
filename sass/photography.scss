@@ -45,6 +45,11 @@
     padding: $section-spacing-extra-small 0 $section-spacing-extra-small
       $section-spacing-extra-small;
   }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-tiny 0 $section-spacing-tiny;
+    text-align: center;
+  }
 }
 
 .photo-gallery-section {
