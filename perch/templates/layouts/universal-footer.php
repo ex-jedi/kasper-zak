@@ -3,16 +3,16 @@
 <?php perch_content("Footer Social Media"); ?>
 	<div class="footer-legal">
 		<p class="footer-terms">
-			<a class="footer-link footer-legals-link"  href="/terms.php">TERMS OF USE</a>
+			<a class="footer-link footer-legals-link"  href="/terms.php">Terms of use</a>
 		</p>
 		<p class="footer-privacy">
-			<a class="footer-link footer-legals-link"  href="/privacy-and-cookie-policy.php">PRIVACY &amp; COOKIE PRIVACY POLICY</a>
+			<a class="footer-link footer-legals-link"  href="/privacy-and-cookie-policy.php">Privacy and cookie policy</a>
 		</p>
 		<p class="footer-copyright" >&copy; <?php echo date("Y"); ?> Kasper Zak</p>
 	</div>
 	<div class="footer-promo">
 		<p>
-			WEB DESIGN & DEVELOPMENT, BRAND DESIGN & ILLUSTRATION BY <a href="https://phoenixandphoenix.co/" class="footer-link promo-link">phoenix & phoenix</a>
+			Brand design, illustration, web design &amp; development by phoenix &amp; phoenix. <a href="https://phoenixandphoenix.co/" class="footer-link promo-link">phoenix & phoenix</a>
 		</p>
 	</div>
 </footer>

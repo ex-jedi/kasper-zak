@@ -4,30 +4,51 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
 // *=========================================
 
 .general-page-title {
-  @include main-font-stack;
   color: $light-font-colour;
-  margin: 0 0 0 $h2-size;
-  padding: $heading-spacing-medium;
+  margin: 0 0 0 $heading-spacing-small;
+  padding: $heading-spacing-medium 0 $heading-spacing-medium
+    $heading-spacing-small;
   font-size: $h2-size;
   position: relative;
-  text-align-last: left;
+  text-align: left;
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
     background-color: $accent-background-colour;
     width: 100%;
-    height: 90vh;
+    height: 75vh;
+
+    @include breakpoint(900) {
+      display: none;
+    }
+  }
+
+  @include breakpoint(1500) {
+    padding: $heading-spacing-small 0 $heading-spacing-small
+      $heading-spacing-small;
+    font-size: 13.5vw;
+  }
+
+  @include breakpoint(900) {
+    margin: 0;
+    padding: $section-spacing-extra-small 0 $section-spacing-extra-small
+      $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-tiny 0 $section-spacing-tiny;
+    text-align: center;
   }
 }
 
@@ -38,25 +59,27 @@
 .photo-wrapper {
   margin: 0 0 $section-spacing-medium;
   width: 100%;
+  max-height: 95vh;
+
+  @include breakpoint(900) {
+    margin: 0 0 $section-spacing-extra-small;
+  }
 }
 
 .double-photo-wrapper {
   @include flex(row);
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
-  height: 95vh;
 }
 
 .full-width-photo-image-wrapper {
   flex: 0 0 auto;
-  height: 95vh;
   overflow: hidden;
 }
 
 .full-width-photo-image {
   clip-path: inset(0% 0% 0% 100%);
-  // height: 100vh;
   width: 100%;
   object-fit: cover;
   transition: all 1.5s 0.1s $ease-out-two;
@@ -65,7 +88,6 @@
 .half-width-photo-image {
   flex: 0 1 auto;
   width: 48%;
-  // height: 100vh;
   justify-content: space-between;
   clip-path: inset(0% 100% 0% 0%);
   transition: all 1s 0.1s $ease-out-two;

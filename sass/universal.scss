@@ -19,6 +19,8 @@ html {
   -webkit-tap-highlight-color: transparent;
   font-size: 20px;
   overflow-x: hidden;
+  // Fixes stick footer overflow
+  background-color: $dark-background-colour;
 }
 
 // * Box sizing rules
@@ -30,8 +32,11 @@ html {
 
 body {
   background-color: $main-background-colour;
-  margin: 0;
+  margin: 0 auto;
   position: relative;
+  //TODO: Check site min and max widths
+  min-width: 320px;
+  max-width: 2200px;
 }
 
 main {
@@ -77,8 +82,8 @@ a {
 }
 
 // *=========================================
-// ** Header  **
 // *=========================================
+// ** Header  **
 
 header {
   @include flex(row);
@@ -94,17 +99,35 @@ header {
 
 .header-inner-wrapper {
   @include flex(row);
-  margin: $header-spacing-extra-small 0 $header-spacing-small;
+  margin: $header-spacing-small 0 0;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 100%;
+  //* Menu breakpoint
+  @include breakpoint(700) {
+    margin: $header-spacing-small $header-spacing-small 0;
+  }
+  //* Last breakpoint
+  @include breakpoint(400) {
+    margin: $header-spacing-extra-small $header-spacing-extra-small 0;
+  }
 }
 
 .main-logo {
   height: $section-spacing-medium;
   width: auto;
+  max-width: 100%;
   margin: 0 auto;
+
+  @include breakpoint(900) {
+    width: 60%;
+    height: auto;
+  }
+  //* Menu Breakpoint
+  @include breakpoint(700) {
+    width: 100%;
+  }
 }
 
 // *=========================================
@@ -121,6 +144,10 @@ header {
   padding: 0;
   overflow: hidden;
   position: relative;
+  //* Menu breakpoint
+  @include breakpoint(700) {
+    display: none;
+  }
 }
 
 .main-nav-ul {
@@ -142,7 +169,7 @@ header {
 .main-nav-trigger {
   position: fixed;
   right: $header-spacing-small;
-  top: $header-spacing-extra-small;
+  top: $header-spacing-small;
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
@@ -352,7 +379,7 @@ footer {
   @include utility-font-stack;
   color: $light-font-colour;
   align-items: center;
-  padding: $section-spacing-medium 0;
+  padding: $section-spacing-medium $paragraph-spacing-small;
   background-color: $dark-background-colour;
   margin: 0;
   position: sticky;
@@ -360,6 +387,8 @@ footer {
   left: 0;
   width: 100%;
   z-index: 1;
+  // Fixes stick footer overflow
+  max-height: 100vh;
 }
 
 .footer-social-media-wrapper {
@@ -367,6 +396,22 @@ footer {
   justify-content: space-between;
   width: 40%;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1500) {
+    width: 50%;
+  }
+
+  @include breakpoint(900) {
+    width: 60%;
+  }
+
+  @include breakpoint(700) {
+    width: 75%;
+  }
+
+  @include breakpoint(400) {
+    width: 100%;
+  }
 }
 
 .footer-social-media-link {
@@ -380,9 +425,14 @@ footer {
   }
 }
 
+.footer-social-media-icon {
+  height: 40px;
+}
+
 .footer-terms,
 .footer-privacy,
-.footer-copyright {
+.footer-copyright,
+.footer-promo {
   margin-bottom: $section-spacing-small;
   text-align: center;
   font-weight: bold;

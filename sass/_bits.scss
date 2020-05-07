@@ -49,12 +49,16 @@ $font-size-super-large: 15rem;
 $font-size-extra-large: 10rem;
 $font-size-large: 5rem;
 $font-size-medium: 2.5rem;
-$font-size-small: 1rem;
+$font-size-smaller: 2rem;
+$font-size-small: 1.5rem;
 
 //* Heading Sizing
 $h1-size: $font-size-extra-large;
 $h2-size: $font-size-extra-large;
+$h2-size-medium: 8rem;
 $h2-size-small: $font-size-large;
+$h2-size-smaller: 3.75rem;
+$h2-size-extra-small: 3rem;
 $h3-size: 1rem;
 
 //* Forms
@@ -73,10 +77,10 @@ $header-spacing-small: 2.5rem;
 $header-spacing-medium: 5rem;
 $header-spacing-large: 10rem;
 
-$heading-spacing-large: 5rem;
-$heading-spacing-medium: 5rem;
-$heading-spacing-small: 2.5rem;
-$heading-spacing-tiny: 1rem;
+$heading-spacing-large: 10rem;
+$heading-spacing-medium: 7.5rem;
+$heading-spacing-small: 5rem;
+$heading-spacing-tiny: 2.5rem;
 
 //* Article Spacing
 $article-spacing-extra-large: 25rem;
@@ -87,6 +91,8 @@ $section-spacing-extra-large: 20rem;
 $section-spacing-large: 15rem;
 $section-spacing-medium: 10rem;
 $section-spacing-small: 5rem;
+$section-spacing-extra-small: 3.5rem;
+$section-spacing-tiny: 2.5rem;
 
 //* Paragraphs
 
@@ -207,6 +213,35 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+//********** Scrollbar Mixin **********
+
+@mixin horizontal-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: scale-color($dark-grey, $lightness: 10%);
+    position: relative;
+    bottom: 10rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    &:hover {
+      background-color: $dark-grey;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    margin: 1px;
   }
 }
 

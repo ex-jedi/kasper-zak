@@ -9,18 +9,69 @@
 //* Page Titles
 .general-page-title {
   width: fit-content;
-  background-image: url('/images/birds-background-images.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  padding: $heading-spacing-large $paragraph-spacing-large;
   font-size: $h2-size-small;
-  margin: 0 auto;
+  line-height: 1;
+  margin: $heading-spacing-large auto;
   color: $dark-font-colour;
+  z-index: 1;
+
+  @include breakpoint(900) {
+    font-size: $h2-size-smaller;
+    margin: $heading-spacing-medium auto;
+  }
+
+  @include breakpoint(700) {
+    margin: $heading-spacing-small auto;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+    margin: $heading-spacing-tiny auto;
+  }
+}
+
+.birds-background-image {
+  position: absolute;
+  top: -400px;
+  z-index: -1;
+  width: 800px;
+  max-width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include breakpoint(900) {
+    top: -300px;
+  }
+
+  @include breakpoint(700) {
+    display: none;
+  }
 }
 
 .legals-text-section {
   @include main-font-stack;
   font-size: $font-size-medium;
   padding: 0 $section-spacing-medium $section-spacing-medium;
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(1500) {
+    padding: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    font-size: $font-size-smaller;
+    padding: 0 $section-spacing-extra-small $section-spacing-extra-small;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-small;
+    padding: 0 $section-spacing-tiny $section-spacing-tiny;
+  }
 }
