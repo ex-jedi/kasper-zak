@@ -115,9 +115,8 @@ header {
 }
 
 .main-logo {
-  height: $section-spacing-medium;
-  width: auto;
-  max-width: 100%;
+  height: auto;
+  width: 400px;
   margin: 0 auto;
 
   @include breakpoint(900) {
