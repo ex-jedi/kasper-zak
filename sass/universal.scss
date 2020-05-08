@@ -274,6 +274,7 @@ header {
   border-bottom: 1px solid $dark-font-colour;
   font-size: $font-size-small;
   padding-bottom: 5px;
+  outline: none;
 
   &:focus,
   &:active {
