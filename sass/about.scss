@@ -24,7 +24,7 @@
   padding: 0 $section-spacing-medium;
 
   @include breakpoint(1500) {
-    padding: 0 $section-spacing-small $section-spacing-medium;
+    padding: 0 $section-spacing-small;
   }
 }
 
