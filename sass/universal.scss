@@ -209,12 +209,24 @@ header {
     margin: $section-spacing-smaller $section-spacing-small
       $section-spacing-smaller;
   }
+
+  @include breakpoint(700) {
+    margin: $section-spacing-small $section-spacing-tiny $section-spacing-small;
+  }
 }
 
 .contact-form-intro-text {
   @include main-font-stack;
   font-size: $font-size-large;
   margin: 0 0 $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    margin: 0 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    margin: 0 0 $section-spacing-small;
+  }
 }
 
 .birds-background-image {
