@@ -206,6 +206,14 @@ header {
   font-size: $font-size-large;
   margin: 0 0 $section-spacing-medium;
 }
+
+.birds-background-image {
+  position: absolute;
+  width: 300px;
+  right: 0;
+  top: 2rem;
+}
+
 .general-contact-form-wrapper {
   @include flex(column);
   justify-content: center;

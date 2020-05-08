@@ -22,16 +22,16 @@
 
 .about-me-text-section-two {
   padding: 0 $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    padding: 0 $section-spacing-small $section-spacing-medium;
+  }
 }
 
 //* Page title
 
 .general-page-title {
   width: fit-content;
-  background-image: url('/images/birds-background-images.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   color: $dark-font-colour;
   padding: $section-spacing-small 0;
   margin: $section-spacing-small auto;
@@ -51,7 +51,6 @@
 
 .about-me-text-wrapper {
   @include main-font-stack;
-
   color: $dark-font-colour;
   font-size: $font-size-medium;
 
@@ -79,10 +78,17 @@
 
 //* Contact Form
 
+.general-contact-form-section {
+  @include breakpoint(1500) {
+    margin: $section-spacing-medium $section-spacing-small
+      $section-spacing-medium;
+  }
+}
+
 .contact-form-intro-text {
-  background-image: url('/images/birds-background-images.png');
+  // background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 400px;
   background-position: top right;
-  padding-top: $section-spacing-small;
+  padding: $section-spacing-small 0;
 }
