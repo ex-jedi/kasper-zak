@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -20,8 +20,12 @@
   text-align: center;
   font-size: $h2-size;
   color: $dark-font-colour;
-  margin: 0 auto;
-  padding: $heading-spacing-medium 0;
+  // margin: 0 auto;
+  margin: $heading-spacing-large auto;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-medium;
+  }
 }
 
 .commercial-image-wrapper {
