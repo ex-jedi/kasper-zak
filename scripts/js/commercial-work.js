@@ -10,7 +10,7 @@ const commercialImage = document.querySelectorAll('.commercial-image');
 commercialImage.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
     triggerElement: item.closest('.commercial-image-wrapper'),
-    triggerHook: 0.5,
+    triggerHook: 0.8,
     // reverse: false,
   })
     .setClassToggle(item, 'commercial-image-reveal')
