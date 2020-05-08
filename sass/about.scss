@@ -26,6 +26,10 @@
   @include breakpoint(700) {
     padding: 0 $section-spacing-tiny $section-spacing-small;
   }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-medium $section-spacing-tiny;
+  }
 }
 
 .about-me-text-section-two {
@@ -37,6 +41,10 @@
 
   @include breakpoint(700) {
     padding: 0 $section-spacing-tiny;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-medium;
   }
 }
 
@@ -80,6 +88,10 @@
   @include breakpoint(700) {
     margin: 0 0 $section-spacing-small;
   }
+
+  @include breakpoint(500) {
+    margin: 0 0 $section-spacing-tiny;
+  }
 }
 
 //* Text
@@ -106,6 +118,10 @@
 
     @include breakpoint(700) {
       margin-bottom: $section-spacing-small;
+    }
+
+    @include breakpoint(500) {
+      margin-bottom: $section-spacing-tiny;
     }
 
     &:last-of-type {

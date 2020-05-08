@@ -213,6 +213,10 @@ header {
   @include breakpoint(700) {
     margin: $section-spacing-small $section-spacing-tiny $section-spacing-small;
   }
+
+  @include breakpoint(400) {
+    margin: $section-spacing-tiny $paragraph-spacing-medium;
+  }
 }
 
 .contact-form-intro-text {
