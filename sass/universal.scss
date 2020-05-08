@@ -231,6 +231,10 @@ header {
   @include breakpoint(900) {
     font-size: $h2-size-smaller;
   }
+
+  @include breakpoint(700) {
+    font-size: $font-size-medium;
+  }
 }
 
 .birds-background-image {
@@ -251,6 +255,11 @@ header {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(700) {
+    @include flex(column);
+    align-items: flex-start;
+  }
 }
 
 .general-contact-form-label {
@@ -261,6 +270,12 @@ header {
   vertical-align: bottom;
   line-height: 0.7;
   letter-spacing: $letter-spacing-small;
+
+  @include breakpoint(700) {
+    line-height: normal;
+    margin-bottom: $paragraph-spacing-medium;
+    font-size: $label-font-size-smaller;
+  }
 }
 
 .text-area-label {
@@ -275,6 +290,10 @@ header {
   font-size: $font-size-small;
   padding-bottom: 5px;
   outline: none;
+
+  @include breakpoint(700) {
+    width: 100%;
+  }
 
   &:focus,
   &:active {
@@ -376,6 +395,10 @@ select {
   }
 }
 
+.submit-wrapper {
+  margin-bottom: 0;
+}
+
 .submit {
   margin: 0 auto;
   background-color: $main-background-colour;
@@ -384,6 +407,8 @@ select {
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 0;
+  // Prevents button looking weird on IOS
+  -webkit-appearance: none;
 }
 
 //********** Honeypot **********
@@ -516,6 +541,7 @@ footer {
 
 //* Hides outline unless tab key is pressed
 
+//TODO: Make sure tab focus highlighting is applied
 .hide-outline {
   a:focus,
   button:focus,

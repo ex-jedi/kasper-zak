@@ -57,6 +57,10 @@
     margin: $heading-spacing-small auto;
     line-height: 1;
   }
+
+  @include breakpoint(400) {
+    margin: $heading-spacing-tiny auto;
+  }
 }
 
 //* Image
@@ -71,6 +75,10 @@
     float: none;
     width: 100%;
     margin: 0 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 0 $section-spacing-small;
   }
 }
 
@@ -94,6 +102,10 @@
 
     @include breakpoint(1100) {
       margin-bottom: $section-spacing-smaller;
+    }
+
+    @include breakpoint(700) {
+      margin-bottom: $section-spacing-small;
     }
 
     &:last-of-type {
