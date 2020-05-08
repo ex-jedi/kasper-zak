@@ -26,11 +26,20 @@
   @include breakpoint(1500) {
     font-size: $h2-size-medium;
   }
+
+  @include breakpoint(1100) {
+    font-size: $h2-size-small;
+    margin: $heading-spacing-medium auto;
+  }
 }
 
 .commercial-image-wrapper {
   width: 100%;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $heading-spacing-medium;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
