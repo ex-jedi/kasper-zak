@@ -201,17 +201,15 @@ header {
   color: $dark-font-colour;
 
   @include breakpoint(1500) {
-    margin: $section-spacing-medium $section-spacing-small
-      $section-spacing-medium;
+    margin: $section-spacing-medium $section-spacing-small;
   }
 
   @include breakpoint(1100) {
-    margin: $section-spacing-smaller $section-spacing-small
-      $section-spacing-smaller;
+    margin: $section-spacing-smaller $section-spacing-small;
   }
 
   @include breakpoint(700) {
-    margin: $section-spacing-small $section-spacing-tiny $section-spacing-small;
+    margin: $section-spacing-small $section-spacing-tiny;
   }
 
   @include breakpoint(400) {
@@ -346,8 +344,8 @@ select {
 
 //********** Checkbox **********
 .checkbox-div {
-  margin-bottom: $section-spacing-small;
   @include flex(row);
+  margin-bottom: $section-spacing-small;
   justify-content: space-between;
   align-items: flex-start;
 
@@ -356,6 +354,10 @@ select {
     width: fit-content;
     font-size: 0;
     top: 0.5rem;
+
+    @include breakpoint(400) {
+      top: 0.3rem;
+    }
 
     &:before {
       content: '';
@@ -396,6 +398,10 @@ select {
     font-size: $input-font-size-medium;
     font-weight: bold;
     width: 90%;
+
+    @include breakpoint(400) {
+      font-size: $input-font-size-small;
+    }
   }
 }
 
