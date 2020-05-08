@@ -12,7 +12,7 @@
 	</div>
 	<div class="footer-promo">
 		<p>
-			Brand design, illustration, web design &amp; development by phoenix &amp; phoenix. <a href="https://phoenixandphoenix.co/" class="footer-link promo-link">phoenix & phoenix</a>
+			Brand design, illustration, web design &amp; development by <a href="https://phoenixandphoenix.co/" class="footer-link promo-link">phoenix &amp; phoenix</a>
 		</p>
 	</div>
 </footer>
