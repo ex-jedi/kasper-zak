@@ -67,6 +67,10 @@
   color: $dark-font-colour;
   font-size: $font-size-medium;
 
+  @include breakpoint(900) {
+    font-size: $font-size-smaller;
+  }
+
   p {
     margin-top: 0;
 
