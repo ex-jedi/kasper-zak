@@ -197,8 +197,18 @@ header {
 // *=========================================
 
 .general-contact-form-section {
-  margin: $section-spacing-medium $section-spacing-large;
+  margin: $section-spacing-large $section-spacing-large;
   color: $dark-font-colour;
+
+  @include breakpoint(1500) {
+    margin: $section-spacing-medium $section-spacing-small
+      $section-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-smaller $section-spacing-small
+      $section-spacing-smaller;
+  }
 }
 
 .contact-form-intro-text {
