@@ -115,9 +115,8 @@ header {
 }
 
 .main-logo {
-  height: $section-spacing-medium;
-  width: auto;
-  max-width: 100%;
+  height: auto;
+  width: 300px;
   margin: 0 auto;
 
   @include breakpoint(900) {
@@ -198,15 +197,55 @@ header {
 // *=========================================
 
 .general-contact-form-section {
-  margin: $section-spacing-medium $section-spacing-large;
+  margin: $section-spacing-large $section-spacing-large;
   color: $dark-font-colour;
+
+  @include breakpoint(1500) {
+    margin: $section-spacing-medium $section-spacing-small;
+  }
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    margin: $section-spacing-small $section-spacing-tiny;
+  }
+
+  @include breakpoint(400) {
+    margin: $section-spacing-tiny $paragraph-spacing-medium;
+  }
 }
 
 .contact-form-intro-text {
   @include main-font-stack;
   font-size: $font-size-large;
   margin: 0 0 $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    margin: 0 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(1100) {
+    margin: 0 0 $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-medium;
+  }
 }
+
+.birds-background-image {
+  position: absolute;
+  width: 350px;
+  right: 0;
+  top: -1rem;
+}
+
 .general-contact-form-wrapper {
   @include flex(column);
   justify-content: center;
@@ -218,6 +257,11 @@ header {
   justify-content: flex-end;
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(700) {
+    @include flex(column);
+    align-items: flex-start;
+  }
 }
 
 .general-contact-form-label {
@@ -228,6 +272,12 @@ header {
   vertical-align: bottom;
   line-height: 0.7;
   letter-spacing: $letter-spacing-small;
+
+  @include breakpoint(700) {
+    line-height: normal;
+    margin-bottom: $paragraph-spacing-medium;
+    font-size: $label-font-size-smaller;
+  }
 }
 
 .text-area-label {
@@ -241,6 +291,11 @@ header {
   border-bottom: 1px solid $dark-font-colour;
   font-size: $font-size-small;
   padding-bottom: 5px;
+  outline: none;
+
+  @include breakpoint(700) {
+    width: 100%;
+  }
 
   &:focus,
   &:active {
@@ -289,8 +344,8 @@ select {
 
 //********** Checkbox **********
 .checkbox-div {
-  margin-bottom: $section-spacing-small;
   @include flex(row);
+  margin-bottom: $section-spacing-small;
   justify-content: space-between;
   align-items: flex-start;
 
@@ -299,6 +354,10 @@ select {
     width: fit-content;
     font-size: 0;
     top: 0.5rem;
+
+    @include breakpoint(400) {
+      top: 0.3rem;
+    }
 
     &:before {
       content: '';
@@ -339,7 +398,15 @@ select {
     font-size: $input-font-size-medium;
     font-weight: bold;
     width: 90%;
+
+    @include breakpoint(400) {
+      font-size: $input-font-size-small;
+    }
   }
+}
+
+.submit-wrapper {
+  margin-bottom: 0;
 }
 
 .submit {
@@ -350,6 +417,8 @@ select {
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 0;
+  // Prevents button looking weird on IOS
+  -webkit-appearance: none;
 }
 
 //********** Honeypot **********
@@ -482,6 +551,7 @@ footer {
 
 //* Hides outline unless tab key is pressed
 
+//TODO: Make sure tab focus highlighting is applied
 .hide-outline {
   a:focus,
   button:focus,

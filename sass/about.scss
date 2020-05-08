@@ -18,23 +18,57 @@
 
 .about-me-section-one {
   padding: 0 $section-spacing-small $section-spacing-medium;
+
+  @include breakpoint(1100) {
+    padding-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding: 0 $section-spacing-tiny $section-spacing-small;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-medium $section-spacing-tiny;
+  }
 }
 
 .about-me-text-section-two {
   padding: 0 $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    padding: 0 $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    padding: 0 $section-spacing-tiny;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-medium;
+  }
 }
 
 //* Page title
 
 .general-page-title {
   width: fit-content;
-  background-image: url('/images/birds-background-images.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
   color: $dark-font-colour;
-  padding: $heading-spacing-medium $section-spacing-small;
-  margin: 0 auto $section-spacing-small;
+  margin: $heading-spacing-large auto;
+
+  @include breakpoint(1100) {
+    font-size: $h2-size-medium;
+    margin: $heading-spacing-medium auto;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-small;
+    margin: $heading-spacing-small auto;
+    line-height: 1;
+  }
+
+  @include breakpoint(400) {
+    margin: $heading-spacing-tiny auto;
+  }
 }
 
 //* Image
@@ -43,20 +77,52 @@
   float: left;
   width: 35%;
   margin-right: $section-spacing-small;
-
   animation: bounce 5s ease-in-out infinite alternate;
+
+  @include breakpoint(1100) {
+    float: none;
+    width: 100%;
+    margin: 0 0 $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 0 $section-spacing-small;
+  }
+
+  @include breakpoint(500) {
+    margin: 0 0 $section-spacing-tiny;
+  }
 }
 
 //* Text
 
 .about-me-text-wrapper {
   @include main-font-stack;
-
   color: $dark-font-colour;
   font-size: $font-size-medium;
 
+  @include breakpoint(900) {
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-small;
+  }
+
   p {
     margin-top: 0;
+
+    @include breakpoint(1100) {
+      margin-bottom: $section-spacing-smaller;
+    }
+
+    @include breakpoint(700) {
+      margin-bottom: $section-spacing-small;
+    }
+
+    @include breakpoint(500) {
+      margin-bottom: $section-spacing-tiny;
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -75,14 +141,4 @@
 .fade-in-reveal {
   opacity: 1;
   transform: rotateX(0);
-}
-
-//* Contact Form
-
-.contact-form-intro-text {
-  background-image: url('/images/birds-background-images.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: top right;
-  padding-top: $section-spacing-small;
 }

@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -20,13 +20,42 @@
   text-align: center;
   font-size: $h2-size;
   color: $dark-font-colour;
-  margin: 0 auto;
-  padding: $heading-spacing-medium 0;
+  margin: $heading-spacing-large auto;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-medium;
+    padding: 0 $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(1100) {
+    font-size: $h2-size-small;
+    margin: $heading-spacing-medium auto;
+  }
+
+  @include breakpoint(900) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: $heading-spacing-tiny auto;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+  }
 }
 
 .commercial-image-wrapper {
   width: 100%;
   margin-bottom: $section-spacing-small;
+
+  @include breakpoint(1100) {
+    margin-bottom: $heading-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $section-spacing-tiny;
+  }
 
   &:last-of-type {
     margin-bottom: 0;
