@@ -51,6 +51,12 @@
     font-size: $h2-size-medium;
     margin: $heading-spacing-medium auto;
   }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-small;
+    margin: $heading-spacing-small auto;
+    line-height: 1;
+  }
 }
 
 //* Image
@@ -77,6 +83,10 @@
 
   @include breakpoint(900) {
     font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-small;
   }
 
   p {

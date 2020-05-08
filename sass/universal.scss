@@ -227,6 +227,10 @@ header {
   @include breakpoint(1100) {
     margin: 0 0 $section-spacing-small;
   }
+
+  @include breakpoint(900) {
+    font-size: $h2-size-smaller;
+  }
 }
 
 .birds-background-image {
