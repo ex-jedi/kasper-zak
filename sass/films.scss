@@ -22,7 +22,8 @@
   @include flex(column);
   @include main-font-stack;
   overflow-y: scroll;
-  height: 100vh;
+  max-height: 100vh;
+  //TODO: Change to proximity for firefox
   scroll-snap-type: y mandatory;
 }
 
