@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 //*=========================================
 //** Header **
@@ -18,13 +18,12 @@
 //** Main **
 //*=========================================
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 .films-section {
   @include flex(column);
   @include main-font-stack;
+  overflow-y: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
 }
 
 .main-nav {
@@ -133,7 +132,7 @@ html {
 
 .play-button {
   position: absolute;
-  background-image: url("/images/video-player-icon.svg");
+  background-image: url('/images/video-player-icon.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
