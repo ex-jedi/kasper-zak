@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 //*=========================================
 //** Header **
@@ -18,13 +18,13 @@
 //** Main **
 //*=========================================
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 .films-section {
   @include flex(column);
   @include main-font-stack;
+  overflow-y: scroll;
+  max-height: 100vh;
+  //TODO: Change to proximity for firefox
+  scroll-snap-type: y mandatory;
 }
 
 .main-nav {
@@ -42,31 +42,68 @@ html {
 
 .video-wrapper {
   @include flex(column);
+  justify-content: center;
   align-items: center;
   position: relative;
   margin: 0;
   padding: 0;
   line-height: 0;
   scroll-snap-align: start;
+  width: 100%;
+  height: 100vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(50%);
+  }
+}
+
+.video-one-wrapper {
+  &::after {
+    background-image: url('/images/market-stall-woman.png');
+  }
+}
+
+.video-two-wrapper {
+  &::after {
+    background-image: url('/images/pole-dancer.png');
+  }
+}
+
+.video-three-wrapper {
+  &::after {
+    background-image: url('/images/kasper-on-phone.png');
+  }
+}
+
+.video-four-wrapper {
+  &::after {
+    background-image: url('/images/man-in-arena.png');
+  }
 }
 
 //* Videos
 
 .video {
   width: 100%;
-  height: 100vh;
-  object-fit: cover;
   padding: 0;
-  margin: 0;
-  //Darkens video to make titles readable
-  filter: brightness(50%);
+  margin: auto;
   transition: all 0.3s ease-in;
   position: relative;
-}
+  height: 100vh;
 
-// Removes dark filter
-.bright-video {
-  filter: brightness(100%);
+  @include breakpoint(1100) {
+    height: auto;
+  }
 }
 
 //* Videos Text
@@ -82,9 +119,26 @@ html {
   text-align: center;
   color: $light-font-colour;
   text-transform: capitalize;
-  //? TODO: Are titles difficult to read?
   transition: all 0.3s ease-in;
   z-index: 2;
+  word-break: break-word;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(900) {
+    font-size: $h2-size-small;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+    top: $font-size-small;
+  }
 }
 
 .hide-video-title {
@@ -101,6 +155,7 @@ html {
   align-items: center;
   font-size: $font-size-medium;
   width: $section-spacing-extra-large;
+  max-width: 90%;
   font-weight: 400;
   color: $light-font-colour;
   z-index: 1;
@@ -109,10 +164,27 @@ html {
   bottom: $section-spacing-small;
   transition: all 0.3s ease-in;
   line-height: 1;
+
+  @include breakpoint(700) {
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
+    bottom: $font-size-small;
+  }
 }
 
 .video-counter-active {
   font-size: $font-size-large;
+
+  @include breakpoint(700) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+  }
 }
 
 .hide-video-counter {
@@ -133,7 +205,7 @@ html {
 
 .play-button {
   position: absolute;
-  background-image: url("/images/video-player-icon.svg");
+  background-image: url('/images/video-player-icon.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -170,4 +242,30 @@ html {
   height: 0;
   padding: 0;
   margin: 0;
+}
+
+//*==============================================================================
+//** Browser Taming **
+//*==============================================================================
+
+//*=========================================
+//** IOS **
+//*=========================================
+
+@supports (-webkit-overflow-scrolling: touch) {
+  // Scroll snapping rules squashes all children into the viewport
+  .films-section {
+    max-height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+} // IOS Styles End
+
+//*=========================================
+//** Firefox Styles **
+//*=========================================
+
+@-moz-document url-prefix() {
+  .films-section {
+    scroll-snap-type: y proximity;
+  }
 }
