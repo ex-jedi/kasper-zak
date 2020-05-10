@@ -241,6 +241,7 @@
 //*=========================================
 
 @supports (-webkit-overflow-scrolling: touch) {
+  // Scroll snapping rules squashes all children into the viewport
   .films-section {
     max-height: 100%;
     -webkit-overflow-scrolling: touch;
