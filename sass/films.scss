@@ -107,9 +107,22 @@
   text-transform: capitalize;
   transition: all 0.3s ease-in;
   z-index: 2;
+  word-break: break-word;
 
   @include breakpoint(1500) {
     font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(900) {
+    font-size: $h2-size-small;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
   }
 }
 
@@ -127,6 +140,7 @@
   align-items: center;
   font-size: $font-size-medium;
   width: $section-spacing-extra-large;
+  max-width: 90%;
   font-weight: 400;
   color: $light-font-colour;
   z-index: 1;
@@ -135,10 +149,26 @@
   bottom: $section-spacing-small;
   transition: all 0.3s ease-in;
   line-height: 1;
+
+  @include breakpoint(700) {
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
+  }
 }
 
 .video-counter-active {
   font-size: $font-size-large;
+
+  @include breakpoint(700) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-extra-small;
+  }
 }
 
 .hide-video-counter {
