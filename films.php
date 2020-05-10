@@ -6,4 +6,4 @@
 	</section>
 </main>
 <?php perch_layout('films-footer'); ?>
-<!-- <?php PerchUtil::output_debug(); ?> -->
+<?php PerchUtil::output_debug(); ?>

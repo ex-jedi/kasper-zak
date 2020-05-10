@@ -34,11 +34,11 @@ function playAndPause() {
   // Play pause and controls
   if (videoActual.paused || videoActual.ended) {
     videoActual.controls = true;
+    videoWrapper.style.background = "url('/images/black-background.svg')";
     videoButton.classList.add('hide-play-button');
     videoTitle.classList.add('hide-video-title');
     videoCounter.classList.add('hide-video-counter');
     mainNav.classList.add('hide-main-nav');
-    videoActual.classList.add('bright-video');
     videoActual.play();
   } else if (!video.seeking) {
     videoActual.pause();
