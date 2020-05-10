@@ -123,6 +123,7 @@
 
   @include breakpoint(400) {
     font-size: $h2-size-extra-small;
+    top: $font-size-small;
   }
 }
 
@@ -156,6 +157,7 @@
 
   @include breakpoint(400) {
     font-size: $font-size-small;
+    bottom: $font-size-small;
   }
 }
 
@@ -227,3 +229,20 @@
   padding: 0;
   margin: 0;
 }
+
+//*=========================================
+//** Browser Taming **
+//*=========================================
+
+//********** IOS Styles **********
+
+//*=========================================
+//** IOS **
+//*=========================================
+
+@supports (-webkit-overflow-scrolling: touch) {
+  .films-section {
+    max-height: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+} // IOS Styles End
