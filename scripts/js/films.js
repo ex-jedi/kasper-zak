@@ -58,7 +58,6 @@ function isPaused() {
 
   if (!videoPaused.seeking) {
     videoPaused.controls = false;
-    videoPaused.classList.remove('bright-video');
     videoButton.classList.remove('hide-play-button');
     videoTitle.classList.remove('hide-video-title');
     videoCounter.classList.remove('hide-video-counter');
