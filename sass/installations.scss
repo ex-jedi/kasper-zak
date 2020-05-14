@@ -23,22 +23,31 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding-top: $header-spacing-medium;
-  padding-bottom: $section-spacing-medium;
   margin-bottom: 0;
 }
 
 .general-page-title {
   color: $dark-font-colour;
+  margin: $heading-spacing-large auto;
 
   @include breakpoint(1500) {
     font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(1200) {
+    margin: $heading-spacing-medium auto;
   }
 }
 
 .installations-link-section {
   @include flex(row);
   justify-content: center;
+  margin-bottom: $section-spacing-medium;
+
+  @include breakpoint(1200) {
+    @include flex(column);
+    align-items: center;
+  }
 }
 
 .installations-link-wrapper {
@@ -66,6 +75,9 @@ body {
 
   @include breakpoint(1500) {
     font-size: $font-size-larger;
+  }
+  @include breakpoint(1200) {
+    margin-bottom: $h2-size-smaller;
   }
 }
 
