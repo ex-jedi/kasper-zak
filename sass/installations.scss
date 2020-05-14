@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -14,27 +14,55 @@ body {
   background: $main-background-gradient;
 }
 
-.header-inner-wrapper {
-  margin: $header-spacing-medium 0 0;
-}
-
 .installations-main-content {
   background-image: url(/images/birds-background-images.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding-top: $header-spacing-medium;
-  padding-bottom: $section-spacing-medium;
   margin-bottom: 0;
 }
 
 .general-page-title {
   color: $dark-font-colour;
+  margin: $heading-spacing-large auto;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(1200) {
+    margin: $heading-spacing-medium auto;
+  }
+
+  @include breakpoint(900) {
+    font-size: 18vw;
+    word-break: break-word;
+    margin: $heading-spacing-small auto;
+  }
+
+  @include breakpoint(700) {
+    margin: $heading-spacing-smaller auto;
+  }
 }
 
 .installations-link-section {
   @include flex(row);
   justify-content: center;
+  margin-bottom: $section-spacing-medium;
+
+  @include breakpoint(1200) {
+    @include flex(column);
+    align-items: center;
+    margin-bottom: $section-spacing-smaller;
+  }
+
+  @include breakpoint(900) {
+    margin-bottom: $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: $heading-spacing-smaller;
+  }
 }
 
 .installations-link-wrapper {
@@ -43,11 +71,16 @@ body {
 
 .props-link-wrapper {
   margin-right: $section-spacing-small;
+
+  @include breakpoint(500) {
+    margin-right: $section-spacing-tiny;
+  }
 }
 
 .sprosser-link-wrapper {
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .installations-link {
@@ -59,11 +92,35 @@ body {
 .props-link {
   display: inline-block;
   font-size: $font-size-extra-large;
+
+  @include breakpoint(1500) {
+    font-size: $font-size-larger;
+  }
+  @include breakpoint(1200) {
+    margin-bottom: $h2-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-small;
+    margin-bottom: $section-spacing-tiny;
+  }
+
+  @include breakpoint(500) {
+    font-size: $h2-size-smaller;
+  }
 }
 
 .sprosser-link {
   display: inline-block;
   font-size: $font-size-large;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(500) {
+    font-size: $font-size-medium;
+  }
 }
 
 .installations-link-number {
@@ -77,6 +134,14 @@ body {
   vertical-align: top;
   margin-top: -11px;
   display: inline-block;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(500) {
+    font-size: $font-size-medium;
+  }
 }
 
 .sprosser-link-number {
