@@ -27,10 +27,15 @@
     margin: $section-spacing-small auto;
   }
 
+  @include breakpoint(900) {
+    font-size: $h2-size-medium;
+  }
+
   @include breakpoint(700) {
     background-image: none;
     padding: 0;
     margin: $section-spacing-tiny auto;
+    font-size: $h2-size-small;
   }
 }
 
@@ -52,6 +57,11 @@
 
   @include breakpoint(700) {
     margin: 0 $section-spacing-tiny $section-spacing-tiny;
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
   }
 }
 
@@ -127,6 +137,11 @@
 
   @include breakpoint(700) {
     padding: $section-spacing-tiny 25px;
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
   }
 }
 
