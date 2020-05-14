@@ -20,8 +20,8 @@
   background-position: center;
   text-transform: capitalize;
   //TODO: Check Below
-  padding: $heading-spacing-small $paragraph-spacing-large;
-  margin: 0 auto;
+  padding: $section-spacing-tiny;
+  margin: $section-spacing-smaller auto;
   color: $dark-font-colour;
 }
 
@@ -30,7 +30,7 @@
   justify-content: center;
   @include main-font-stack;
   font-size: $font-size-medium;
-  margin: $section-spacing-medium auto;
+  margin: 0 auto $section-spacing-medium;
 }
 
 .installations-subtitle {
