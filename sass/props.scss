@@ -19,10 +19,19 @@
   background-size: contain;
   background-position: center;
   text-transform: capitalize;
-  //TODO: Check Below
   padding: $section-spacing-tiny;
   margin: $section-spacing-smaller auto;
   color: $dark-font-colour;
+
+  @include breakpoint(1100) {
+    margin: $section-spacing-small auto;
+  }
+
+  @include breakpoint(700) {
+    background-image: none;
+    padding: 0;
+    margin: $section-spacing-tiny auto;
+  }
 }
 
 .installations-subtitle-wrapper {
@@ -31,16 +40,38 @@
   @include main-font-stack;
   font-size: $font-size-medium;
   margin: 0 auto $section-spacing-medium;
+
+  @include breakpoint(1500) {
+    @include flex(column);
+    align-items: center;
+  }
+
+  @include breakpoint(1100) {
+    margin: 0 $section-spacing-tiny $h2-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 $section-spacing-tiny $section-spacing-tiny;
+  }
 }
 
 .installations-subtitle {
   color: $dark-font-colour;
   font-weight: normal;
   margin: 0;
+  text-align: center;
 }
 
 .installations-subtitle-one {
   margin-right: $section-spacing-small;
+
+  @include breakpoint(1500) {
+    margin: 0 0 $heading-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 0 $section-spacing-tiny;
+  }
 }
 
 //* Gallery
@@ -48,7 +79,7 @@
 .props-gallery-section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: $section-spacing-small;
+  grid-gap: $section-spacing-tiny;
   justify-items: stretch;
   align-items: stretch;
 
@@ -80,6 +111,23 @@
   color: $dark-font-colour;
   font-size: $font-size-medium;
   padding: $section-spacing-medium;
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(1100) {
+    padding: $heading-spacing-smaller $heading-spacing-smaller
+      $section-spacing-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-tiny 25px;
+  }
 }
 
 //********** Text fade in **********
