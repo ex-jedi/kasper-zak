@@ -14,10 +14,6 @@ body {
   background: $main-background-gradient;
 }
 
-.header-inner-wrapper {
-  margin: $header-spacing-medium 0 0;
-}
-
 .installations-main-content {
   background-image: url(/images/birds-background-images.png);
   background-repeat: no-repeat;
@@ -37,6 +33,11 @@ body {
   @include breakpoint(1200) {
     margin: $heading-spacing-medium auto;
   }
+
+  @include breakpoint(900) {
+    font-size: 17vw;
+    word-break: break-word;
+  }
 }
 
 .installations-link-section {
@@ -47,6 +48,10 @@ body {
   @include breakpoint(1200) {
     @include flex(column);
     align-items: center;
+  }
+
+  @include breakpoint(700) {
+    font-size: 16px;
   }
 }
 
@@ -79,6 +84,10 @@ body {
   @include breakpoint(1200) {
     margin-bottom: $h2-size-smaller;
   }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-small;
+  }
 }
 
 .sprosser-link {
@@ -86,7 +95,7 @@ body {
   font-size: $font-size-large;
 
   @include breakpoint(1500) {
-    // font-size: $font-size-medium;
+    font-size: $h2-size-smaller;
   }
 }
 
@@ -101,6 +110,10 @@ body {
   vertical-align: top;
   margin-top: -11px;
   display: inline-block;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-smaller;
+  }
 }
 
 .sprosser-link-number {
