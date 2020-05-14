@@ -35,7 +35,7 @@ body {
   }
 
   @include breakpoint(900) {
-    font-size: 17vw;
+    font-size: 18vw;
     word-break: break-word;
     margin: $heading-spacing-small auto;
   }
@@ -61,7 +61,6 @@ body {
   }
 
   @include breakpoint(700) {
-    font-size: 16px;
     margin-bottom: $heading-spacing-smaller;
   }
 }
@@ -72,17 +71,16 @@ body {
 
 .props-link-wrapper {
   margin-right: $section-spacing-small;
+
+  @include breakpoint(500) {
+    margin-right: $section-spacing-tiny;
+  }
 }
 
 .sprosser-link-wrapper {
   justify-content: center;
   align-items: center;
   position: relative;
-  right: 3rem;
-
-  @include breakpoint(700) {
-    right: 0;
-  }
 }
 
 .installations-link {
@@ -106,6 +104,10 @@ body {
     font-size: $h2-size-small;
     margin-bottom: $section-spacing-tiny;
   }
+
+  @include breakpoint(500) {
+    font-size: $h2-size-smaller;
+  }
 }
 
 .sprosser-link {
@@ -114,6 +116,10 @@ body {
 
   @include breakpoint(1500) {
     font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(500) {
+    font-size: $font-size-medium;
   }
 }
 
@@ -131,6 +137,10 @@ body {
 
   @include breakpoint(1500) {
     font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(500) {
+    font-size: $font-size-medium;
   }
 }
 
