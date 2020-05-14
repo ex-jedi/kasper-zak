@@ -37,6 +37,7 @@ body {
   @include breakpoint(900) {
     font-size: 17vw;
     word-break: break-word;
+    margin: $heading-spacing-small auto;
   }
 }
 
@@ -48,6 +49,7 @@ body {
   @include breakpoint(1200) {
     @include flex(column);
     align-items: center;
+    margin-bottom: $section-spacing-smaller;
   }
 
   @include breakpoint(700) {
@@ -66,6 +68,8 @@ body {
 .sprosser-link-wrapper {
   justify-content: center;
   align-items: center;
+  position: relative;
+  right: 4rem;
 }
 
 .installations-link {
