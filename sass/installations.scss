@@ -39,6 +39,10 @@ body {
     word-break: break-word;
     margin: $heading-spacing-small auto;
   }
+
+  @include breakpoint(700) {
+    margin: $heading-spacing-smaller auto;
+  }
 }
 
 .installations-link-section {
@@ -52,8 +56,13 @@ body {
     margin-bottom: $section-spacing-smaller;
   }
 
+  @include breakpoint(900) {
+    margin-bottom: $section-spacing-small;
+  }
+
   @include breakpoint(700) {
     font-size: 16px;
+    margin-bottom: $heading-spacing-smaller;
   }
 }
 
@@ -69,7 +78,11 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
-  right: 4rem;
+  right: 3rem;
+
+  @include breakpoint(700) {
+    right: 0;
+  }
 }
 
 .installations-link {
@@ -91,6 +104,7 @@ body {
 
   @include breakpoint(700) {
     font-size: $h2-size-small;
+    margin-bottom: $section-spacing-tiny;
   }
 }
 
