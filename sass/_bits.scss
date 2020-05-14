@@ -30,7 +30,8 @@ $grid-gap: 0 1rem;
 //** Typography **
 //*=========================================
 
-//* Font Stacks
+//********** Font Stacks **********
+
 @mixin main-font-stack {
   font-family: 'baskerville-poster-pt', serif;
   font-weight: 400;
@@ -47,6 +48,7 @@ $grid-gap: 0 1rem;
 //* Font sizing
 $font-size-super-large: 15rem;
 $font-size-extra-large: 10rem;
+$font-size-larger: 8rem;
 $font-size-large: 5rem;
 $font-size-medium: 2.5rem;
 $font-size-smaller: 2rem;

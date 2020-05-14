@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -30,6 +30,10 @@ body {
 
 .general-page-title {
   color: $dark-font-colour;
+
+  @include breakpoint(1500) {
+    font-size: $h2-size-medium;
+  }
 }
 
 .installations-link-section {
@@ -59,11 +63,19 @@ body {
 .props-link {
   display: inline-block;
   font-size: $font-size-extra-large;
+
+  @include breakpoint(1500) {
+    font-size: $font-size-larger;
+  }
 }
 
 .sprosser-link {
   display: inline-block;
   font-size: $font-size-large;
+
+  @include breakpoint(1500) {
+    // font-size: $font-size-medium;
+  }
 }
 
 .installations-link-number {
