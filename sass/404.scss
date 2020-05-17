@@ -24,7 +24,15 @@
   @include breakpoint(1200) {
     @include flex(column);
     align-items: center;
-    padding: $section-spacing-small;
+    padding: $section-spacing-small $section-spacing-medium;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-tiny $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-tiny;
   }
 }
 
@@ -38,6 +46,18 @@
   @include breakpoint(1600) {
     font-size: $h2-size;
   }
+
+  @include breakpoint(900) {
+    margin: 0 auto $section-spacing-tiny;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(500) {
+    font-size: $h2-size-small;
+  }
 }
 
 .four-oh-four-image-wrapper {
@@ -50,8 +70,6 @@
     width: 100%;
     order: 2;
     margin: 0 auto;
-    // align-items: center;
-    // justify-content: center;
   }
 }
 
@@ -81,7 +99,7 @@
 }
 
 .four-oh-four-image {
-  max-width: 600px;
+  width: 600px;
   animation: ruh-row 2.5s 1s ease-in-out forwards;
 
   @include breakpoint(1600) {
@@ -112,6 +130,11 @@
 
   @include breakpoint(1200) {
     margin-bottom: $heading-spacing-smaller;
-    width: 70%;
+    width: 100%;
+  }
+
+  @include breakpoint(900) {
+    width: 100%;
+    font-size: $font-size-small;
   }
 }
