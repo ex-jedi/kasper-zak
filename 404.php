@@ -5,4 +5,4 @@
 			<?php perch_content('404 Page Content'); ?>
 	</main>
 <?php perch_layout('universal-footer'); ?>
-<?php perch_layout('universal-footer-end-js'); ?>
+<?php perch_layout('404-footer-end-js'); ?>

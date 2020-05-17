@@ -100,7 +100,6 @@
 
 .four-oh-four-image {
   width: 600px;
-  animation: ruh-row 2.5s 1s ease-in-out forwards;
 
   @include breakpoint(1600) {
     width: 450px;
@@ -110,6 +109,10 @@
     width: 100%;
     margin: 0 auto;
   }
+}
+
+.image-animation {
+  animation: ruh-row 2.5s 0.5s ease-in-out forwards;
 }
 
 .four-oh-four-text-wrapper {
