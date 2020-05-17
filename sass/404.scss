@@ -16,6 +16,16 @@
   color: $dark-font-colour;
   padding: $section-spacing-medium $section-spacing-small;
   align-items: flex-start;
+
+  @include breakpoint(1500) {
+    padding: $section-spacing-medium $heading-spacing-smaller;
+  }
+
+  @include breakpoint(1200) {
+    @include flex(column);
+    align-items: center;
+    padding: $section-spacing-small;
+  }
 }
 
 .four-oh-four-title {
@@ -34,6 +44,15 @@
   flex: 1 1 auto;
   width: 40%;
   margin-right: $section-spacing-small;
+  align-self: center;
+
+  @include breakpoint(1200) {
+    width: 100%;
+    order: 2;
+    margin: 0 auto;
+    // align-items: center;
+    // justify-content: center;
+  }
 }
 
 @keyframes ruh-row {
@@ -66,7 +85,12 @@
   animation: ruh-row 2.5s 1s ease-in-out forwards;
 
   @include breakpoint(1600) {
+    width: 450px;
+  }
+
+  @include breakpoint(1200) {
     width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -74,8 +98,20 @@
   font-size: $font-size-medium;
   flex: 1 1 auto;
   width: 60%;
+  overflow: hidden;
+
+  p {
+    @include breakpoint(1200) {
+      margin-bottom: 0;
+    }
+  }
 
   @include breakpoint(1600) {
     font-size: $label-font-size-smaller;
+  }
+
+  @include breakpoint(1200) {
+    margin-bottom: $heading-spacing-smaller;
+    width: 70%;
   }
 }
