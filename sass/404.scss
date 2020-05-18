@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 //*=========================================
 //** Main **
@@ -16,12 +16,61 @@
   color: $dark-font-colour;
   padding: $section-spacing-medium $section-spacing-small;
   align-items: flex-start;
+
+  @include breakpoint(1500) {
+    padding: $section-spacing-medium $heading-spacing-smaller;
+  }
+
+  @include breakpoint(1200) {
+    @include flex(column);
+    align-items: center;
+    padding: $section-spacing-small $section-spacing-medium;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-tiny $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-tiny;
+  }
+}
+
+.four-oh-four-title {
+  font-size: $font-size-super-large;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 auto $section-spacing-small;
+  line-height: 1;
+
+  @include breakpoint(1600) {
+    font-size: $h2-size;
+  }
+
+  @include breakpoint(900) {
+    margin: 0 auto $section-spacing-tiny;
+  }
+
+  @include breakpoint(700) {
+    font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(500) {
+    font-size: $h2-size-small;
+  }
 }
 
 .four-oh-four-image-wrapper {
   flex: 1 1 auto;
   width: 40%;
   margin-right: $section-spacing-small;
+  align-self: center;
+
+  @include breakpoint(1200) {
+    width: 100%;
+    order: 2;
+    margin: 0 auto;
+  }
 }
 
 @keyframes ruh-row {
@@ -50,20 +99,45 @@
 }
 
 .four-oh-four-image {
-  max-width: 600px;
-  animation: ruh-row 2.5s 1s ease-in-out forwards;
+  width: 600px;
+
+  @include breakpoint(1600) {
+    width: 450px;
+  }
+
+  @include breakpoint(1200) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.image-animation {
+  animation: ruh-row 2.5s 0.5s ease-in-out forwards;
 }
 
 .four-oh-four-text-wrapper {
   font-size: $font-size-medium;
   flex: 1 1 auto;
   width: 60%;
-}
+  overflow: hidden;
 
-.four-oh-four-title {
-  font-size: $font-size-super-large;
-  text-align: right;
-  font-weight: 400;
-  margin: 0 $section-spacing-small $section-spacing-small auto;
-  line-height: 1;
+  p {
+    @include breakpoint(1200) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint(1600) {
+    font-size: $label-font-size-smaller;
+  }
+
+  @include breakpoint(1200) {
+    margin-bottom: $heading-spacing-smaller;
+    width: 100%;
+  }
+
+  @include breakpoint(900) {
+    width: 100%;
+    font-size: $font-size-small;
+  }
 }
