@@ -137,7 +137,7 @@ const showReel = new ScrollMagic.Scene({
 const triptychImageTwo = document.querySelectorAll('.triptych-section-two-image');
 
 // For indicators in the scene
-// TODO: What's this for?
+// TODO: Used for multiple indicators. Can be removed before launch.
 let counterTwo = 1;
 
 // Loop through elements to add animation

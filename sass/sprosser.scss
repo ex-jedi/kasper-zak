@@ -52,22 +52,31 @@
   position: relative;
   display: grid;
   width: auto;
+  height: 100vh;
   overflow: hidden;
   grid-template-columns: repeat(2, 1fr);
   justify-items: stretch;
   align-items: stretch;
-  margin: 0 $paragraph-spacing-small;
+  margin: 0;
 
   @include breakpoint(1200) {
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: 1fr;
+    height: auto;
   }
 }
 
 .sprosser-video {
   width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
   border: 4px solid #fff;
   transition: all 0.2s ease-in;
+
+  @include breakpoint(1200) {
+    height: 25vh;
+    width: auto;
+  }
 }
 
 .play-button-wrapper {
