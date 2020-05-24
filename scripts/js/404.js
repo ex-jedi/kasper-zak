@@ -19,5 +19,4 @@ const sceneOne = new ScrollMagic.Scene({
   reverse: false,
 })
   .setClassToggle(fadeInImage, 'image-animation')
-  .addIndicators()
   .addTo(controller);
