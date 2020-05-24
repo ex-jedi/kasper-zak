@@ -521,6 +521,12 @@ footer {
   font-weight: bold;
 }
 
+.footer-promo {
+  @include breakpoint(400) {
+    margin-bottom: 0;
+  }
+}
+
 .footer-link {
   color: $light-font-colour;
 }

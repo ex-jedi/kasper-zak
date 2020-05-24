@@ -36,6 +36,10 @@
     background-image: none;
     font-size: $h2-size-small;
   }
+
+  @include breakpoint(400) {
+    font-size: $h2-size-smaller;
+  }
 }
 
 .sprosser-subtitle-wrapper {
@@ -50,8 +54,16 @@
     @include flex(column);
     margin: 0 auto $section-spacing-small;
   }
+
+  @include breakpoint(900) {
+    font-size: $font-size-smaller;
+  }
   @include breakpoint(700) {
     margin: 0 auto $section-spacing-tiny;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
   }
 }
 
@@ -79,6 +91,14 @@
     width: 100%;
     padding: 0 $section-spacing-extra-small;
     text-align: center;
+  }
+
+  @include breakpoint(700) {
+    padding: 0 $section-spacing-tiny;
+  }
+
+  @include breakpoint(400) {
+    padding: 0 $paragraph-spacing-small;
   }
 }
 
