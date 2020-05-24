@@ -23,12 +23,18 @@
   color: $dark-font-colour;
 
   @include breakpoint(1500) {
-    padding: $section-spacing-tiny;
+    padding: $section-spacing-tiny 0;
     margin: $section-spacing-small auto;
   }
 
   @include breakpoint(1200) {
     font-size: $h2-size-medium;
+  }
+
+  @include breakpoint(700) {
+    margin: 0 auto;
+    background-image: none;
+    font-size: $h2-size-small;
   }
 }
 
@@ -42,6 +48,10 @@
 
   @include breakpoint(1200) {
     @include flex(column);
+    margin: 0 auto $section-spacing-small;
+  }
+  @include breakpoint(700) {
+    margin: 0 auto $section-spacing-tiny;
   }
 }
 
@@ -56,6 +66,9 @@
 
   @include breakpoint(1200) {
     margin: 0 auto $section-spacing-extra-small;
+  }
+  @include breakpoint(700) {
+    margin: 0 auto $section-spacing-tiny;
   }
 }
 
