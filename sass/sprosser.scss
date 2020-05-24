@@ -18,9 +18,15 @@
   background-size: contain;
   background-position: center;
   text-transform: capitalize;
-  padding: $heading-spacing-medium $paragraph-spacing-large;
+  padding: 0 0 $section-spacing-medium;
   margin: 0 auto;
   color: $dark-font-colour;
+
+  @include breakpoint(1500) {
+    padding: $heading-spacing-small 0 $heading-spacing-small
+      $heading-spacing-small;
+    // font-size: 13.5vw;
+  }
 }
 
 .sprosser-subtitle-wrapper {
