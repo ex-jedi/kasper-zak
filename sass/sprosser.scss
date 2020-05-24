@@ -23,9 +23,12 @@
   color: $dark-font-colour;
 
   @include breakpoint(1500) {
-    padding: $heading-spacing-small 0 $heading-spacing-small
-      $heading-spacing-small;
-    // font-size: 13.5vw;
+    padding: $section-spacing-tiny;
+    margin: $section-spacing-small auto;
+  }
+
+  @include breakpoint(1200) {
+    font-size: $h2-size-medium;
   }
 }
 
@@ -36,6 +39,10 @@
   @include main-font-stack;
   font-size: $font-size-medium;
   margin: 0 auto $section-spacing-medium;
+
+  @include breakpoint(1200) {
+    @include flex(column);
+  }
 }
 
 .sprosser-subtitle {
@@ -46,10 +53,20 @@
 
 .sprosser-subtitle-one {
   margin-right: $section-spacing-small;
+
+  @include breakpoint(1200) {
+    margin: 0 auto $section-spacing-extra-small;
+  }
 }
 
 .sprosser-subtitle-two {
   width: 50%;
+
+  @include breakpoint(1200) {
+    width: 100%;
+    padding: 0 $section-spacing-extra-small;
+    text-align: center;
+  }
 }
 
 //* Sprosser Videos
@@ -65,7 +82,7 @@
   align-items: stretch;
   margin: 0;
 
-  @include breakpoint(1200) {
+  @include breakpoint(1100) {
     grid-template-columns: 1fr;
     height: auto;
   }
@@ -79,7 +96,7 @@
   border: 4px solid #fff;
   transition: all 0.2s ease-in;
 
-  @include breakpoint(1200) {
+  @include breakpoint(1100) {
     height: 25vh;
     width: auto;
   }
@@ -151,6 +168,10 @@
   color: $dark-font-colour;
   font-size: $font-size-medium;
   padding: $section-spacing-medium;
+
+  p {
+    margin: 0;
+  }
 }
 
 .sprosser-fade-in {
