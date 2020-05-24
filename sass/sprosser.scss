@@ -182,6 +182,20 @@
   font-size: $font-size-medium;
   padding: $section-spacing-medium;
 
+  @include breakpoint(1100) {
+    padding: $section-spacing-smaller;
+  }
+
+  @include breakpoint(900) {
+    padding: $section-spacing-small;
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(400) {
+    font-size: $font-size-small;
+    padding: $section-spacing-tiny $paragraph-spacing-medium;
+  }
+
   p {
     margin: 0;
   }
