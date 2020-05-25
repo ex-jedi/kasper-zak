@@ -115,7 +115,6 @@
   flex: 0 1 auto;
   position: relative;
   width: 800px;
-  height: 800px;
   background-color: $dark-background-colour;
   padding: $section-spacing-small;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
@@ -143,9 +142,11 @@
 }
 
 .homepage-illustration-wrapper {
+  position: relative;
+  top: $section-spacing-large;
   flex: 0 1 auto;
   width: 40%;
-  margin-top: $section-spacing-large;
+  margin-left: $section-spacing-tiny;
 }
 
 .homepage-illustration {

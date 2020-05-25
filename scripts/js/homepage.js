@@ -1,12 +1,19 @@
 // *=========================================
 // ** General Stuff  **
 // *=========================================
-// *
+
+// * Matching height and width
+
+// Homepage slides
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
+
+const showreelPlayer = document.querySelector('.showreel-player');
+showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
+
 window.addEventListener('resize', () => {
   slidesImage.style.height = `${slidesImage.offsetWidth}px`;
-  console.log(slidesImage.style.width);
+  showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
 });
 
 // *=========================================
