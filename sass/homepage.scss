@@ -122,14 +122,18 @@
   @include breakpoint(1800) {
     width: 45%;
   }
+
+  @include breakpoint(1500) {
+    padding: $section-spacing-extra-small;
+  }
 }
 
 .showreel-player-arrow {
   align-self: flex-end;
   position: relative;
 
-  @include breakpoint(1800) {
-    // height: 40%;
+  @include breakpoint(1600) {
+    height: 50%;
   }
 }
 
@@ -150,6 +154,10 @@
 
   @include breakpoint(1800) {
     font-size: 4vw;
+  }
+
+  @include breakpoint(1500) {
+    font-size: 3.5vw;
   }
 }
 
@@ -174,6 +182,10 @@
   margin: $section-spacing-extra-large $section-spacing-medium
     $section-spacing-medium;
   color: $dark-font-colour;
+
+  @include breakpoint(1200) {
+    margin-top: $section-spacing-large;
+  }
 }
 
 .homepage-text-area-two-paragraph {
