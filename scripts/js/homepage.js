@@ -183,6 +183,18 @@ const slideParallaxScene = new ScrollMagic.Scene({
   .setTween(parallaxTl)
   .addTo(controller);
 
+const parallaxMQ = window.matchMedia('(max-width: 1200px)');
+
+function parallaxDestroy() {
+  if (parallaxMQ.matches) {
+    console.clear();
+    console.log('Match');
+    slideParallaxScene.destroy();
+  }
+}
+parallaxDestroy();
+window.addEventListener('resize', parallaxDestroy);
+
 // ********** Showreel Player **********
 
 // Grabbing page elements
