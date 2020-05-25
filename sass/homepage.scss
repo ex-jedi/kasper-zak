@@ -145,7 +145,7 @@
   position: relative;
   top: $section-spacing-large;
   flex: 0 1 auto;
-  width: 40%;
+  width: 700px;
   margin-left: $section-spacing-tiny;
 }
 
@@ -156,7 +156,8 @@
 //* Text Area Two
 
 .homepage-text-area-two {
-  margin: $section-spacing-medium;
+  margin: $section-spacing-extra-large $section-spacing-medium
+    $section-spacing-medium;
   color: $dark-font-colour;
 }
 
