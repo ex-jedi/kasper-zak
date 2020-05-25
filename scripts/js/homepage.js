@@ -133,7 +133,7 @@ function onComplete() {
   shake.to('.showreel-player-arrow', 0.15, {
     x: -5,
     y: 5,
-    rotate: 0,
+    rotate: 4,
     repeat: 9,
     yoyo: true,
   });

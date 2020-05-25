@@ -118,11 +118,19 @@
   background-color: $dark-background-colour;
   padding: $section-spacing-small;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+  @include breakpoint(1800) {
+    width: 45%;
+  }
 }
 
 .showreel-player-arrow {
   align-self: flex-end;
-  transform: rotate(-5deg);
+  position: relative;
+
+  @include breakpoint(1800) {
+    // height: 40%;
+  }
 }
 
 .showreel-player-button {
@@ -139,6 +147,10 @@
   text-align: left;
   color: $light-font-colour;
   opacity: 0;
+
+  @include breakpoint(1800) {
+    font-size: 4vw;
+  }
 }
 
 .homepage-illustration-wrapper {
@@ -146,7 +158,10 @@
   top: $section-spacing-large;
   flex: 0 1 auto;
   width: 700px;
-  margin-left: $section-spacing-tiny;
+
+  @include breakpoint(1800) {
+    width: 45%;
+  }
 }
 
 .homepage-illustration {
