@@ -183,17 +183,14 @@ const slideParallaxScene = new ScrollMagic.Scene({
   .setTween(parallaxTl)
   .addTo(controller);
 
+// Remove or add ScrollMagic parallax scene depending pn screen size
 const parallaxMQ = window.matchMedia('(max-width: 1200px)');
 
-function parallaxDestroy() {
-  if (parallaxMQ.matches) {
-    console.clear();
-    console.log('Match');
-    slideParallaxScene.destroy();
-  }
+function parallaxRun() {
+  return parallaxMQ.matches ? controller.removeScene(slideParallaxScene) : controller.addScene(slideParallaxScene);
 }
-parallaxDestroy();
-window.addEventListener('resize', parallaxDestroy);
+parallaxRun();
+window.addEventListener('resize', parallaxRun);
 
 // ********** Showreel Player **********
 
