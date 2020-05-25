@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import "bits"; //Contains variables, media queries mixins etc.
+@import 'bits'; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -34,6 +34,11 @@
   margin: 10rem 0.5rem 0;
   opacity: 0;
   position: relative;
+
+  @include breakpoint(1500) {
+    width: 400px;
+    height: 400px;
+  }
 }
 
 .triptych-image-two {
@@ -67,7 +72,7 @@
   padding: 0 $section-spacing-extra-large $section-spacing-small;
   margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
-  background-image: url("/images/birds-background-images.png");
+  background-image: url('/images/birds-background-images.png');
   background-repeat: no-repeat;
   background-position: left $section-spacing-small top $section-spacing-medium;
   background-size: 50%;
@@ -102,6 +107,10 @@
   @include flex(row);
   margin: 0 $section-spacing-small $section-spacing-small;
   justify-content: space-between;
+
+  @include breakpoint(1200) {
+    @include flex(column);
+  }
 }
 
 .showreel-player {
@@ -110,15 +119,30 @@
   flex: 0 1 auto;
   position: relative;
   width: 800px;
-  height: 800px;
   background-color: $dark-background-colour;
   padding: $section-spacing-small;
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+
+  @include breakpoint(1800) {
+    width: 45%;
+  }
+
+  @include breakpoint(1500) {
+    padding: $section-spacing-extra-small;
+  }
+
+  @include breakpoint(1200) {
+    width: 70%;
+  }
 }
 
 .showreel-player-arrow {
   align-self: flex-end;
-  transform: rotate(-5deg);
+  position: relative;
+
+  @include breakpoint(1600) {
+    height: 50%;
+  }
 }
 
 .showreel-player-button {
@@ -135,12 +159,31 @@
   text-align: left;
   color: $light-font-colour;
   opacity: 0;
+
+  @include breakpoint(1800) {
+    font-size: 4vw;
+  }
+
+  @include breakpoint(1500) {
+    font-size: 3.5vw;
+  }
 }
 
 .homepage-illustration-wrapper {
+  position: relative;
+  top: $section-spacing-large;
   flex: 0 1 auto;
-  width: 40%;
-  margin-top: $section-spacing-large;
+  width: 700px;
+
+  @include breakpoint(1800) {
+    width: 45%;
+  }
+
+  @include breakpoint(1200) {
+    width: 60%;
+    align-self: flex-end;
+    top: $section-spacing-extra-large;
+  }
 }
 
 .homepage-illustration {
@@ -150,8 +193,13 @@
 //* Text Area Two
 
 .homepage-text-area-two {
-  margin: $section-spacing-medium;
+  margin: $section-spacing-extra-large $section-spacing-medium
+    $section-spacing-medium;
   color: $dark-font-colour;
+
+  @include breakpoint(1200) {
+    margin-top: $section-spacing-large;
+  }
 }
 
 .homepage-text-area-two-paragraph {
@@ -171,7 +219,7 @@
   overflow: hidden;
 
   &:before {
-    content: "";
+    content: '';
     width: 150%;
     height: 80%;
     background-color: $accent-background-colour;

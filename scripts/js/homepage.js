@@ -1,4 +1,22 @@
 // *=========================================
+// ** General Stuff  **
+// *=========================================
+
+// * Matching height and width
+
+// Homepage slides
+const slidesImage = document.querySelector('.triptych-slides-wrapper');
+slidesImage.style.height = `${slidesImage.offsetWidth}px`;
+
+const showreelPlayer = document.querySelector('.showreel-player');
+showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
+
+window.addEventListener('resize', () => {
+  slidesImage.style.height = `${slidesImage.offsetWidth}px`;
+  showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
+});
+
+// *=========================================
 // ** Animations  **
 // *=========================================
 
@@ -29,7 +47,6 @@ tlOne
 
 const slides = document.querySelectorAll('.triptych-slides-wrapper .triptych-image-two');
 const slidesLength = slides.length - 1;
-console.log(slidesLength);
 let currentSlide = 0;
 let slideChange;
 
@@ -116,7 +133,7 @@ function onComplete() {
   shake.to('.showreel-player-arrow', 0.15, {
     x: -5,
     y: 5,
-    rotate: 0,
+    rotate: 4,
     repeat: 9,
     yoyo: true,
   });
@@ -165,6 +182,15 @@ const slideParallaxScene = new ScrollMagic.Scene({
 })
   .setTween(parallaxTl)
   .addTo(controller);
+
+// Remove or add ScrollMagic parallax scene depending pn screen size
+const parallaxMQ = window.matchMedia('(max-width: 1200px)');
+
+function parallaxRun() {
+  return parallaxMQ.matches ? controller.removeScene(slideParallaxScene) : controller.addScene(slideParallaxScene);
+}
+parallaxRun();
+window.addEventListener('resize', parallaxRun);
 
 // ********** Showreel Player **********
 
