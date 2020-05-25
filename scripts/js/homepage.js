@@ -1,4 +1,15 @@
 // *=========================================
+// ** General Stuff  **
+// *=========================================
+// *
+const slidesImage = document.querySelector('.triptych-slides-wrapper');
+slidesImage.style.height = `${slidesImage.offsetWidth}px`;
+window.addEventListener('resize', () => {
+  slidesImage.style.height = `${slidesImage.offsetWidth}px`;
+  console.log(slidesImage.style.width);
+});
+
+// *=========================================
 // ** Animations  **
 // *=========================================
 
@@ -29,7 +40,6 @@ tlOne
 
 const slides = document.querySelectorAll('.triptych-slides-wrapper .triptych-image-two');
 const slidesLength = slides.length - 1;
-console.log(slidesLength);
 let currentSlide = 0;
 let slideChange;
 
