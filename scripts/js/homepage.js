@@ -5,6 +5,7 @@
 // * Matching height and width
 
 // Homepage slides
+// TODO: Check if below is being used
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
 

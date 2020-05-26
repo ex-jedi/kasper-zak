@@ -31,13 +31,22 @@
 .triptych-slides-wrapper {
   width: 500px;
   height: 500px;
-  margin: 10rem 0.5rem 0;
+  margin: $section-spacing-medium 0.5rem 0;
   opacity: 0;
   position: relative;
 
   @include breakpoint(1500) {
     width: 400px;
     height: 400px;
+    margin-top: $section-spacing-smaller;
+  }
+
+  @include breakpoint(1200) {
+    margin-top: $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    margin-top: $section-spacing-tiny;
   }
 }
 
@@ -76,6 +85,19 @@
   background-repeat: no-repeat;
   background-position: left $section-spacing-small top $section-spacing-medium;
   background-size: 50%;
+
+  @include breakpoint(1500) {
+    padding: 0 $section-spacing-large $section-spacing-small;
+  }
+
+  @include breakpoint(1200) {
+    padding: 0 $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    margin-top: calc(0px - (#{$font-size-larger} / 2));
+    padding: 0 $section-spacing-small $section-spacing-small;
+  }
 }
 
 .homepage-intro-text-paragraph {
@@ -87,6 +109,10 @@
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-larger;
+  }
 }
 
 .homepage-intro-text-paragraph-two,
@@ -94,6 +120,10 @@
 .homepage-intro-text-paragraph-four {
   font-size: $font-size-large;
   opacity: 0;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-medium-large;
+  }
 }
 
 .homepage-intro-text-paragraph-three,
@@ -110,6 +140,7 @@
 
   @include breakpoint(1200) {
     @include flex(column);
+    margin-left: 0;
   }
 }
 
@@ -143,6 +174,10 @@
   @include breakpoint(1600) {
     height: 50%;
   }
+
+  @include breakpoint(1200) {
+    height: 65%;
+  }
 }
 
 .showreel-player-button {
@@ -167,27 +202,47 @@
   @include breakpoint(1500) {
     font-size: 3.5vw;
   }
+
+  @include breakpoint(1200) {
+    font-size: 5.5vw;
+  }
 }
 
-.homepage-illustration-wrapper {
-  position: relative;
-  top: $section-spacing-large;
+// .homepage-illustration-wrapper {
+//   flex: 0 1 auto;
+//   width: 700px;
+//   position: relative;
+//   top: $section-spacing-large;
+
+//   @include breakpoint(1800) {
+//     width: 45%;
+//   }
+
+//   @include breakpoint(1200) {
+//     width: 60%;
+//     // align-self: flex-end;
+//     // top: $section-spacing-large;
+//   }
+// }
+
+.homepage-illustration {
+  width: 100%;
+  height: 100%;
   flex: 0 1 auto;
   width: 700px;
+  position: relative;
+  top: $section-spacing-large;
 
   @include breakpoint(1800) {
     width: 45%;
   }
 
   @include breakpoint(1200) {
-    width: 60%;
+    width: 100%;
+    max-width: 600px;
     align-self: flex-end;
-    top: $section-spacing-extra-large;
+    top: 30rem;
   }
-}
-
-.homepage-illustration {
-  width: 100%;
 }
 
 //* Text Area Two
