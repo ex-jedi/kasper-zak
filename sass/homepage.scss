@@ -31,13 +31,14 @@
 .triptych-slides-wrapper {
   width: 500px;
   height: 500px;
-  margin: 10rem 0.5rem 0;
+  margin: $section-spacing-medium 0.5rem 0;
   opacity: 0;
   position: relative;
 
   @include breakpoint(1500) {
     width: 400px;
     height: 400px;
+    margin-top: $section-spacing-smaller;
   }
 }
 
@@ -76,6 +77,15 @@
   background-repeat: no-repeat;
   background-position: left $section-spacing-small top $section-spacing-medium;
   background-size: 50%;
+
+  @include breakpoint(1500) {
+    margin-top: $section-spacing-extra-small;
+    padding: 0 $section-spacing-large $section-spacing-small;
+  }
+
+  @include breakpoint(1200) {
+    padding: 0 $section-spacing-smaller $section-spacing-small;
+  }
 }
 
 .homepage-intro-text-paragraph {
