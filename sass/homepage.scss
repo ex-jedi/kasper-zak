@@ -40,6 +40,14 @@
     height: 400px;
     margin-top: $section-spacing-smaller;
   }
+
+  @include breakpoint(1200) {
+    margin-top: $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    margin-top: $section-spacing-tiny;
+  }
 }
 
 .triptych-image-two {
@@ -79,12 +87,16 @@
   background-size: 50%;
 
   @include breakpoint(1500) {
-    margin-top: $section-spacing-extra-small;
     padding: 0 $section-spacing-large $section-spacing-small;
   }
 
   @include breakpoint(1200) {
     padding: 0 $section-spacing-smaller $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    margin-top: calc(0px - (#{$font-size-larger} / 2));
+    padding: 0 $section-spacing-small $section-spacing-small;
   }
 }
 
@@ -97,6 +109,10 @@
 .homepage-intro-text-paragraph-one {
   font-size: $font-size-extra-large;
   line-height: 1;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-larger;
+  }
 }
 
 .homepage-intro-text-paragraph-two,
@@ -104,6 +120,10 @@
 .homepage-intro-text-paragraph-four {
   font-size: $font-size-large;
   opacity: 0;
+
+  @include breakpoint(1100) {
+    font-size: $font-size-medium-large;
+  }
 }
 
 .homepage-intro-text-paragraph-three,
