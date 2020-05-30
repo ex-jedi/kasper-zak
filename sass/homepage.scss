@@ -256,6 +256,10 @@
   @include breakpoint(1200) {
     margin: $section-spacing-large $section-spacing-smaller;
   }
+
+  @include breakpoint(900) {
+    margin: $section-spacing-large $section-spacing-small;
+  }
 }
 
 .homepage-text-area-two-paragraph {
