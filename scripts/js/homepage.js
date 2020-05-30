@@ -271,6 +271,7 @@ playerButton.addEventListener('click', () => {
   showreelTl.play();
   setTimeout(() => {
     noScrollWrapper.classList.add('no-scroll');
+    showreelVideoWrapper.style.pointerEvents = 'auto';
   }, 1500);
 });
 
@@ -292,6 +293,7 @@ function stopShowreel(event) {
     player.stopVideo();
     setTimeout(() => {
       noScrollWrapper.classList.remove('no-scroll');
+      showreelVideoWrapper.style.pointerEvents = 'none';
     }, 1500);
   }
 }
