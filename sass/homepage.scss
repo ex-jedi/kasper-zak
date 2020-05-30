@@ -142,6 +142,10 @@
     @include flex(column);
     margin-left: 0;
   }
+
+  @include breakpoint(700) {
+    margin-right: 0;
+  }
 }
 
 .showreel-player {
@@ -165,6 +169,10 @@
   @include breakpoint(1200) {
     width: 70%;
     padding: $section-spacing-tiny;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
   }
 }
 
@@ -207,6 +215,10 @@
   @include breakpoint(1200) {
     font-size: 5.5vw;
   }
+
+  @include breakpoint(700) {
+    font-size: 8vw;
+  }
 }
 
 // .homepage-illustration-wrapper {
@@ -239,10 +251,15 @@
   }
 
   @include breakpoint(1200) {
-    width: 100%;
-    max-width: 600px;
+    // width: 100%;
+    // max-width: 600px;
+    width: 600px;
     align-self: flex-end;
     top: 30rem;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
   }
 }
 
@@ -278,7 +295,7 @@
   position: relative;
   overflow: hidden;
 
-  @include breakpoint(900) {
+  @include breakpoint(1100) {
     overflow: visible;
   }
 
@@ -294,11 +311,22 @@
 
     @include breakpoint(1500) {
       top: 12rem;
-      height: 75%;
     }
 
-    @include breakpoint(900) {
-      height: 55%;
+    @include breakpoint(1200) {
+      height: 68%;
+      top: 9rem;
+    }
+
+    @include breakpoint(1100) {
+      height: 62.5%;
+      top: 8rem;
+    }
+
+    @include breakpoint(700) {
+      top: 6rem;
+      height: 85%;
+      width: 160%;
     }
   }
 }
@@ -307,6 +335,10 @@
   flex: 0 1 auto;
   width: 65%;
   height: auto;
+
+  @include breakpoint(700) {
+    width: 100%;
+  }
 }
 
 .triptych-two-image-one,
@@ -318,9 +350,13 @@
 
 .triptych-two-image-two {
   align-self: flex-end;
-  margin: -$section-spacing-small 0 0 -$section-spacing-small;
+  margin: -$section-spacing-small 0;
   clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
   transition: all 1.3s $ease-out-two;
+
+  @include breakpoint(700) {
+    margin: $paragraph-spacing-small 0;
+  }
 }
 
 //*=========================================
@@ -375,6 +411,14 @@
   top: 1rem;
   left: 50%;
   transform: translateX(-50%);
+}
+
+//*=========================================
+//** Contact Form **
+//*=========================================
+
+.general-contact-form-section {
+  margin-top: $section-spacing-medium;
 }
 
 //*=========================================
