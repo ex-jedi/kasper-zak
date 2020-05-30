@@ -90,7 +90,7 @@
 .intro-text-section {
   @include main-font-stack;
   line-height: normal;
-  padding: 0 $section-spacing-extra-large $section-spacing-small;
+  padding: 0 $section-spacing-extra-large $section-spacing-medium;
   margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
   background-image: url('/images/birds-background-images.png');
@@ -99,16 +99,21 @@
   background-size: 50%;
 
   @include breakpoint(1500) {
-    padding: 0 $section-spacing-large $section-spacing-small;
+    padding: 0 $section-spacing-large $section-spacing-medium;
   }
 
   @include breakpoint(1200) {
-    padding: 0 $section-spacing-smaller $section-spacing-small;
+    padding: 0 $section-spacing-smaller $section-spacing-medium;
   }
 
   @include breakpoint(900) {
     margin-top: calc(0px - (#{$font-size-larger} / 2));
     padding: 0 $section-spacing-small $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    margin-top: $section-spacing-tiny;
+    padding: 0 $paragraph-spacing-medium $section-spacing-small;
   }
 }
 
@@ -116,6 +121,10 @@
   margin: 0 0 $paragraph-spacing-large;
   width: 100%;
   opacity: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .homepage-intro-text-paragraph-one {
@@ -123,7 +132,7 @@
   line-height: 1;
 
   @include breakpoint(1100) {
-    font-size: $font-size-larger;
+    font-size: $font-size-150;
   }
 }
 
@@ -135,6 +144,10 @@
 
   @include breakpoint(1100) {
     font-size: $font-size-medium-large;
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-medium;
   }
 }
 
@@ -253,6 +266,7 @@
 
   @include breakpoint(700) {
     width: 100%;
+    top: $section-spacing-extra-large;
   }
 }
 
@@ -269,6 +283,10 @@
 
   @include breakpoint(900) {
     margin: $section-spacing-large $section-spacing-small;
+  }
+
+  @include breakpoint(700) {
+    margin: $section-spacing-medium $paragraph-spacing-medium;
   }
 }
 

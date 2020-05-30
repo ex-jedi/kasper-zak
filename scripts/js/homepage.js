@@ -45,9 +45,9 @@ tlOne
   );
 
 // * Switching off GreenSock animation on mobile
-const triptychMQ = window.matchMedia('(max-width: 700px)');
+const mediaSevenHundred = window.matchMedia('(max-width: 700px)');
 
-triptychMQ.matches ? tlOne.progress(0.45) : null;
+mediaSevenHundred.matches ? tlOne.progress(0.45) : null;
 
 // ********** Homepage Triptych Slider **********
 
@@ -103,20 +103,23 @@ const controller = new ScrollMagic.Controller();
 // Collect elements to fade in
 const introParagraphs = document.querySelectorAll('.fade-in-text');
 
-// For indicators in the scene
-let counter = 1;
+// Responsive trigger hook
+let responsiveTriggerHook = 0.5;
+if (mediaSevenHundred.matches) {
+  responsiveTriggerHook = 1;
+}
+console.log(responsiveTriggerHook);
 
 // Loop through elements to add animation
 introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.5,
+    triggerHook: responsiveTriggerHook,
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
+    // .addIndicators()
     .addTo(controller);
-
-  counter++;
 });
 
 // ********** Showreel Player **********
