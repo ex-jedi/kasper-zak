@@ -278,15 +278,28 @@
   position: relative;
   overflow: hidden;
 
+  @include breakpoint(900) {
+    overflow: visible;
+  }
+
   &:before {
     content: '';
     width: 150%;
-    height: 80%;
+    height: 70%;
     background-color: $accent-background-colour;
     position: absolute;
     top: $section-spacing-large;
     z-index: -1;
     transform: matrix(0.97, -0.26, 0.26, 0.97, 0, 0);
+
+    @include breakpoint(1500) {
+      top: 12rem;
+      height: 75%;
+    }
+
+    @include breakpoint(900) {
+      height: 55%;
+    }
   }
 }
 
