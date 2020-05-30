@@ -44,6 +44,11 @@ tlOne
     'togetherness'
   );
 
+// * Switching off GreenSock animation on mobile
+const triptychMQ = window.matchMedia('(max-width: 700px)');
+
+triptychMQ.matches ? tlOne.progress(0.45) : null;
+
 // ********** Homepage Triptych Slider **********
 
 const slides = document.querySelectorAll('.triptych-slides-wrapper .triptych-image-two');

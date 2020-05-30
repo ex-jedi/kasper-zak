@@ -26,6 +26,10 @@
 .triptych-image-one {
   width: 45%;
   opacity: 0;
+
+  @include breakpoint(700) {
+    display: none;
+  }
 }
 
 .triptych-slides-wrapper {
@@ -47,6 +51,10 @@
 
   @include breakpoint(900) {
     margin-top: $section-spacing-tiny;
+  }
+
+  @include breakpoint(700) {
+    width: 100%;
   }
 }
 
@@ -71,6 +79,10 @@
 .triptych-image-three {
   width: 20%;
   opacity: 0;
+
+  @include breakpoint(700) {
+    display: none;
+  }
 }
 
 //* Intro Text
@@ -221,23 +233,6 @@
   }
 }
 
-// .homepage-illustration-wrapper {
-//   flex: 0 1 auto;
-//   width: 700px;
-//   position: relative;
-//   top: $section-spacing-large;
-
-//   @include breakpoint(1800) {
-//     width: 45%;
-//   }
-
-//   @include breakpoint(1200) {
-//     width: 60%;
-//     // align-self: flex-end;
-//     // top: $section-spacing-large;
-//   }
-// }
-
 .homepage-illustration {
   width: 100%;
   height: 100%;
@@ -251,8 +246,6 @@
   }
 
   @include breakpoint(1200) {
-    // width: 100%;
-    // max-width: 600px;
     width: 600px;
     align-self: flex-end;
     top: 30rem;
