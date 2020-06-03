@@ -2,6 +2,17 @@
 // ** About page  **
 // *=========================================
 
+// ********** General Stuff **********
+
+// * matchMedia media queries
+const mediaNineHundred = window.matchMedia('(max-width: 900px)');
+
+// Responsive trigger hooks for ScrollMagic
+let responsiveTriggerHookOne = 0.75;
+if (mediaNineHundred.matches) {
+  responsiveTriggerHookOne = 0.95;
+}
+
 // ********** Text Fade In **********
 
 // * Init ScrollMagic
@@ -16,9 +27,10 @@ const fadeInText = document.querySelectorAll('.fade-in-text');
 fadeInText.forEach(function(text) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: text,
-    triggerHook: 0.75,
+    triggerHook: responsiveTriggerHookOne,
     // reverse: false,
   })
     .setClassToggle(text, 'fade-in-reveal')
+    .addIndicators()
     .addTo(controller);
 });
