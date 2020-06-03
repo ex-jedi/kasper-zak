@@ -97,7 +97,7 @@ function infiniteNextSlide() {
 
 // Used as callback function when Triptych GSAP timeline completes
 function slideInterval() {
-  slideChange = setInterval(nextSlide, 200);
+  slideChange = setInterval(nextSlide, 300);
 }
 
 // * Repeat image slideshow on mouse enter
@@ -106,7 +106,7 @@ const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
 let keepOnSliding;
 
 TriptychSlider.addEventListener('mouseenter', function() {
-  keepOnSliding = setInterval(infiniteNextSlide, 200);
+  keepOnSliding = setInterval(infiniteNextSlide, 300);
 });
 TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);

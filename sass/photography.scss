@@ -77,6 +77,17 @@
 .full-width-photo-image-wrapper {
   flex: 0 0 auto;
   overflow: hidden;
+
+  @include breakpoint(900) {
+    &:last-of-type {
+      margin-bottom: $section-spacing-smaller;
+    }
+  }
+  @include breakpoint(700) {
+    &:last-of-type {
+      margin-bottom: $section-spacing-small;
+    }
+  }
 }
 
 .full-width-photo-image {
