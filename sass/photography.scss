@@ -44,6 +44,7 @@
     margin: 0;
     padding: $section-spacing-extra-small 0 $section-spacing-extra-small
       $section-spacing-extra-small;
+    color: $dark-font-colour;
   }
 
   @include breakpoint(700) {
