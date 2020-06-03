@@ -15,7 +15,7 @@ const fadeInImage = document.querySelectorAll('.four-oh-four-image');
 // Loop through elements to add animation
 const sceneOne = new ScrollMagic.Scene({
   triggerElement: fadeInImage,
-  triggerHook: 0.8,
+  triggerHook: 0.7,
   reverse: false,
 })
   .setClassToggle(fadeInImage, 'image-animation')

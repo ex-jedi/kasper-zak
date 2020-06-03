@@ -14,6 +14,7 @@
   @include flex(row);
   @include main-font-stack;
   color: $dark-font-colour;
+  margin-bottom: $section-spacing-small;
   padding: $section-spacing-medium $section-spacing-small;
   align-items: flex-start;
 
@@ -32,6 +33,7 @@
   }
 
   @include breakpoint(700) {
+    margin-bottom: $section-spacing-tiny;
     padding: $section-spacing-tiny;
   }
 }
@@ -112,7 +114,7 @@
 }
 
 .image-animation {
-  animation: ruh-row 2.5s 0.5s ease-in-out forwards;
+  animation: ruh-row 2.5s ease-in-out forwards;
 }
 
 .four-oh-four-text-wrapper {

@@ -417,8 +417,6 @@ select {
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 0;
-  // Prevents button looking weird on IOS
-  // -webkit-appearance: none;
 }
 
 //********** Honeypot **********
@@ -599,3 +597,13 @@ footer {
 //*=========================================
 //** Browser Specific Styles  **
 //*=========================================
+//*=========================================
+//** IOS **
+//*=========================================
+
+@supports (-webkit-appearance: none) {
+  .submit {
+    // Prevents button looking weird on IOS
+    -webkit-appearance: none;
+  }
+} // IOS Styles End
