@@ -2,6 +2,22 @@
 // ** Props   **
 // *=========================================
 
+// ********** General Stuff **********
+
+// * matchMedia media queries
+const mediaNineHundred = window.matchMedia('(max-width: 900px)');
+
+// Responsive trigger hooks for ScrollMagic
+let responsiveTriggerHookOne = 0.6;
+if (mediaNineHundred.matches) {
+  responsiveTriggerHookOne = 0.8;
+}
+
+let responsiveTriggerHookTwo = 0.8;
+if (mediaNineHundred.matches) {
+  responsiveTriggerHookTwo = 1;
+}
+
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
 
@@ -15,7 +31,7 @@ const fadeInText = document.querySelectorAll('.fade-in');
 fadeInText.forEach(function(text) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: text,
-    triggerHook: 0.7,
+    triggerHook: responsiveTriggerHookTwo,
     // reverse: false,
   })
     .setClassToggle(text, 'fade-in-reveal')
@@ -29,7 +45,7 @@ const photoImageFadeIn = document.querySelectorAll('.props-image');
 photoImageFadeIn.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.6,
+    triggerHook: responsiveTriggerHookOne,
     // reverse: false,
   })
     .setClassToggle(item, 'photo-image-reveal')
