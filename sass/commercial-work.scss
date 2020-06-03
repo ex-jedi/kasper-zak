@@ -12,6 +12,19 @@
 
 .commercial-work-section {
   padding-bottom: $section-spacing-small;
+  margin-bottom: $section-spacing-smaller;
+
+  @include breakpoint(1500) {
+    margin-bottom: $section-spacing-small;
+  }
+
+  @include breakpoint(900) {
+    margin-bottom: $paragraph-spacing-medium;
+  }
+
+  @include breakpoint(700) {
+    margin-bottom: 0;
+  }
 }
 
 .commercial-work-title,

@@ -7,6 +7,7 @@
 // Homepage slides
 // TODO: Check if below is being used
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
+
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
 
 const showreelPlayer = document.querySelector('.showreel-player');
@@ -20,6 +21,23 @@ window.addEventListener('resize', () => {
 // *=========================================
 // ** Animations  **
 // *=========================================
+
+// ********** General Stuff **********
+
+// * matchMedia media queries
+const mediaTwelveHundred = window.matchMedia('(max-width: 1200px)');
+const mediaSevenHundred = window.matchMedia('(max-width: 700px)');
+
+// Responsive trigger hooks for ScrollMagic
+let responsiveTriggerHookOne = 0.5;
+if (mediaSevenHundred.matches) {
+  responsiveTriggerHookOne = 1;
+}
+
+let responsiveTriggerHookTwo = 0.5;
+if (mediaTwelveHundred.matches) {
+  responsiveTriggerHookTwo = 0.8;
+}
 
 // ********** Homepage Triptych **********
 
@@ -43,6 +61,10 @@ tlOne
     },
     'togetherness'
   );
+
+// * Switching off GreenSock animation on mobile
+
+mediaSevenHundred.matches ? tlOne.progress(0.45) : null;
 
 // ********** Homepage Triptych Slider **********
 
@@ -75,7 +97,7 @@ function infiniteNextSlide() {
 
 // Used as callback function when Triptych GSAP timeline completes
 function slideInterval() {
-  slideChange = setInterval(nextSlide, 200);
+  slideChange = setInterval(nextSlide, 300);
 }
 
 // * Repeat image slideshow on mouse enter
@@ -84,7 +106,7 @@ const TriptychSlider = document.querySelector('.triptych-slides-wrapper');
 let keepOnSliding;
 
 TriptychSlider.addEventListener('mouseenter', function() {
-  keepOnSliding = setInterval(infiniteNextSlide, 200);
+  keepOnSliding = setInterval(infiniteNextSlide, 300);
 });
 TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);
@@ -98,20 +120,16 @@ const controller = new ScrollMagic.Controller();
 // Collect elements to fade in
 const introParagraphs = document.querySelectorAll('.fade-in-text');
 
-// For indicators in the scene
-let counter = 1;
-
 // Loop through elements to add animation
 introParagraphs.forEach(function(item) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.5,
+    triggerHook: responsiveTriggerHookTwo,
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
+    // .addIndicators()
     .addTo(controller);
-
-  counter++;
 });
 
 // ********** Showreel Player **********
@@ -143,7 +161,7 @@ function onComplete() {
 // Init ScrollMagic scene to add GSAP animation at scroll trigger point
 const showReel = new ScrollMagic.Scene({
   triggerElement: '.showreel-player',
-  triggerHook: 0.4,
+  triggerHook: 0.5,
   // reverse: false,
 })
   .setTween(tlTwo)
@@ -162,7 +180,7 @@ let counterTwo = 1;
 triptychImageTwo.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
     triggerElement: item,
-    triggerHook: 0.5,
+    triggerHook: responsiveTriggerHookTwo,
     // reverse: false,
   })
     .setClassToggle(item, 'triptych-image-slide-in')
@@ -185,10 +203,11 @@ const slideParallaxScene = new ScrollMagic.Scene({
   .addTo(controller);
 
 // Remove or add ScrollMagic parallax scene depending pn screen size
-const parallaxMQ = window.matchMedia('(max-width: 1200px)');
 
 function parallaxRun() {
-  return parallaxMQ.matches ? controller.removeScene(slideParallaxScene) : controller.addScene(slideParallaxScene);
+  return mediaTwelveHundred.matches
+    ? controller.removeScene(slideParallaxScene)
+    : controller.addScene(slideParallaxScene);
 }
 parallaxRun();
 window.addEventListener('resize', parallaxRun);
@@ -263,6 +282,7 @@ playerButton.addEventListener('click', () => {
   showreelTl.play();
   setTimeout(() => {
     noScrollWrapper.classList.add('no-scroll');
+    showreelVideoWrapper.style.pointerEvents = 'auto';
   }, 1500);
 });
 
@@ -284,6 +304,7 @@ function stopShowreel(event) {
     player.stopVideo();
     setTimeout(() => {
       noScrollWrapper.classList.remove('no-scroll');
+      showreelVideoWrapper.style.pointerEvents = 'none';
     }, 1500);
   }
 }

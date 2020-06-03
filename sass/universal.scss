@@ -19,8 +19,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   font-size: 20px;
   overflow-x: hidden;
-  // Fixes stick footer overflow
-  background-color: $dark-background-colour;
+  background-color: $main-background-colour;
 }
 
 // * Box sizing rules
@@ -31,12 +30,13 @@ html {
 }
 
 body {
-  background-color: $main-background-colour;
   margin: 0 auto;
   position: relative;
   //TODO: Check site min and max widths
   min-width: 320px;
   max-width: 2000px;
+  // Fixes stick footer overflow
+  background-color: $dark-background-colour;
 }
 
 main {
@@ -418,7 +418,7 @@ select {
   font-weight: bold;
   border-radius: 0;
   // Prevents button looking weird on IOS
-  -webkit-appearance: none;
+  // -webkit-appearance: none;
 }
 
 //********** Honeypot **********

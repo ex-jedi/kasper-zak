@@ -269,3 +269,13 @@
     scroll-snap-type: y proximity;
   }
 }
+
+//*=========================================
+//** IOS **
+//*=========================================
+
+@supports (-webkit-appearance: none) {
+  .films-section {
+    max-height: 100%;
+  }
+} // IOS Styles End
