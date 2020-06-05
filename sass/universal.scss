@@ -291,7 +291,6 @@ header {
   border-bottom: 1px solid $dark-font-colour;
   font-size: $font-size-small;
   padding-bottom: 5px;
-  outline: none;
 
   @include breakpoint(700) {
     width: 100%;
@@ -299,7 +298,6 @@ header {
 
   &:focus,
   &:active {
-    border: 0;
     border-bottom: 1px solid $dark-font-colour;
   }
 }
@@ -545,8 +543,22 @@ footer {
 }
 
 //*=========================================
-//** Utility & Accessibility  **
+//** Browser Specific Styles  **
 //*=========================================
+//*=========================================
+//** IOS **
+//*=========================================
+
+@supports (-webkit-appearance: none) {
+  .submit {
+    // Prevents button looking weird on IOS
+    -webkit-appearance: none;
+  }
+} // IOS Styles End
+
+//*==============================================================================
+//** Accessibility **
+//*==============================================================================
 
 //* Remove all animations and transitions for people that prefer not to see them
 @media (prefers-reduced-motion: reduce) {
@@ -584,26 +596,9 @@ footer {
 
 //* Hides outline unless tab key is pressed
 
-//TODO: Make sure tab focus highlighting is applied
-.hide-outline {
-  a:focus,
-  button:focus,
-  input:focus,
-  textarea:focus {
-    outline: none;
-  }
+body:not(.user-is-tabbing) button:focus,
+body:not(.user-is-tabbing) input:focus,
+body:not(.user-is-tabbing) select:focus,
+body:not(.user-is-tabbing) textarea:focus {
+  outline: none;
 }
-
-//*=========================================
-//** Browser Specific Styles  **
-//*=========================================
-//*=========================================
-//** IOS **
-//*=========================================
-
-@supports (-webkit-appearance: none) {
-  .submit {
-    // Prevents button looking weird on IOS
-    -webkit-appearance: none;
-  }
-} // IOS Styles End
