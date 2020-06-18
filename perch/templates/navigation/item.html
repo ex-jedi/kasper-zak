@@ -1,7 +1,7 @@
 <perch:before>
     <nav class="main-nav">
-        <button class="main-nav-trigger" id="pull" @click="navPull = !navPull" :class="{'button-hide': navPull}" @click="navPull = !navPull" >Menu</button>
-        <img class="main-nav-closer" src="/images/dark-green-cross-icon.svg" @click="navPull = !navPull" :class="{'closer-reveal': navPull}">
+        <img class="main-nav-background-birds" src="/images/birds-background-images.png">
+        <button class="main-nav-trigger" id="pull" >Menu</button>
         <ul class="main-nav-ul" :class="{'main-nav-ul-reveal': navPull}">
 </perch:before>
         <li class="main-nav-li<perch:if exists="ancestor_page"> ancestor</perch:if>" id="<perch:if exists="current_page">main-nav-selected</perch:if>">

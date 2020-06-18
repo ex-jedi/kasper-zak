@@ -200,6 +200,12 @@ header {
 .main-nav-closer {
   display: none;
 }
+
+.main-nav-background-birds {
+  position: absolute;
+  width: 40%;
+  z-index: -1;
+}
 // *=========================================
 // ** Main **
 // *=========================================
