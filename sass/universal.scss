@@ -453,7 +453,11 @@ footer {
   width: 100%;
   z-index: 1;
   // Fixes stick footer overflow
-  max-height: 100vh;
+  max-height: 115vh;
+
+  @include breakpoint(1000) {
+    max-height: 100vh;
+  }
   @include breakpoint(700) {
     padding: $section-spacing-small $paragraph-spacing-small;
   }
