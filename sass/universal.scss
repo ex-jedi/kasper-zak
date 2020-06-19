@@ -21,6 +21,12 @@ html {
   overflow-x: hidden;
   // overflow: hidden;
   background-color: $main-background-colour;
+  @include styled-scrollbar(
+    1rem,
+    $dark-background-colour,
+    $main-background-colour,
+    $accent-background-colour
+  );
 }
 
 // * Box sizing rules
@@ -333,7 +339,12 @@ header {
   line-height: 1.85rem;
   background-attachment: local;
   resize: none;
-  @include horizontal-scrollbar;
+  @include styled-scrollbar(
+    0.25rem,
+    $dark-background-colour,
+    $main-background-colour,
+    $main-background-colour
+  );
   background-image: linear-gradient(
       to right,
       $main-background-colour 0,
