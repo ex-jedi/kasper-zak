@@ -19,6 +19,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   font-size: 20px;
   overflow-x: hidden;
+  // overflow: hidden;
   background-color: $main-background-colour;
 }
 
@@ -144,10 +145,10 @@ header {
   align-items: center;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-y: scroll;
   z-index: 10;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: $main-background-colour;
 
   //* Menu breakpoint
