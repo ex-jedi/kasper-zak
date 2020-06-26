@@ -1,7 +1,9 @@
 <perch:before>
     <nav class="main-nav">
+      <button class="main-nav-trigger menu-opener" id="menu-opener" >Menu</button>
+      <button class="main-nav-trigger menu-closer" id="menu-closer" >Close</button>
+      <div class="nav-inner-wrapper">
         <img class="main-nav-background-birds" src="/images/birds-background-images.png">
-        <button class="main-nav-trigger" id="pull" >Menu</button>
         <ul class="main-nav-ul">
 </perch:before>
         <li class="main-nav-li<perch:if exists="ancestor_page"> ancestor</perch:if>" id="<perch:if exists="current_page">main-nav-selected</perch:if>">
@@ -9,5 +11,6 @@
         </li>
 <perch:after>
         </ul>
+      </div>
     </nav>
 </perch:after>
