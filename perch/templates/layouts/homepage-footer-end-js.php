@@ -7,6 +7,8 @@
 <!-- General JS file -->
 <!-- Reframe  -->
 <script src="/scripts/minified/reframe.js"></script>
+<!-- Universal JS File  -->
+<script src="/scripts/minified/universal-min.js"></script>
 <!-- Homepage JS File  -->
 <script src="/scripts/minified/homepage-min.js"></script>
 </body>
