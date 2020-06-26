@@ -18,6 +18,7 @@ window.addEventListener('keydown', handleFirstTab);
 // ********** Text Fade In **********
 
 // * Init ScrollMagic
+// eslint-disable-next-line no-undef
 const controller = new ScrollMagic.Controller();
 
 const fadeInText = document.querySelectorAll('.sprosser-fade-in');
