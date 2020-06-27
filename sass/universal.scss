@@ -150,7 +150,7 @@ header {
   top: 0;
   margin: 0;
   padding: 0;
-  // overflow-y: auto;
+  overflow: visible;
   z-index: 10;
   height: 0;
   width: 0;
@@ -167,13 +167,15 @@ header {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   clip-path: inset(0 0 0 100%);
 }
 
 .main-nav-reveal {
   width: 100vw;
   height: 100%;
+  overflow-y: auto;
 }
 
 .main-nav-ul {
@@ -220,12 +222,25 @@ header {
 
 .menu-closer {
   display: none;
+  opacity: 0;
 }
 
 .main-nav-background-birds {
   position: absolute;
   width: 40%;
   z-index: -1;
+
+  @include breakpoint(1500) {
+    width: 60%;
+  }
+
+  @include breakpoint(1000) {
+    width: 90%;
+  }
+
+  @include breakpoint(400) {
+    top: 35%;
+  }
 }
 // *=========================================
 // ** Main **
@@ -658,3 +673,20 @@ body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none;
 }
+
+//*=========================================
+//** IOS **
+//*=========================================
+
+@media not all and (min-resolution: 0.001dpcm) {
+  .main-nav {
+    height: 200px;
+    width: 200px;
+  }
+
+  .main-nav-reveal {
+    width: 100vw;
+    height: 100%;
+    overflow-y: auto;
+  }
+} // IOS Styles End
