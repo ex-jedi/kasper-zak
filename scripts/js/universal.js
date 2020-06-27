@@ -69,3 +69,21 @@ function menuCloserHandler() {
 }
 
 menuCloser.addEventListener('click', menuCloserHandler);
+
+// =========================================
+// ** Menu Scroll Hide  **
+// =========================================
+const navTrigger = document.querySelector('.main-nav-trigger');
+const menuSevenHundred = window.matchMedia('(max-width: 700px)');
+let scrollPos = 0;
+// adding scroll event
+// eslint-disable-next-line func-names
+window.addEventListener('scroll', function() {
+  if (document.body.getBoundingClientRect().top < scrollPos && menuSevenHundred.matches && window.scrollY > 10) {
+    navTrigger.classList.add('nav-trigger-hide');
+  } else {
+    navTrigger.classList.remove('nav-trigger-hide');
+  }
+  // saves the new position for iteration.
+  scrollPos = document.body.getBoundingClientRect().top;
+});

@@ -232,6 +232,7 @@ header {
     top: unset;
     bottom: $paragraph-spacing-small;
     transform: translateX(50%);
+    transition: all 0.3s ease;
   }
 }
 
@@ -256,6 +257,10 @@ header {
   @include breakpoint(400) {
     top: 35%;
   }
+}
+
+.nav-trigger-hide {
+  transform: translateX(50%) translateY(6rem);
 }
 // *=========================================
 // ** Main **
