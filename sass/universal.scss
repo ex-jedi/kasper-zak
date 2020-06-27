@@ -226,6 +226,13 @@ header {
   text-transform: uppercase;
   cursor: pointer;
   z-index: 1;
+
+  @include breakpoint(700) {
+    right: 50%;
+    top: unset;
+    bottom: $paragraph-spacing-small;
+    transform: translateX(50%);
+  }
 }
 
 .menu-closer {
