@@ -203,6 +203,14 @@ header {
   font-size: $font-size-medium;
   font-weight: bold;
   color: $dark-font-colour;
+
+  @include breakpoint(500) {
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(350) {
+    font-size: $font-size-small;
+  }
 }
 
 .main-nav-trigger {
