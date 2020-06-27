@@ -7,20 +7,24 @@
 // *=========================================
 
 // *  Variables
-const menuOpener = document.querySelector('#menu-opener');
-const menuCloser = document.querySelector('#menu-closer');
+const html = document.querySelector('html');
 const mainNav = document.querySelector('.main-nav');
 const navWrapper = document.querySelector('.nav-inner-wrapper');
-const html = document.querySelector('html');
-
+const menuOpener = document.querySelector('#menu-opener');
+const menuCloser = document.querySelector('#menu-closer');
+const navLink = document.querySelectorAll('.main-nav-link');
+const backgroundBirds = document.querySelector('.main-nav-background-birds');
 // ********** Open Menu **********
 
 const openMenuTl = gsap.timeline({
   paused: true,
-  defaults: { ease: 'power4.in', duration: 1 },
+  defaults: { ease: 'power3.in', duration: 1 },
 });
 
-openMenuTl.to(navWrapper, { ease: 'power3.in', clipPath: 'inset(0 0 0 0' });
+openMenuTl
+  .to(navWrapper, { clipPath: 'inset(0 0 0 0' })
+  .fromTo(navLink, { x: -300, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 0.75 }, '-=0.75')
+  .fromTo(backgroundBirds, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 2, ease: 'power3.out' }, '-=1');
 
 function menuOpenerHandler() {
   openMenuTl.restart();
