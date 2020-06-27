@@ -51,7 +51,7 @@ const closeMenuTl = gsap.timeline({
 
 closeMenuTl
   .to(navWrapper, { clipPath: 'inset(0 100% 0  0' })
-  .to(navLink, { x: 300, opacity: 0, stagger: 0.2, duration: 0.75 }, '-=1.5')
+  .to(navLink, { x: 300, opacity: 0, stagger: -0.2, duration: 0.75 }, '-=1.5')
   .to(backgroundBirds, { x: -200, opacity: 0, duration: 1.5, ease: 'power3.out', onComplete: menuClosed }, '-=1.25');
 
 function menuCloserHandler() {
