@@ -191,7 +191,9 @@ header {
   text-align: center;
 
   &:last-of-type {
-    margin-bottom: 0;
+    @include breakpoint(500) {
+      margin-bottom: 5rem;
+    }
   }
 }
 
@@ -205,11 +207,9 @@ header {
   color: $dark-font-colour;
 
   @include breakpoint(500) {
-    font-size: $font-size-smaller;
-  }
-
-  @include breakpoint(350) {
     font-size: $font-size-small;
+    padding: calc(#{$section-spacing-tiny} / 4);
+    margin-bottom: calc(#{$section-spacing-tiny} / 4);
   }
 }
 
