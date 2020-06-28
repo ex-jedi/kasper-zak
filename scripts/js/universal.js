@@ -23,17 +23,20 @@ const openMenuTl = gsap.timeline({
   defaults: { ease: 'power3.in', duration: 1 },
 });
 
+// GSAP callback. Applied after menu opener opacity animated to 0.
+function menuOpenerHider() {
+  menuOpener.style.display = 'none';
+  menuCloser.style.display = 'unset';
+}
+
 openMenuTl
   .to(navWrapper, { clipPath: 'inset(0 0 0 0' })
-  .addLabel('menuTrigger', '<')
-  .to(menuOpener, { opacity: 0, duration: 0 }, 'menuTrigger')
-  .to(menuCloser, { opacity: 1, duration: 0.5 }, 'menuTrigger')
-  .fromTo(navLink, { x: -300, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 0.75 }, '-=1')
+  .to(menuOpener, { opacity: 0, duration: 0.3, onComplete: menuOpenerHider }, '-=1.2')
+  .to(menuCloser, { opacity: 1, duration: 0.75 }, '+=0.4')
+  .fromTo(navLink, { x: -300, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 0.75 }, '-=2')
   .fromTo(backgroundBirds, { x: 100, opacity: 0 }, { x: 0, opacity: 0.5, duration: 2, ease: 'power3.out' }, '-=1');
 
 function menuOpenerHandler() {
-  menuOpener.style.display = 'none';
-  menuCloser.style.display = 'unset';
   mainNav.classList.add('main-nav-reveal');
   html.classList.add('html-nav-opened');
   openMenuTl.restart();
@@ -54,18 +57,21 @@ const closeMenuTl = gsap.timeline({
   defaults: { ease: 'power4.in', duration: 1 },
 });
 
+// GSAP callback. Applied after menu opener opacity animated to 0.
+function menuCloserHider() {
+  menuCloser.style.display = 'none';
+  menuOpener.style.display = 'unset';
+}
+
 closeMenuTl
   .to(navWrapper, { clipPath: 'inset(0 100% 0  0' })
-  .addLabel('menuTrigger', '<')
-  .to(menuCloser, { opacity: 0, duration: 0 }, 'menuTrigger')
-  .to(menuOpener, { opacity: 1, duration: 0.5 }, 'menuTrigger')
+  .to(menuCloser, { opacity: 0, duration: 0.3, onComplete: menuCloserHider }, '-=1.2')
+  .to(menuOpener, { opacity: 1, duration: 0.5 }, '-=0.4')
   .to(navLink, { x: 300, opacity: 0, stagger: -0.2, duration: 0.6 }, '-=1.5')
   .to(backgroundBirds, { x: -200, opacity: 0, duration: 1.5, ease: 'power3.out', onComplete: menuClosed }, '-=1');
 
 function menuCloserHandler() {
   closeMenuTl.restart();
-  menuCloser.style.display = 'none';
-  menuOpener.style.display = 'unset';
 }
 
 menuCloser.addEventListener('click', menuCloserHandler);
