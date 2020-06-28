@@ -20,8 +20,9 @@ html {
   font-size: 20px;
   overflow-x: hidden;
   background-color: $main-background-colour;
+
   @include styled-scrollbar(
-    1rem,
+    0.75rem,
     $dark-background-colour,
     $main-background-colour,
     $accent-background-colour
