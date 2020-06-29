@@ -56,7 +56,7 @@
 
 </head>
 	<body class="<?php perch_page_attribute('bodyClass', array('template' => 'bits.html' )); ?>">
-				<div id="vue-wrapper" class="site-wrapper" :class="{'hide-outline': outlineHide}" @keydown.9="outlineHide = false" itemscope itemtype="http://schema.org/LocalBusiness">
+				<div class="site-wrapper" itemscope itemtype="http://schema.org/LocalBusiness">
 			<header class="main-header">
 				<!-- Skip to main content link  -->
 				<a class="show-on-focus"  href="#main-content">Skip to main content</a>

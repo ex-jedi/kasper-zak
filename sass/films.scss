@@ -6,6 +6,10 @@
 
 @import 'bits'; //Contains variables, media queries mixins etc.
 
+html {
+  overflow: hidden;
+}
+
 //*=========================================
 //** Header **
 //*=========================================
@@ -25,6 +29,13 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   -webkit-overflow-scrolling: touch;
+
+  @include styled-scrollbar(
+    0.5rem,
+    $dark-background-colour,
+    $main-background-colour,
+    $accent-background-colour
+  );
 }
 
 .main-nav {

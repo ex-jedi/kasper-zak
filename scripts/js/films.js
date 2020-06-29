@@ -1,6 +1,19 @@
 // *=========================================
 // ** Films page Js  **
 // *=========================================
+
+// ********** General Stuff **********
+
+// * Adding focus outline class when tab key is used
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    // the "I am a keyboard user" key
+    document.body.classList.add('user-is-tabbing');
+    window.removeEventListener('keydown', handleFirstTab);
+  }
+}
+
+window.addEventListener('keydown', handleFirstTab);
 // *=========================================
 // ** Video Controls  **
 // *=========================================
@@ -19,7 +32,7 @@ video.forEach(elem => {
 });
 
 // * Other elements to control
-const mainNav = document.querySelector('.main-nav');
+const mainNavigation = document.querySelector('.main-nav');
 
 // ********** Video control events **********
 
@@ -38,7 +51,7 @@ function playAndPause() {
     videoButton.classList.add('hide-play-button');
     videoTitle.classList.add('hide-video-title');
     videoCounter.classList.add('hide-video-counter');
-    mainNav.classList.add('hide-main-nav');
+    mainNavigation.classList.add('hide-main-nav');
     videoActual.play();
   } else if (!video.seeking) {
     videoActual.pause();
@@ -61,7 +74,7 @@ function isPaused() {
     videoButton.classList.remove('hide-play-button');
     videoTitle.classList.remove('hide-video-title');
     videoCounter.classList.remove('hide-video-counter');
-    mainNav.classList.remove('hide-main-nav');
+    mainNavigation.classList.remove('hide-main-nav');
   }
 }
 
