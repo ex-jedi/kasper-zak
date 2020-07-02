@@ -74,7 +74,7 @@ tlOne
 
 // * Switching off GreenSock animation on mobile
 
-mediaSevenHundred.matches ? tlOne.progress(0.45) : null;
+mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
 
 // ********** Homepage Triptych Slider **********
 

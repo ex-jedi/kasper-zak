@@ -211,6 +211,7 @@ html {
 }
 
 .play-button {
+  //FIXME: Hidden by title in lanscape orientation
   position: absolute;
   background-image: url('/images/video-player-icon.svg');
   background-size: contain;
