@@ -313,6 +313,11 @@ html {
 //*=========================================
 
 @media not all and (min-resolution: 0.001dpcm) {
+  //* html scroll is removed to hide scrollbar
+  html {
+    overflow: scroll;
+  }
+
   .films-section {
     height: 100%;
   }
