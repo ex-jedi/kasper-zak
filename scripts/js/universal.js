@@ -70,9 +70,9 @@ function menuCloserHider() {
 closeMenuTl
   .to(navWrapper, { clipPath: 'inset(0 100% 0  0' })
   .to(menuCloser, { opacity: 0, duration: 0.3, onComplete: menuCloserHider }, '-=1.2')
-  .to(menuOpener, { opacity: 1, duration: 0.5 }, '-=0.4')
   .to(navLink, { x: 300, opacity: 0, stagger: -0.2, duration: 0.6 }, '-=1.5')
-  .to(backgroundBirds, { x: -200, opacity: 0, duration: 1.5, ease: 'power3.out', onComplete: menuClosed }, '-=1');
+  .to(backgroundBirds, { x: -200, opacity: 0, duration: 1.5, ease: 'power3.out', onComplete: menuClosed }, '-=1')
+  .to(menuOpener, { opacity: 1, duration: 0.5 }, '+=0.2');
 
 function menuCloserHandler() {
   closeMenuTl.restart();
