@@ -221,8 +221,8 @@ header {
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
+  width: $section-spacing-small;
+  height: $section-spacing-small;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;

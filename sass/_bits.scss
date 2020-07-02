@@ -266,6 +266,8 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
 //** Media Queries   **
 //*=========================================
 
+//********** Width **********
+
 @mixin breakpoint($point) {
   @if unitless($point) {
     $point: 1px * $point;
@@ -275,13 +277,13 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
   }
 }
 
-//* Alternative Media Queries
-//TODO: You must Choose!
+//********** Height **********
 
-// @mixin breakpoint($point) {
-//   @if $point == 2000 {
-//     @media (max-width: 2000) {
-//       @content;
-//     }
-//   }
-// }
+@mixin height-breakpoint($point) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) {
+    @content;
+  }
+}
