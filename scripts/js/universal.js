@@ -27,6 +27,9 @@ const openMenuTl = gsap.timeline({
 function menuOpenerHider() {
   menuOpener.style.display = 'none';
   menuCloser.style.display = 'unset';
+  setTimeout(() => {
+    mainNav.style.overflowY = 'auto';
+  }, 500);
 }
 
 openMenuTl
@@ -50,6 +53,7 @@ menuOpener.addEventListener('click', menuOpenerHandler);
 function menuClosed() {
   mainNav.classList.remove('main-nav-reveal');
   html.classList.remove('html-nav-opened');
+  mainNav.style.overflowY = 'unset';
 }
 
 const closeMenuTl = gsap.timeline({

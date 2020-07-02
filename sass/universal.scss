@@ -155,11 +155,6 @@ header {
   z-index: 10;
   height: 0;
   width: 0;
-
-  //* Menu breakpoint
-  @include breakpoint(700) {
-    // display: none;
-  }
 }
 
 .nav-inner-wrapper {
@@ -176,7 +171,6 @@ header {
 .main-nav-reveal {
   width: 100vw;
   height: 100%;
-  overflow-y: auto;
 }
 
 .main-nav-ul {
@@ -227,8 +221,8 @@ header {
   border: 1px solid $dark-grey;
   background-color: $main-background-colour;
   border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
+  width: $section-spacing-small;
+  height: $section-spacing-small;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;

@@ -146,6 +146,12 @@ html {
     font-size: $h2-size-extra-small;
     top: $font-size-small;
   }
+
+  //* Fixing squashed landscape layout
+  @include height-breakpoint(450) {
+    font-size: $font-size-medium;
+    top: $paragraph-spacing-small;
+  }
 }
 
 .hide-video-title {
@@ -173,12 +179,18 @@ html {
   line-height: 1;
 
   @include breakpoint(700) {
+    bottom: calc(#{$section-spacing-small} + 1.5rem);
     font-size: $font-size-smaller;
   }
 
   @include breakpoint(400) {
     font-size: $font-size-small;
-    bottom: $font-size-small;
+  }
+
+  //* Fixing squashed landscape layout
+  @include height-breakpoint(450) {
+    bottom: $paragraph-spacing-small;
+    font-size: $font-size-small;
   }
 }
 
@@ -191,6 +203,11 @@ html {
 
   @include breakpoint(400) {
     font-size: $h2-size-extra-small;
+  }
+
+  //* Fixing squashed landscape layout
+  @include height-breakpoint(450) {
+    font-size: $font-size-medium;
   }
 }
 
@@ -211,13 +228,15 @@ html {
 }
 
 .play-button {
+  //FIXME: Hidden by title in lanscape orientation
   position: absolute;
   background-image: url('/images/video-player-icon.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 11rem;
-  width: 11rem;
+  height: $section-spacing-large;
+  width: $section-spacing-large;
+  opacity: 0.9;
   border: 0;
   background-color: transparent;
   top: 50%;
@@ -227,9 +246,21 @@ html {
   transform: translateX(-50%) translateY(-50%) scale(0.5);
   transition: all 0.2s ease-in;
   cursor: pointer;
+
   &:active {
     outline: none;
     border: none;
+  }
+
+  @include breakpoint(700) {
+    height: $section-spacing-medium;
+    width: $section-spacing-medium;
+  }
+
+  //* Fixing squashed landscape layout
+  @include height-breakpoint(450) {
+    height: $section-spacing-medium;
+    width: $section-spacing-medium;
   }
 }
 
