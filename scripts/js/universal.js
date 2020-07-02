@@ -26,10 +26,10 @@ const openMenuTl = gsap.timeline({
 // GSAP callback. Applied after menu opener opacity animated to 0.
 function menuOpenerHider() {
   menuOpener.style.display = 'none';
-  menuCloser.style.display = 'unset';
   setTimeout(() => {
+    menuCloser.style.display = 'unset';
     mainNav.style.overflowY = 'auto';
-  }, 500);
+  }, 1500);
 }
 
 openMenuTl
@@ -64,7 +64,10 @@ const closeMenuTl = gsap.timeline({
 // GSAP callback. Applied after menu opener opacity animated to 0.
 function menuCloserHider() {
   menuCloser.style.display = 'none';
-  menuOpener.style.display = 'unset';
+
+  setTimeout(() => {
+    menuOpener.style.display = 'unset';
+  }, 1500);
 }
 
 closeMenuTl
