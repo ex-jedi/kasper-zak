@@ -705,14 +705,25 @@ body:not(.user-is-tabbing) textarea:focus {
 //*=========================================
 
 @media not all and (min-resolution: 0.001dpcm) {
-  .main-nav {
-    height: 200px;
-    width: 200px;
-  }
+  // .main-nav {
+  //   height: 200px;
+  //   width: 200px;
 
-  .main-nav-reveal {
-    width: 100vw;
-    height: 100%;
-    overflow-y: auto;
-  }
+  //   @include breakpoint(400) {
+  //     height: 0;
+  //     width: 0;
+  //   }
+  // }
+
+  // .main-nav-reveal {
+  //   width: 100vw;
+  //   height: 100%;
+  //   overflow-y: auto;
+  // }
+
+  // .nav-inner-wrapper {
+  //   @include breakpoint(400) {
+  //     clip-path: none;
+  //   }
+  // }
 } // IOS Styles End

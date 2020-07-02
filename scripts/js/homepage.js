@@ -149,15 +149,8 @@ const tlTwo = gsap.timeline({
   defaults: { duration: 1, ease: Power2.easeOut },
 });
 
-tlTwo
-  .to('.showreel-player', {
-    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
-  })
-  .fromTo('.showreel-player-button', { xPercent: -100 }, { xPercent: 0, opacity: 1 })
-  .fromTo('.showreel-player-arrow', { yPercent: -10, opacity: 0 }, { yPercent: 0, opacity: 1, onComplete });
-
 // GSAP callback to add repeating animation
-function onComplete() {
+function arrowShake() {
   const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 4 });
   shake.to('.showreel-player-arrow', 0.15, {
     x: -5,
@@ -167,6 +160,13 @@ function onComplete() {
     yoyo: true,
   });
 }
+
+tlTwo
+  .to('.showreel-player', {
+    clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
+  })
+  .fromTo('.showreel-player-button', { xPercent: -100 }, { xPercent: 0, opacity: 1 })
+  .fromTo('.showreel-player-arrow', { yPercent: -10, opacity: 0 }, { yPercent: 0, opacity: 1, onComplete: arrowShake });
 
 // Init ScrollMagic scene to add GSAP animation at scroll trigger point
 const showReel = new ScrollMagic.Scene({

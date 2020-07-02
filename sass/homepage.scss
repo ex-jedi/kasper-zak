@@ -451,3 +451,23 @@
 .triptych-image-slide-in {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
+
+//*=========================================
+//** IOS **
+//*=========================================
+
+@media not all and (min-resolution: 0.001dpcm) {
+  // .showreel-player {
+  //   @include breakpoint(400) {
+  //     clip-path: none;
+  //   }
+  // }
+
+  // .showreel-video {
+  //   clip-path: none;
+  // }
+
+  // .homepage-showreel-wrapper {
+  //   clip-path: none;
+  // }
+} // IOS Styles End
