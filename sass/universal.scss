@@ -504,6 +504,11 @@ select {
   border-radius: 0;
 }
 
+.success {
+  font-size: $font-size-medium;
+  text-align: center;
+}
+
 //********** Honeypot **********
 
 .form-identification-number {
