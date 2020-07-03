@@ -142,21 +142,21 @@ introParagraphs.forEach(function(item) {
     .addTo(controller);
 });
 
-// ********** Showreel Player **********
+// ********** Showreel Player Flyout **********
 
 // Init GSAP timeline
 const tlTwo = gsap.timeline({
-  defaults: { duration: 1, ease: Power2.easeOut },
+  defaults: { duration: 0.6, ease: Power2.easeOut },
 });
 
 // GSAP callback to add repeating animation
 function arrowShake() {
-  const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 4 });
+  const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 2 });
   shake.to('.showreel-player-arrow', 0.15, {
-    x: -5,
-    y: 5,
-    rotate: 4,
-    repeat: 9,
+    x: -15,
+    y: 15,
+    rotate: 5,
+    repeat: 5,
     yoyo: true,
   });
 }
@@ -222,7 +222,7 @@ function parallaxRun() {
 parallaxRun();
 window.addEventListener('resize', parallaxRun);
 
-// ********** Showreel Player **********
+// ********** Showreel Video **********
 
 // Grabbing page elements
 const playerButton = document.querySelector('.showreel-player-button');
