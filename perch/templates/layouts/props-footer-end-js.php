@@ -6,6 +6,7 @@
 <script src="/scripts/minified/gsap.min.js"></script>
 <!-- General JS file -->
 <script type="text/javascript" src="/scripts/minified/universal-min.js"></script>
+<!-- Page JS file  -->
 <script src="/scripts/minified/props-min.js"></script>
 </body>
 </html>
