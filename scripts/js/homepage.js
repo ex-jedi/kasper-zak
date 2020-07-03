@@ -151,10 +151,10 @@ const tlTwo = gsap.timeline({
 
 // GSAP callback to add repeating animation
 function arrowShake() {
-  const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 2 });
+  const shake = new gsap.timeline({ repeat: -1, delay: 2, repeatDelay: 2 });
   shake.to('.showreel-player-arrow', 0.15, {
-    x: -15,
-    y: 15,
+    x: -10,
+    y: 10,
     rotate: 5,
     repeat: 5,
     yoyo: true,
@@ -171,7 +171,7 @@ tlTwo
 // Init ScrollMagic scene to add GSAP animation at scroll trigger point
 const showReel = new ScrollMagic.Scene({
   triggerElement: '.showreel-player',
-  triggerHook: 0.5,
+  triggerHook: responsiveTriggerHookTwo,
   // reverse: false,
 })
   .setTween(tlTwo)
