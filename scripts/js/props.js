@@ -2,8 +2,6 @@
 // ** Props   **
 // *=========================================
 
-window.addEventListener('keydown', handleFirstTab);
-
 // * matchMedia media queries
 const mediaNineHundred = window.matchMedia('(max-width: 900px)');
 

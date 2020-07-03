@@ -1,2 +1,2 @@
-window.addEventListener("keydown",handleFirstTab);const controller=new ScrollMagic.Controller,photoImage=document.querySelectorAll(".photo-image");photoImage.forEach((function(e){new ScrollMagic.Scene({triggerElement:e.closest(".photo-wrapper"),triggerHook:.7}).setClassToggle(e,"photo-image-reveal").addTo(controller)}));
+const controller=new ScrollMagic.Controller,photoImage=document.querySelectorAll(".photo-image");photoImage.forEach((function(o){new ScrollMagic.Scene({triggerElement:o.closest(".photo-wrapper"),triggerHook:.7}).setClassToggle(o,"photo-image-reveal").addTo(controller)}));
 //# sourceMappingURL=photography-min.js.map

@@ -2,8 +2,6 @@
 // ** General Stuff  **
 // *=========================================
 
-window.addEventListener('keydown', handleFirstTab);
-
 // * Matching height and width
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 

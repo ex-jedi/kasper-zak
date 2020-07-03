@@ -2,8 +2,6 @@
 // ** Photography  **
 // *=========================================
 
-window.addEventListener('keydown', handleFirstTab);
-
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
 

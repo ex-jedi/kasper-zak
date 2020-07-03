@@ -15,6 +15,8 @@ function handleFirstTab(e) {
   }
 }
 
+window.addEventListener('keydown', handleFirstTab);
+
 // *=========================================
 // ** Menu GSAP Timeline   **
 // *=========================================
