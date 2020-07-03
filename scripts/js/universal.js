@@ -3,6 +3,29 @@
 // *==============================================================================
 
 // *=========================================
+// ** Accessibility  **
+// *=========================================
+
+// * Adding focus outline class when tab key is used
+function handleFirstTab(e) {
+  if (e.keyCode === 9) {
+    document.body.classList.add('user-is-tabbing');
+
+    window.removeEventListener('keydown', handleFirstTab);
+    window.addEventListener('mousedown', handleMouseDownOnce);
+  }
+}
+
+function handleMouseDownOnce() {
+  document.body.classList.remove('user-is-tabbing');
+
+  window.removeEventListener('mousedown', handleMouseDownOnce);
+  window.addEventListener('keydown', handleFirstTab);
+}
+
+window.addEventListener('keydown', handleFirstTab);
+
+// *=========================================
 // ** Menu GSAP Timeline   **
 // *=========================================
 
@@ -15,7 +38,6 @@ const menuCloser = document.querySelector('#menu-closer');
 const navLink = document.querySelectorAll('.main-nav-link');
 const backgroundBirds = document.querySelector('.main-nav-background-birds');
 
-const body = document.querySelector('body');
 // ********** Open Menu **********
 
 const openMenuTl = gsap.timeline({

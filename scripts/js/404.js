@@ -1,25 +1,11 @@
 // *=========================================
-// ** About page  **
+// ** 404 page  **
 // *=========================================
 
-// * Adding focus outline class when tab key is used
-function handleFirstTab(e) {
-  if (e.keyCode === 9) {
-    // the "I am a keyboard user" key
-    document.body.classList.add('user-is-tabbing');
-    window.removeEventListener('keydown', handleFirstTab);
-  }
-}
-
-window.addEventListener('keydown', handleFirstTab);
-
 // ********** Text Fade In **********
-console.log('Hello');
 
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
-
-const fadeInParagraphs = document.querySelectorAll('.about-me-text-wrapper p');
 
 const fadeInImage = document.querySelectorAll('.four-oh-four-image');
 

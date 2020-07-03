@@ -2,20 +2,7 @@
 // ** General Stuff  **
 // *=========================================
 
-// * Adding focus outline class when tab key is used
-function handleFirstTab(e) {
-  if (e.keyCode === 9) {
-    // the "I am a keyboard user" key
-    document.body.classList.add('user-is-tabbing');
-    window.removeEventListener('keydown', handleFirstTab);
-  }
-}
-
-window.addEventListener('keydown', handleFirstTab);
-
 // * Matching height and width
-// Homepage slides
-// TODO: Check if below is being used
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
@@ -39,42 +26,15 @@ const mediaTwelveHundred = window.matchMedia('(max-width: 1200px)');
 const mediaSevenHundred = window.matchMedia('(max-width: 700px)');
 
 // Responsive trigger hooks for ScrollMagic
-let responsiveTriggerHookOne = 0.5;
+let responsiveTriggerHookOne = 0.6;
 if (mediaSevenHundred.matches) {
-  responsiveTriggerHookOne = 1;
+  responsiveTriggerHookOne = 0.9;
 }
 
 let responsiveTriggerHookTwo = 0.5;
 if (mediaTwelveHundred.matches) {
   responsiveTriggerHookTwo = 0.8;
 }
-
-// ********** Homepage Triptych **********
-
-const tlOne = gsap.timeline({
-  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
-});
-
-tlOne
-  .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0, opacity: 1 }, '+=1')
-  .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0, opacity: 1 }, '-=0.2')
-  .addLabel('togetherness', '-=.3')
-  .fromTo('.triptych-slides-wrapper', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'none' }, 'togetherness')
-  .fromTo(
-    '.triptych-image-two',
-    { yPercent: 100 },
-    {
-      yPercent: 0,
-      duration: 2,
-      ease: 'elastic.out(1, 0.5)',
-      onComplete: slideInterval,
-    },
-    'togetherness'
-  );
-
-// * Switching off GreenSock animation on mobile
-
-mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
 
 // ********** Homepage Triptych Slider **********
 
@@ -122,6 +82,34 @@ TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);
 });
 
+// ********** Homepage Triptych **********
+
+const tlOne = gsap.timeline({
+  defaults: { duration: 0.6, ease: 'back.out(1.4)' },
+});
+
+tlOne
+  .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0, opacity: 1 }, '+=1')
+  .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0, opacity: 1 }, '-=0.2')
+  .addLabel('togetherness', '-=.3')
+  .fromTo('.triptych-slides-wrapper', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'none' }, 'togetherness')
+  .fromTo(
+    '.triptych-image-two',
+    { yPercent: 100 },
+    {
+      yPercent: 0,
+      duration: 2,
+      ease: 'elastic.out(1, 0.5)',
+      onComplete: slideInterval,
+    },
+    'togetherness'
+  );
+
+// * Switching off GreenSock animation on mobile
+
+// eslint-disable-next-line no-unused-expressions
+mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
+
 // ********** Intro Paragraphs **********
 
 // * Init ScrollMagic
@@ -138,40 +126,39 @@ introParagraphs.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
-    // .addIndicators()
     .addTo(controller);
 });
 
-// ********** Showreel Player **********
+// ********** Showreel Player Flyout **********
 
 // Init GSAP timeline
 const tlTwo = gsap.timeline({
-  defaults: { duration: 1, ease: Power2.easeOut },
+  defaults: { duration: 0.6, ease: 'power2.out' },
 });
+
+// GSAP callback to add repeating animation
+function arrowShake() {
+  const shake = gsap.timeline({ repeat: -1, delay: 2, repeatDelay: 2 });
+  shake.to('.showreel-player-arrow', 0.15, {
+    x: -10,
+    y: 10,
+    rotate: 5,
+    repeat: 5,
+    yoyo: true,
+  });
+}
 
 tlTwo
   .to('.showreel-player', {
     clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)',
   })
   .fromTo('.showreel-player-button', { xPercent: -100 }, { xPercent: 0, opacity: 1 })
-  .fromTo('.showreel-player-arrow', { yPercent: -10, opacity: 0 }, { yPercent: 0, opacity: 1, onComplete });
-
-// GSAP callback to add repeating animation
-function onComplete() {
-  const shake = new gsap.timeline({ repeat: -1, delay: 3, repeatDelay: 4 });
-  shake.to('.showreel-player-arrow', 0.15, {
-    x: -5,
-    y: 5,
-    rotate: 4,
-    repeat: 9,
-    yoyo: true,
-  });
-}
+  .fromTo('.showreel-player-arrow', { yPercent: -10, opacity: 0 }, { yPercent: 0, opacity: 1, onComplete: arrowShake });
 
 // Init ScrollMagic scene to add GSAP animation at scroll trigger point
 const showReel = new ScrollMagic.Scene({
   triggerElement: '.showreel-player',
-  triggerHook: 0.5,
+  triggerHook: responsiveTriggerHookOne,
   // reverse: false,
 })
   .setTween(tlTwo)
@@ -182,10 +169,6 @@ const showReel = new ScrollMagic.Scene({
 // Collect elements to fade in
 const triptychImageTwo = document.querySelectorAll('.triptych-section-two-image');
 
-// For indicators in the scene
-// TODO: Used for multiple indicators. Can be removed before launch.
-let counterTwo = 1;
-
 // Loop through elements to add animation
 triptychImageTwo.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
@@ -195,14 +178,12 @@ triptychImageTwo.forEach(function(item) {
   })
     .setClassToggle(item, 'triptych-image-slide-in')
     .addTo(controller);
-
-  counterTwo++;
 });
 
 // * Parallax Scene
 
 const parallaxTl = gsap.timeline();
-parallaxTl.from('.homepage-illustration', 2, { y: '-70%', ease: Power0.easeNone }, 0);
+parallaxTl.from('.homepage-illustration', 2, { y: '-70%', ease: 'none' }, 0);
 
 const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
@@ -222,7 +203,7 @@ function parallaxRun() {
 parallaxRun();
 window.addEventListener('resize', parallaxRun);
 
-// ********** Showreel Player **********
+// ********** Showreel Video **********
 
 // Grabbing page elements
 const playerButton = document.querySelector('.showreel-player-button');
@@ -238,15 +219,6 @@ tag.src = 'https://www.youtube.com/iframe_api';
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('showreel-iframe', {
-    events: {
-      onStateChange: onPlayerStateChange,
-    },
-  });
-}
-
 function showCloseButton(playerStatus) {
   if (playerStatus === 2 || playerStatus === 0) {
     gsap.to(closeButton, { duration: 0.6, opacity: 1 });
@@ -257,6 +229,15 @@ function showCloseButton(playerStatus) {
 
 function onPlayerStateChange(event) {
   showCloseButton(event.data);
+}
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('showreel-iframe', {
+    events: {
+      onStateChange: onPlayerStateChange,
+    },
+  });
 }
 
 //  Play YouTube showreel callback for GSAP timeline

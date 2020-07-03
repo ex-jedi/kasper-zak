@@ -110,7 +110,7 @@ html {
   margin: auto;
   transition: all 0.3s ease-in;
   position: relative;
-  height: 100%;
+  height: 100vh;
 }
 
 //* Videos Text
@@ -228,7 +228,6 @@ html {
 }
 
 .play-button {
-  //FIXME: Hidden by title in lanscape orientation
   position: absolute;
   background-image: url('/images/video-player-icon.svg');
   background-size: contain;
