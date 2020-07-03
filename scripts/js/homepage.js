@@ -72,6 +72,7 @@ tlOne
 
 // * Switching off GreenSock animation on mobile
 
+// eslint-disable-next-line no-unused-expressions
 mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
 
 // ********** Homepage Triptych Slider **********
@@ -194,7 +195,7 @@ triptychImageTwo.forEach(function(item) {
 // * Parallax Scene
 
 const parallaxTl = gsap.timeline();
-parallaxTl.from('.homepage-illustration', 2, { y: '-70%', ease: Power0.easeNone }, 0);
+parallaxTl.from('.homepage-illustration', 2, { y: '-70%', ease: 'none' }, 0);
 
 const slideParallaxScene = new ScrollMagic.Scene({
   triggerElement: '.homepage-illustration',
@@ -230,15 +231,6 @@ tag.src = 'https://www.youtube.com/iframe_api';
 const firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-let player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('showreel-iframe', {
-    events: {
-      onStateChange: onPlayerStateChange,
-    },
-  });
-}
-
 function showCloseButton(playerStatus) {
   if (playerStatus === 2 || playerStatus === 0) {
     gsap.to(closeButton, { duration: 0.6, opacity: 1 });
@@ -249,6 +241,15 @@ function showCloseButton(playerStatus) {
 
 function onPlayerStateChange(event) {
   showCloseButton(event.data);
+}
+
+let player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('showreel-iframe', {
+    events: {
+      onStateChange: onPlayerStateChange,
+    },
+  });
 }
 
 //  Play YouTube showreel callback for GSAP timeline
