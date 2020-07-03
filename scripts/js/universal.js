@@ -15,7 +15,6 @@ const menuCloser = document.querySelector('#menu-closer');
 const navLink = document.querySelectorAll('.main-nav-link');
 const backgroundBirds = document.querySelector('.main-nav-background-birds');
 
-const body = document.querySelector('body');
 // ********** Open Menu **********
 
 const openMenuTl = gsap.timeline({
