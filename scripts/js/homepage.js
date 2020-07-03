@@ -37,9 +37,9 @@ const mediaTwelveHundred = window.matchMedia('(max-width: 1200px)');
 const mediaSevenHundred = window.matchMedia('(max-width: 700px)');
 
 // Responsive trigger hooks for ScrollMagic
-let responsiveTriggerHookOne = 0.5;
+let responsiveTriggerHookOne = 0.6;
 if (mediaSevenHundred.matches) {
-  responsiveTriggerHookOne = 1;
+  responsiveTriggerHookOne = 0.9;
 }
 
 let responsiveTriggerHookTwo = 0.5;
@@ -137,7 +137,6 @@ introParagraphs.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'fade-in')
-    // .addIndicators()
     .addTo(controller);
 });
 
@@ -145,12 +144,12 @@ introParagraphs.forEach(function(item) {
 
 // Init GSAP timeline
 const tlTwo = gsap.timeline({
-  defaults: { duration: 0.6, ease: Power2.easeOut },
+  defaults: { duration: 0.6, ease: 'power2.out' },
 });
 
 // GSAP callback to add repeating animation
 function arrowShake() {
-  const shake = new gsap.timeline({ repeat: -1, delay: 2, repeatDelay: 2 });
+  const shake = gsap.timeline({ repeat: -1, delay: 2, repeatDelay: 2 });
   shake.to('.showreel-player-arrow', 0.15, {
     x: -10,
     y: 10,
@@ -170,10 +169,11 @@ tlTwo
 // Init ScrollMagic scene to add GSAP animation at scroll trigger point
 const showReel = new ScrollMagic.Scene({
   triggerElement: '.showreel-player',
-  triggerHook: responsiveTriggerHookTwo,
+  triggerHook: responsiveTriggerHookOne,
   // reverse: false,
 })
   .setTween(tlTwo)
+  .addIndicators()
   .addTo(controller);
 
 // ********** Homepage Triptych Two **********
