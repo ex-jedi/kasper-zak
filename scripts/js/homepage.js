@@ -14,8 +14,6 @@ function handleFirstTab(e) {
 window.addEventListener('keydown', handleFirstTab);
 
 // * Matching height and width
-// Homepage slides
-// TODO: Check if below is being used
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
@@ -52,7 +50,7 @@ if (mediaTwelveHundred.matches) {
 // ********** Homepage Triptych **********
 
 const tlOne = gsap.timeline({
-  defaults: { duration: 0.6, ease: Back.easeOut.config(1) },
+  defaults: { duration: 0.6, ease: 'back.out(1.4)' },
 });
 
 tlOne
@@ -182,10 +180,6 @@ const showReel = new ScrollMagic.Scene({
 // Collect elements to fade in
 const triptychImageTwo = document.querySelectorAll('.triptych-section-two-image');
 
-// For indicators in the scene
-// TODO: Used for multiple indicators. Can be removed before launch.
-let counterTwo = 1;
-
 // Loop through elements to add animation
 triptychImageTwo.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
@@ -195,8 +189,6 @@ triptychImageTwo.forEach(function(item) {
   })
     .setClassToggle(item, 'triptych-image-slide-in')
     .addTo(controller);
-
-  counterTwo++;
 });
 
 // * Parallax Scene
