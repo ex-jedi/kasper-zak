@@ -47,34 +47,6 @@ if (mediaTwelveHundred.matches) {
   responsiveTriggerHookTwo = 0.8;
 }
 
-// ********** Homepage Triptych **********
-
-const tlOne = gsap.timeline({
-  defaults: { duration: 0.6, ease: 'back.out(1.4)' },
-});
-
-tlOne
-  .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0, opacity: 1 }, '+=1')
-  .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0, opacity: 1 }, '-=0.2')
-  .addLabel('togetherness', '-=.3')
-  .fromTo('.triptych-slides-wrapper', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'none' }, 'togetherness')
-  .fromTo(
-    '.triptych-image-two',
-    { yPercent: 100 },
-    {
-      yPercent: 0,
-      duration: 2,
-      ease: 'elastic.out(1, 0.5)',
-      onComplete: slideInterval,
-    },
-    'togetherness'
-  );
-
-// * Switching off GreenSock animation on mobile
-
-// eslint-disable-next-line no-unused-expressions
-mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
-
 // ********** Homepage Triptych Slider **********
 
 const slides = document.querySelectorAll('.triptych-slides-wrapper .triptych-image-two');
@@ -120,6 +92,34 @@ TriptychSlider.addEventListener('mouseenter', function() {
 TriptychSlider.addEventListener('mouseleave', function() {
   clearInterval(keepOnSliding);
 });
+
+// ********** Homepage Triptych **********
+
+const tlOne = gsap.timeline({
+  defaults: { duration: 0.6, ease: 'back.out(1.4)' },
+});
+
+tlOne
+  .fromTo('.triptych-image-one', { xPercent: -100 }, { xPercent: 0, opacity: 1 }, '+=1')
+  .fromTo('.triptych-image-three', { xPercent: 100 }, { xPercent: 0, opacity: 1 }, '-=0.2')
+  .addLabel('togetherness', '-=.3')
+  .fromTo('.triptych-slides-wrapper', { opacity: 0 }, { opacity: 1, duration: 1.5, ease: 'none' }, 'togetherness')
+  .fromTo(
+    '.triptych-image-two',
+    { yPercent: 100 },
+    {
+      yPercent: 0,
+      duration: 2,
+      ease: 'elastic.out(1, 0.5)',
+      onComplete: slideInterval,
+    },
+    'togetherness'
+  );
+
+// * Switching off GreenSock animation on mobile
+
+// eslint-disable-next-line no-unused-expressions
+mediaSevenHundred.matches ? tlOne.progress(0.95) : null;
 
 // ********** Intro Paragraphs **********
 
