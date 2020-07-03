@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://use.typekit.net/gyv3hod.css">
-	<link rel="stylesheet" href="/css/universal.css?v=1.1">
-	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.1">
+	<link rel="stylesheet" href="/css/universal.css?v=1.2">
+	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.2">
 	<!-- Perch Meta -->
 	<?php
 	$domain        = 'https://'.$_SERVER["HTTP_HOST"];
