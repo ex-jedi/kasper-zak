@@ -173,7 +173,6 @@ const showReel = new ScrollMagic.Scene({
   // reverse: false,
 })
   .setTween(tlTwo)
-  .addIndicators()
   .addTo(controller);
 
 // ********** Homepage Triptych Two **********

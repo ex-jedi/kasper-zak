@@ -14,12 +14,9 @@ function handleFirstTab(e) {
 window.addEventListener('keydown', handleFirstTab);
 
 // ********** Text Fade In **********
-console.log('Hello');
 
 // * Init ScrollMagic
 const controller = new ScrollMagic.Controller();
-
-const fadeInParagraphs = document.querySelectorAll('.about-me-text-wrapper p');
 
 const fadeInImage = document.querySelectorAll('.four-oh-four-image');
 
