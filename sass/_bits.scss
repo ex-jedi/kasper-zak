@@ -109,25 +109,6 @@ $input-spacing: 1rem;
   &:hover,
   &focus {
     border-bottom: 3px solid $colour;
-    padding-bottom: 0;
-    margin-bottom: 5px;
-    outline: 0;
-
-    @include breakpoint(800) {
-      border-bottom: 3px solid transparent;
-    }
-  }
-}
-
-//* Fancy Link Underline With Visited styles
-@mixin link-underline-visited($colour) {
-  transition: all $timing-duration-short;
-  border-bottom: 3px solid transparent;
-  padding-bottom: 5px;
-
-  @include breakpoint(800) {
-    border-bottom: 3px solid transparent;
-    text-decoration: underline;
   }
 
   &:hover,
@@ -136,14 +117,6 @@ $input-spacing: 1rem;
     padding-bottom: 0;
     margin-bottom: 5px;
     outline: 0;
-
-    @include breakpoint(800) {
-      border-bottom: 3px solid transparent;
-    }
-  }
-
-  &:visited {
-    border-bottom: 3px solid $link-visited;
 
     @include breakpoint(800) {
       border-bottom: 3px solid transparent;

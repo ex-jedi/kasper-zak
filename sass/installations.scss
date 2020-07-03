@@ -84,25 +84,24 @@ body {
 }
 
 .installations-link {
+  @include link-underline($dark-font-colour);
   @include main-font-stack;
+
   color: $dark-font-colour;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .props-link {
+  @include link-underline($dark-font-colour);
   display: inline-block;
   font-size: $font-size-extra-large;
 
   @include breakpoint(1500) {
     font-size: $font-size-larger;
   }
-  @include breakpoint(1200) {
-    margin-bottom: $h2-size-smaller;
-  }
 
   @include breakpoint(700) {
     font-size: $h2-size-small;
-    margin-bottom: $section-spacing-tiny;
   }
 
   @include breakpoint(500) {
@@ -116,6 +115,14 @@ body {
 
   @include breakpoint(1500) {
     font-size: $h2-size-smaller;
+  }
+
+  @include breakpoint(1200) {
+    margin-top: $h2-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    margin-top: $section-spacing-tiny;
   }
 
   @include breakpoint(500) {
@@ -142,8 +149,4 @@ body {
   @include breakpoint(500) {
     font-size: $font-size-medium;
   }
-}
-
-.sprosser-link-number {
-  vertical-align: bottom;
 }
