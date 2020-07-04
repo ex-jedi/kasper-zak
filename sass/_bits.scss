@@ -102,7 +102,7 @@ $input-spacing: 1rem;
 
 //* Fancy Link Underline
 @mixin link-underline($colour) {
-  transition: all $timing-duration-short;
+  transition: all $timing-short;
   border-bottom: 3px solid transparent;
   padding-bottom: 5px;
 
@@ -156,7 +156,8 @@ $main-background-gradient: linear-gradient(
 //********** Transition Timings **********
 
 //* Times
-$timing-duration-short: 0.3s ease;
+$timing-duration-short: 0.3s;
+$timing-short: 0.3s ease;
 $timing-duration-medium: 0.6s ease;
 $timing-duration-long: 1s ease;
 
@@ -240,6 +241,17 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
     $point: 1px * $point;
   }
   @media (max-height: $point) {
+    @content;
+  }
+}
+
+//********** Width and Orientation **********
+
+@mixin width-orientation-breakpoint($point, $orientation: portrait) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) and (orientation: $orientation) {
     @content;
   }
 }
