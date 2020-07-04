@@ -165,6 +165,7 @@ header {
   height: auto;
   min-height: 100vh;
   clip-path: inset(0 0 0 100%);
+  -webkit-overflow-scrolling: auto;
 }
 
 .main-nav-reveal {
