@@ -243,3 +243,14 @@ $cubic-two: cubic-bezier(0.13, 0.1, 0.12, 0.93);
     @content;
   }
 }
+
+//********** Width and Orientation **********
+
+@mixin width-orientation-breakpoint($point, $orientation: portrait) {
+  @if unitless($point) {
+    $point: 1px * $point;
+  }
+  @media (max-height: $point) and (orientation: $orientation) {
+    @content;
+  }
+}

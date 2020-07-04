@@ -201,6 +201,17 @@ header {
   font-weight: bold;
   color: $dark-font-colour;
 
+  @include width-orientation-breakpoint(1100, landscape) {
+    padding: calc(#{$section-spacing-tiny} / 4);
+    margin-bottom: calc(#{$section-spacing-tiny} / 4);
+  }
+
+  @include breakpoint(700) {
+    font-size: $font-size-smaller;
+    padding: calc(#{$section-spacing-tiny} / 3);
+    margin-bottom: calc(#{$section-spacing-tiny} / 3);
+  }
+
   @include breakpoint(500) {
     font-size: $font-size-small;
     padding: calc(#{$section-spacing-tiny} / 4);
