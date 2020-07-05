@@ -16,6 +16,10 @@ html {
 
 .invisible-header {
   height: 0;
+
+  .header-inner-wrapper {
+    margin: 0;
+  }
 }
 
 //*=========================================
