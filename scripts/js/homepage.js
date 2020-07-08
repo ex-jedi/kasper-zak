@@ -2,7 +2,7 @@
 // ** General Stuff  **
 // *=========================================
 
-// * Matching height and width
+// * Matching slideshow images height and width
 const slidesImage = document.querySelector('.triptych-slides-wrapper');
 
 slidesImage.style.height = `${slidesImage.offsetWidth}px`;
@@ -10,10 +10,13 @@ slidesImage.style.height = `${slidesImage.offsetWidth}px`;
 const showreelPlayer = document.querySelector('.showreel-player');
 showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
 
-window.addEventListener('resize', () => {
+function squareSlideshowImages() {
   slidesImage.style.height = `${slidesImage.offsetWidth}px`;
   showreelPlayer.style.height = `${showreelPlayer.offsetWidth}px`;
-});
+}
+
+window.addEventListener('resize', squareSlideshowImages);
+window.addEventListener('load', squareSlideshowImages);
 
 // *=========================================
 // ** Animations  **
