@@ -20,6 +20,14 @@ body {
   background-size: contain;
   background-position: center;
   margin-bottom: 0;
+
+  @include breakpoint(1000) {
+    background-image: url(/images/birds-background-images-small.png);
+  }
+
+  @include breakpoint(500) {
+    background-image: url(/images/birds-background-images-tiny.png);
+  }
 }
 
 .general-page-title {

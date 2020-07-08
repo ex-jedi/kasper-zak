@@ -104,11 +104,13 @@
 
   @include breakpoint(1200) {
     padding: 0 $section-spacing-smaller $section-spacing-medium;
+    background-image: url('/images/birds-background-images-small.png');
   }
 
   @include breakpoint(900) {
     margin-top: calc(0px - (#{$font-size-larger} / 2));
     padding: 0 $section-spacing-small $section-spacing-small;
+    background-image: url('/images/birds-background-images-tiny.png');
   }
 
   @include breakpoint(700) {
