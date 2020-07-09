@@ -1,6 +1,6 @@
 #General Stuff
 node_modules
-.vscode
+.vscode/
 
 #Perch Files
 perch/resources/
@@ -9,4 +9,6 @@ perch/config/config.php
 perch/addons/apps/jw_activity_log/lang/en-gb.txt
 #Uncomment below for public repos
 perch/core
-video/
+video
+
+
