@@ -120,7 +120,8 @@
 
   color: $dark-font-colour;
   font-size: $font-size-medium;
-  padding: $section-spacing-medium;
+  padding: $section-spacing-medium $section-spacing-medium
+    calc(#{$section-spacing-medium} + 2rem);
 
   p:first-of-type {
     margin-top: 0;
