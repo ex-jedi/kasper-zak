@@ -507,12 +507,18 @@ select {
 
 .submit {
   margin: 0 auto;
-  background-color: $main-background-colour;
   border: 1px solid $dark-background-colour;
+  background-color: $main-background-colour;
   padding: 0.5rem 1rem;
   text-transform: uppercase;
   font-weight: bold;
   border-radius: 0;
+  transition: all ease $timing-duration-short;
+
+  &:hover {
+    background-color: $dark-background-colour;
+    color: $light-font-colour;
+  }
 }
 
 .success {
