@@ -29,8 +29,6 @@
 		'template' => 'default.html'
 	));
 	?>
-<!-- Google Analytics -->
-<?php perch_content('Analytics'); ?>
 
 <!-- Cookie Consent -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
