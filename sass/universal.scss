@@ -281,7 +281,7 @@ header {
   @include utility-font-stack;
 
   justify-content: space-between;
-  padding: $paragraph-spacing-medium $section-spacing-small;
+  padding: $paragraph-spacing-medium $section-spacing-tiny;
   align-items: center;
   position: fixed;
   bottom: 0;
@@ -318,16 +318,12 @@ header {
   border: 2px solid $light-font-colour;
   color: $light-font-colour;
   font-size: inherit;
-  padding: 5px $section-spacing-small;
+  padding: 5px $section-spacing-tiny;
   width: fit-content;
   flex: 0 0 auto;
-
-  @include breakpoint(1100) {
-    padding: 5px $section-spacing-medium;
-  }
+  text-align: center;
 
   @include breakpoint(500) {
-    padding: 5px $section-spacing-small;
     width: 80%;
   }
 }
