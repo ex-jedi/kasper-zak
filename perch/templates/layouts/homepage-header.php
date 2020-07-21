@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="https://use.typekit.net/gyv3hod.css">
-	<link rel="stylesheet" href="/css/universal.css?v=1.2">
-	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.2">
+	<link rel="stylesheet" href="/css/universal.css?v=1.3">
+	<link rel="stylesheet" href="<?php perch_page_attribute('css', array('template' => 'bits.html')) ;?>?v=1.3">
 	<!-- Perch Meta -->
 	<?php
 	$domain        = 'https://'.$_SERVER["HTTP_HOST"];
@@ -29,29 +29,6 @@
 		'template' => 'default.html'
 	));
 	?>
-
-<!-- Cookie Consent -->
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-	<script>
-	window.addEventListener("load", function(){
-	window.cookieconsent.initialise({
-		"palette": {
-			"popup": {
-				"background": "#000"
-			},
-			"button": {
-				"background": "transparent",
-				"text": "#fff",
-				"border": "#fff"
-			}
-		},
-		"content": {
-			"href": "/privacy-and-cookie-policy"
-		}
-	})});
-	</script>
-
 </head>
 	<body class="<?php perch_page_attribute('bodyClass', array('template' => 'bits.html' )); ?>">
 				<div class="site-wrapper" itemscope itemtype="http://schema.org/LocalBusiness">
@@ -65,5 +42,5 @@
 								'hide-extensions' => true,
 						)); ?>
 				</div>
-
+			<?php perch_content("Cookie Warning"); ?>
 			</header>
