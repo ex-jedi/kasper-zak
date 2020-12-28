@@ -308,3 +308,4 @@ closeButton.addEventListener('click', stopShowreel);
 
 // Close Showreel with Escape key
 window.addEventListener('keyup', stopShowreel);
+
