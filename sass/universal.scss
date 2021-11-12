@@ -5,7 +5,7 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Wrappers **
@@ -238,6 +238,7 @@ header {
   text-transform: uppercase;
   cursor: pointer;
   z-index: 1;
+  color: $dark-font-colour;
 
   @include breakpoint(700) {
     right: 50%;
@@ -515,7 +516,7 @@ select {
     }
 
     &:before {
-      content: '';
+      content: "";
       display: inline-block;
       width: 0.9rem;
       height: 0.9rem;
@@ -527,7 +528,7 @@ select {
     }
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       height: 7px;
       width: 16px;
@@ -588,10 +589,13 @@ select {
 //********** Honeypot **********
 
 .form-identification-number {
-  overflow: hidden;
-  position: absolute;
-  z-index: -10;
   opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
 }
 
 //********** Section divider **********
