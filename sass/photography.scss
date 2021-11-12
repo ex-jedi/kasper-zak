@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -20,7 +20,7 @@
   text-align: left;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     z-index: -1;
     top: 0;
@@ -73,6 +73,8 @@
 
   @include breakpoint(700) {
     margin-bottom: $section-spacing-tiny;
+    height: auto;
+    max-height: 100%;
   }
 }
 
@@ -81,6 +83,10 @@
   justify-content: space-between;
   align-items: flex-start;
   overflow: hidden;
+
+  @include breakpoint(700) {
+    @include flex(column);
+  }
 }
 
 .full-width-photo-image-wrapper {
@@ -101,6 +107,12 @@
   justify-content: space-between;
   clip-path: inset(0% 100% 0% 0%);
   transition: all 1s 0.1s $ease-out-two;
+
+  @include breakpoint(700) {
+    width: 100%;
+    margin: $section-spacing-tiny auto;
+    height: auto;
+  }
 }
 
 //* Image wipe
