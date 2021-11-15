@@ -431,10 +431,10 @@ header {
 
   @include breakpoint(1100) {
     line-height: normal;
+    margin-bottom: $paragraph-spacing-medium;
   }
 
   @include breakpoint(700) {
-    margin-bottom: $paragraph-spacing-medium;
     font-size: $label-font-size-smaller;
   }
 }
