@@ -141,7 +141,7 @@ const tlTwo = gsap.timeline({
 
 // GSAP callback to add repeating animation
 function arrowShake() {
-  const shake = gsap.timeline({ repeat: -1, delay: 2, repeatDelay: 2 });
+  const shake = gsap.timeline({ repeat: -1, delay: 0, repeatDelay: 0.5 });
   shake.to('.showreel-player-arrow', 0.15, {
     x: -10,
     y: 10,

@@ -19,13 +19,13 @@
 //********** Font Stacks **********
 
 @mixin main-font-stack {
-  font-family: 'baskerville-poster-pt', serif;
+  font-family: "baskerville-poster-pt", serif;
   font-weight: 400;
   line-height: 1.5;
 }
 
 @mixin utility-font-stack {
-  font-family: 'calluna-sans', sans-serif;
+  font-family: "calluna-sans", sans-serif;
   font-weight: 400;
 }
 

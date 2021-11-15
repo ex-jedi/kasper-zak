@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -93,7 +93,7 @@
   padding: 0 $section-spacing-extra-large $section-spacing-medium;
   margin-top: calc(0px - (#{$font-size-extra-large} / 2));
   color: $dark-font-colour;
-  background-image: url('/images/birds-background-images.png');
+  background-image: url("/images/birds-background-images.png");
   background-repeat: no-repeat;
   background-position: left $section-spacing-small top $section-spacing-medium;
   background-size: 50%;
@@ -104,13 +104,13 @@
 
   @include breakpoint(1200) {
     padding: 0 $section-spacing-smaller $section-spacing-medium;
-    background-image: url('/images/birds-background-images-small.png');
+    background-image: url("/images/birds-background-images-small.png");
   }
 
   @include breakpoint(900) {
     margin-top: calc(0px - (#{$font-size-larger} / 2));
     padding: 0 $section-spacing-small $section-spacing-small;
-    background-image: url('/images/birds-background-images-tiny.png');
+    background-image: url("/images/birds-background-images-tiny.png");
   }
 
   @include breakpoint(700) {
@@ -297,6 +297,10 @@
   font-size: $font-size-medium;
   line-height: 1.5;
   margin: 0;
+
+  @include breakpoint(700) {
+    font-size: $font-size-smaller;
+  }
 }
 
 //* Triptych Section Two
@@ -313,7 +317,7 @@
   }
 
   &:before {
-    content: '';
+    content: "";
     width: 150%;
     height: 70%;
     background-color: $accent-background-colour;
