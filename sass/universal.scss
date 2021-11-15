@@ -616,7 +616,7 @@ footer {
   @include utility-font-stack;
   color: $light-font-colour;
   align-items: center;
-  padding: $section-spacing-medium $paragraph-spacing-small;
+  padding: $section-spacing-medium $paragraph-spacing-small 0;
   background-color: $dark-background-colour;
   margin: 0 0 -50px;
   position: sticky;
@@ -636,7 +636,8 @@ footer {
   }
 
   @include breakpoint(400) {
-    padding: $paragraph-spacing-large $paragraph-spacing-small;
+    padding: $paragraph-spacing-large $paragraph-spacing-small
+      $section-spacing-smaller;
   }
 }
 
