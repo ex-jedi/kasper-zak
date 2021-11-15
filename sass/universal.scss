@@ -114,10 +114,12 @@ header {
   align-items: center;
   position: relative;
   width: 100%;
+
   //* Menu breakpoint
   @include breakpoint(700) {
     margin: $header-spacing-small $header-spacing-small 0;
   }
+
   //* Last breakpoint
   @include breakpoint(400) {
     margin: $header-spacing-extra-small $header-spacing-extra-small 0;
@@ -133,6 +135,7 @@ header {
     width: 40%;
     height: auto;
   }
+
   //* Menu Breakpoint
   @include breakpoint(700) {
     width: 100%;
@@ -411,7 +414,7 @@ header {
   align-items: flex-end;
   margin-bottom: $section-spacing-small;
 
-  @include breakpoint(700) {
+  @include breakpoint(1100) {
     @include flex(column);
     align-items: flex-start;
   }
@@ -426,8 +429,11 @@ header {
   line-height: 0.7;
   letter-spacing: $letter-spacing-small;
 
-  @include breakpoint(700) {
+  @include breakpoint(1100) {
     line-height: normal;
+  }
+
+  @include breakpoint(700) {
     margin-bottom: $paragraph-spacing-medium;
     font-size: $label-font-size-smaller;
   }
@@ -442,10 +448,12 @@ header {
   background-color: $main-background-colour;
   border: 0;
   border-bottom: 1px solid $dark-font-colour;
+  border-radius: 0;
   font-size: $font-size-small;
   padding-bottom: 5px;
+  padding-left: 0;
 
-  @include breakpoint(700) {
+  @include breakpoint(1100) {
     width: 100%;
   }
 
