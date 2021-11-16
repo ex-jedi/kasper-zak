@@ -577,6 +577,7 @@ select {
   font-weight: bold;
   border-radius: 0;
   transition: all ease $timing-duration-short;
+  color: $dark-font-colour;
 
   &:hover {
     background-color: $dark-background-colour;
