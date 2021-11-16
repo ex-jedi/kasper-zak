@@ -109,7 +109,7 @@ header {
 
 .header-inner-wrapper {
   @include flex(row);
-  margin: $header-spacing-small 0 0;
+  margin: $header-spacing-extra-small 0 0;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -117,12 +117,7 @@ header {
 
   //* Menu breakpoint
   @include breakpoint(700) {
-    margin: $header-spacing-small $header-spacing-small 0;
-  }
-
-  //* Last breakpoint
-  @include breakpoint(400) {
-    margin: $header-spacing-extra-small $header-spacing-extra-small 0;
+    margin: $header-spacing-extra-small $header-spacing-small 0;
   }
 }
 
@@ -582,6 +577,7 @@ select {
   font-weight: bold;
   border-radius: 0;
   transition: all ease $timing-duration-short;
+  color: $dark-font-colour;
 
   &:hover {
     background-color: $dark-background-colour;
@@ -664,11 +660,7 @@ footer {
   }
 
   @include breakpoint(700) {
-    width: 75%;
-  }
-
-  @include breakpoint(400) {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -699,6 +691,10 @@ footer {
 
 .footer-social-media-icon {
   height: 50px;
+
+  @include breakpoint(700) {
+    height: 35px;
+  }
 }
 
 .footer-terms,
