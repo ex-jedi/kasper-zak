@@ -136,8 +136,8 @@
 }
 
 .play-button-wrapper {
-  position: absolute;
   @include flex(column);
+  position: absolute;
   justify-content: center;
   align-items: center;
   z-index: 2;
