@@ -26,10 +26,11 @@ const fadeInText = document.querySelectorAll('.sprosser-fade-in');
 fadeInText.forEach(function(text) {
   const sceneOne = new ScrollMagic.Scene({
     triggerElement: text,
-    triggerHook: 0.8,
+    triggerHook: 1,
     // reverse: false,
   })
     .setClassToggle(text, 'sprosser-fade-in-reveal')
+    .addIndicators()
     .addTo(controller);
 });
 
