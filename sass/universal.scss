@@ -659,11 +659,7 @@ footer {
   }
 
   @include breakpoint(700) {
-    width: 75%;
-  }
-
-  @include breakpoint(400) {
-    width: 100%;
+    width: 90%;
   }
 }
 
@@ -694,6 +690,10 @@ footer {
 
 .footer-social-media-icon {
   height: 50px;
+
+  @include breakpoint(700) {
+    height: 35px;
+  }
 }
 
 .footer-terms,
