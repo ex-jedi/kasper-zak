@@ -119,11 +119,6 @@ header {
   @include breakpoint(700) {
     margin: $header-spacing-extra-small $header-spacing-small 0;
   }
-
-  //* Last breakpoint
-  @include breakpoint(400) {
-    margin: $header-spacing-extra-small $header-spacing-extra-small 0;
-  }
 }
 
 .main-logo {
