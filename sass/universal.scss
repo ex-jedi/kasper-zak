@@ -109,7 +109,7 @@ header {
 
 .header-inner-wrapper {
   @include flex(row);
-  margin: $header-spacing-small 0 0;
+  margin: $header-spacing-extra-small 0 0;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -117,7 +117,7 @@ header {
 
   //* Menu breakpoint
   @include breakpoint(700) {
-    margin: $header-spacing-small $header-spacing-small 0;
+    margin: $header-spacing-extra-small $header-spacing-small 0;
   }
 
   //* Last breakpoint
