@@ -4,7 +4,7 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
@@ -13,7 +13,7 @@
 //* Page Titles
 .general-page-title {
   width: fit-content;
-  background-image: url('/images/birds-background-images-tiny.png');
+  background-image: url("/images/birds-background-images-tiny.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -156,11 +156,11 @@
 }
 
 .play-button {
-  background-image: url('/images/video-player-icon.svg');
+  background-image: url("/images/video-player-icon.svg");
 }
 
 .pause-button {
-  background-image: url('/images/pause button.svg');
+  background-image: url("/images/pause button.svg");
   opacity: 0;
   transform: scale(0);
   display: none;
@@ -207,7 +207,12 @@
   }
 
   @include breakpoint(900) {
-    padding: $section-spacing-small;
+    padding: $section-spacing-small $section-spacing-extra-small;
+    font-size: $font-size-smaller;
+  }
+
+  @include breakpoint(700) {
+    padding: $section-spacing-small $paragraph-spacing-small;
     font-size: $font-size-smaller;
   }
 
