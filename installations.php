@@ -5,5 +5,5 @@
 	<?php perch_content("Installations Links"); ?>
 </main>
 <?php perch_layout('universal-footer'); ?>
-<?php perch_layout('universal-footer-end-js'); ?>
+<?php perch_layout('installations-footer-end-js'); ?>
 <!-- <?php PerchUtil::output_debug(); ?> -->
