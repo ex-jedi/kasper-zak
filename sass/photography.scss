@@ -119,6 +119,24 @@
   }
 }
 
+.half-width-photo-image-two {
+  @include breakpoint(700) {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+
+.responsive-image-right-left-flip {
+  @include breakpoint(700) {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+
+.responsive-image-left-right-flip {
+  @include breakpoint(700) {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+}
+
 //* Image wipe
 
 .photo-image-reveal {
