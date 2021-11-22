@@ -17,7 +17,6 @@ filmsSCrollAnimate.forEach(function(item) {
     // reverse: false,
   })
     .setClassToggle(item, 'film-scroll-animation-reveal')
-    .addIndicators()
     .addTo(controller);
 });
 

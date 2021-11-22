@@ -5,8 +5,6 @@
 <script src="/scripts/minified/gsap.min.js"></script>
 <!-- ScrollMagic Files -->
 <script src="/scripts/minified/ScrollMagic.min.js"></script>
-<!-- TODO: Remove markers -->
-<script src="/scripts/minified/debug.addIndicators.min.js"></script>
 <!-- Universal JS File  -->
 <script src="/scripts/minified/universal-min.js"></script>
 <!-- Films JS File  -->
