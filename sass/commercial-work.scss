@@ -109,14 +109,22 @@
   }
 }
 
-//* Image wipe
-
-.responsive-image-swipe-left-to-right {
+.half-width-commercial-image-left-to-right {
   clip-path: inset(0% 100% 0% 0%);
 }
 
+//* Image wipe
+
+.responsive-image-swipe-left-to-right {
+  @include breakpoint(700) {
+    clip-path: inset(0% 100% 0% 0%);
+  }
+}
+
 .responsive-image-swipe-right-to-left {
-  clip-path: inset(0% 0% 0% 100%);
+  @include breakpoint(700) {
+    clip-path: inset(0% 0% 0% 100%);
+  }
 }
 
 .commercial-image-reveal {
