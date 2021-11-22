@@ -4,14 +4,14 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
 // *=========================================
 
 .commercial-work-section {
-  padding-bottom: $section-spacing-small;
+  padding-bottom: $section-spacing-medium;
   margin-bottom: $section-spacing-smaller;
 
   @include breakpoint(1500) {
