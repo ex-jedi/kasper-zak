@@ -165,8 +165,8 @@ html {
   justify-content: space-between;
   align-items: center;
   font-size: $font-size-medium;
-  width: $section-spacing-extra-large;
-  max-width: 90%;
+  width: 90%;
+  max-width: $section-spacing-large;
   font-weight: 400;
   color: $light-font-colour;
   z-index: 1;
