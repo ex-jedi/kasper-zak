@@ -55,10 +55,10 @@
 
 .photo-gallery-section {
   @include flex(column);
-  margin-bottom: $section-spacing-small;
+  margin-bottom: $section-spacing-medium;
 
   @include breakpoint(1500) {
-    margin-bottom: $section-spacing-tiny;
+    margin-bottom: $section-spacing-small;
   }
 }
 
