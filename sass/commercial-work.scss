@@ -110,6 +110,15 @@
 }
 
 //* Image wipe
+
+.responsive-image-swipe-left-to-right {
+  clip-path: inset(0% 100% 0% 0%);
+}
+
+.responsive-image-swipe-right-to-left {
+  clip-path: inset(0% 0% 0% 100%);
+}
+
 .commercial-image-reveal {
   clip-path: inset(0% 0% 0% 0%);
 }
