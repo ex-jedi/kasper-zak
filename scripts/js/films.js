@@ -3,6 +3,25 @@
 // *=========================================
 
 // *=========================================
+// ** Scroll Effects  **
+// *=========================================
+// * Init ScrollMagic
+const controller = new ScrollMagic.Controller();
+
+const filmsSCrollAnimate = document.querySelectorAll('.film-scroll-animation');
+
+filmsSCrollAnimate.forEach(function(item) {
+  const sceneTwo = new ScrollMagic.Scene({
+    triggerElement: item,
+    triggerHook: 0.95,
+    // reverse: false,
+  })
+    .setClassToggle(item, 'film-scroll-animation-reveal')
+    .addIndicators()
+    .addTo(controller);
+});
+
+// *=========================================
 // ** Video Controls  **
 // *=========================================
 
