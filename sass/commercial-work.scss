@@ -4,14 +4,14 @@
 
 //* Imports
 
-@import 'bits'; //Contains variables, media queries mixins etc.
+@import "bits"; //Contains variables, media queries mixins etc.
 
 // *=========================================
 // ** Main **
 // *=========================================
 
 .commercial-work-section {
-  padding-bottom: $section-spacing-small;
+  padding-bottom: $section-spacing-medium;
   margin-bottom: $section-spacing-smaller;
 
   @include breakpoint(1500) {
@@ -86,6 +86,10 @@
   @include flex(row);
   justify-content: center;
   align-content: center;
+
+  @include breakpoint(700) {
+    @include flex(column);
+  }
 }
 
 .left-half-width-commercial-image {
@@ -98,6 +102,11 @@
   height: auto;
   clip-path: inset(0% 0% 0% 100%);
   transition: all 1s 0.3s $ease-out-two;
+
+  @include breakpoint(700) {
+    width: 100%;
+    margin-bottom: $section-spacing-tiny;
+  }
 }
 
 //* Image wipe

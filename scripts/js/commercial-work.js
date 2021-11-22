@@ -9,7 +9,7 @@ const commercialImage = document.querySelectorAll('.commercial-image');
 
 commercialImage.forEach(function(item) {
   const sceneTwo = new ScrollMagic.Scene({
-    triggerElement: item.closest('.commercial-image-wrapper'),
+    triggerElement: item,
     triggerHook: 0.8,
     // reverse: false,
   })

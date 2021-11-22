@@ -55,10 +55,10 @@
 
 .photo-gallery-section {
   @include flex(column);
-  margin-bottom: $section-spacing-small;
+  margin-bottom: $section-spacing-medium;
 
   @include breakpoint(1500) {
-    margin-bottom: $section-spacing-tiny;
+    margin-bottom: $section-spacing-small;
   }
 }
 
@@ -116,6 +116,24 @@
     width: 100%;
     margin: $section-spacing-tiny auto;
     height: auto;
+  }
+}
+
+.half-width-photo-image-two {
+  @include breakpoint(700) {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+
+.responsive-image-right-left-flip {
+  @include breakpoint(700) {
+    clip-path: inset(0% 0% 0% 100%);
+  }
+}
+
+.responsive-image-left-right-flip {
+  @include breakpoint(700) {
+    clip-path: inset(0% 100% 0% 0%);
   }
 }
 
