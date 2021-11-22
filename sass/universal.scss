@@ -660,6 +660,10 @@ footer {
   }
 
   @include breakpoint(700) {
+    width: 70%;
+  }
+
+  @include breakpoint(400) {
     width: 90%;
   }
 }
